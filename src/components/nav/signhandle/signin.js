@@ -1,0 +1,98 @@
+import { Component } from 'react';
+
+class SignIn extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      errorMessage: '',
+    };
+  }
+  handleInputValue = (key) => (e) => {
+    this.setState({ [key]: e.target.value });
+  };
+  handleSignIn = () => {
+    if (
+      !this.state.email.includes('@') ||
+      this.state.email.length <= 6 ||
+      this.state.password.length <= 8
+    ) {
+      return;
+    }
+    let tempdata = JSON.stringify({
+      email: this.state.email,
+      password: this.state.password,
+    });
+    console.log(tempdata);
+    const url = 'http://localhost:4000/user/signin';
+    fetch(url, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: tempdata,
+    })
+      .then((res) => res.json())
+      .then((body) => {
+        this.props.signInAndOutHandler('aa');
+        this.props.signInModalHandler();
+        this.setState({ errorMessage: '' });
+      })
+      .catch((err) => {
+        this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });
+        throw err;
+      });
+  };
+  render() {
+    return (
+      <div id="sign-in">
+        이메일 로그인
+        <center>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <div>
+              <input
+                type="email"
+                placeholder="이메일"
+                onChange={this.handleInputValue('email')}
+              ></input>
+              <span onClick={this.props.signInModalHandler}>X</span>
+            </div>
+            <div>
+              <input
+                type="password"
+                placeholder="비밀번호 숫자, 문자 포함 8자리 이상"
+                onChange={this.handleInputValue('password')}
+              ></input>
+            </div>
+            <button type="submit" onClick={this.handleSignIn}>
+              로그인
+            </button>
+            {!this.state.email.includes('@') ? (
+              <div>"이메일을 입력하세요"</div>
+            ) : this.state.password.length <= 8 ? (
+              <div>비밀번호를 8자 이상 입력하세요</div>
+            ) : (
+              <div>{this.state.errorMessage}</div>
+            )}
+          </form>
+          <div
+            onClick={(event) => {
+              this.props.signUpModalHandler();
+              this.props.signInModalHandler();
+            }}
+          >
+            아이디가 없으신가요?
+          </div>
+        </center>
+      </div>
+    );
+  }
+}
+
+export default SignIn;
