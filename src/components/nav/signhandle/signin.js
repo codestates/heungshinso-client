@@ -20,11 +20,10 @@ class SignIn extends Component {
     ) {
       return;
     }
-    let tempdata = JSON.stringify({
+    let body = {
       email: this.state.email,
       password: this.state.password,
-    });
-    console.log(tempdata);
+    };
     const url = 'http://localhost:4000/user/signin';
     fetch(url, {
       method: 'POST',
@@ -32,7 +31,7 @@ class SignIn extends Component {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: tempdata,
+      body: JSON.stringify(body),
     })
       .then((res) => res.json())
       .then((body) => {

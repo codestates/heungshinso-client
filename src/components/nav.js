@@ -8,7 +8,7 @@ class Nav extends Component {
     super(props);
   }
   handleSignOut = () => {
-    const url = 'https://www.localhost:4000/user/signout';
+    const url = 'http://localhost:4000/user/signin';
     fetch(url, {
       method: 'POST',
       mode: 'cors',

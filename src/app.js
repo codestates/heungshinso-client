@@ -57,7 +57,7 @@ class App extends Component {
           <hr />
 
           <Switch>
-            <Route exact path="/" component={Main} />
+            <Route exact path="/" render={() => <Main data={this.state} />} />
             <Route path="/recruit" component={Recruit} />
             <Route path="/apply">
               <Apply users={this.state.users} />
