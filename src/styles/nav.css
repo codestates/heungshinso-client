@@ -1,0 +1,13 @@
+.hidden-modal {
+}
+
+.show-modal {
+  background-color: rgba(0, 0, 0, 0.466);
+}
+
+#sign-in {
+  align-content: center;
+  height: 500px;
+  width: 500px;
+  background-color: snow;
+}

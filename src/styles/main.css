@@ -1,0 +1,83 @@
+/* .main_container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+
+
+/* intro_section */
+.intro_section {
+  display: flex;
+  height: 1000px;
+  justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-size: 100%;
+}
+
+.intro{
+  display: flex;
+  /* border: solid 1px white; */
+  font-size: 150px;
+  color: yellow;
+  padding-top: 130px;
+  margin: 150px;
+}
+
+
+/* recurite_section */
+.recurite_section {
+  display: flex;
+  flex-flow: column;
+  height: 1000px;
+  background-color: oldlace;
+  padding-top: 15px;
+}
+
+.recurite_title {
+  border: solid 3px yellowgreen;
+  margin-top: 20px
+}
+
+.recurite_article {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  border: solid 3px pink; 
+  margin: 25px 150px;
+}
+
+.recurite_card {
+  width: 400px;
+  height: 380px;
+  border: solid 3px yellow;
+  margin: 30px
+}
+
+
+/* aplly_section */
+.aplly_section {
+  display: flex;
+  flex-flow: column;
+  height: 1000px;
+  background-color: whitesmoke;
+  padding-top: 15px;
+}
+
+
+ /* footer */
+ .footer {
+   display: flex;
+   flex-flow: column;
+   justify-content: space-around;
+ }
+
+ .team{
+  border: solid 3px papayawhip;
+ }
+
+ .member{
+  display: flex;
+  justify-content: space-around;
+  border: solid 1px palevioletred;
+ }
