@@ -34,6 +34,13 @@ class App extends Component {
       },
     }));
   }
+
+  componentDidMount() {
+    window.fetch('http://3.35.21.164:3000/')
+      .then(res => res.json())
+      .then(res => console.log(res))
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -58,7 +65,9 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" render={() => <Main data={this.state} />} />
-            <Route path="/recruit" component={Recruit} />
+            <Route path="/recruit">
+              <Recruit teams={this.state.teams} />
+            </Route>
             <Route path="/apply">
               <Apply users={this.state.users} />
             </Route>
@@ -66,19 +75,19 @@ class App extends Component {
               {this.state.currentUser.isLogin ? (
                 <CreateTeam users={this.state.users} />
               ) : (
-                <Redirect to="/" />
-              )}
+                  <Redirect to="/" />
+                )}
             </Route>
-            <Route exact path="/profile">
-              {this.state.currentUser.isLogin ? (
+            <Route exact path="/profile" >
+              {this.state ? (
                 <Profile />
               ) : (
-                <Redirect to="/" />
-              )}
+                  <Redirect to="/" />
+                )}
             </Route>
           </Switch>
         </div>
-      </BrowserRouter>
+      </BrowserRouter >
     );
   }
 }
