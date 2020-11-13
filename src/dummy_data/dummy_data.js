@@ -1,5 +1,5 @@
 const dummyData = {
-  users: [
+  user: [
     {
       id: 1,
       username: 'duyjlepc',
@@ -111,7 +111,7 @@ const dummyData = {
       user_status: '사이드잡',
     },
   ],
-  teams: [
+  team: [
     {
       id: 1,
       title: '모집 title :dxfcfxwc',
@@ -272,7 +272,7 @@ for (let i = 1; i <= 6; i++) {
 let a = {
   user: [
     {
-      id: 11,
+      id: 10,
       username: 'John',
       password: '123123',
       email: 'example@example.com',
@@ -383,7 +383,7 @@ let a = {
       descrition: '좋은사람으로요',
       team_region: '원격입니다.',
       team_position: '시니어 그자체.',
-      userId: 4444,
+      userId: 11,
       createdAt: '2020-11-12T05:52:59.000Z',
       updatedAt: '2020-11-12T05:52:59.000Z',
     },
@@ -393,7 +393,7 @@ let a = {
       descrition: '프로젝트 팀입니다.',
       team_region: '원격입니다.',
       team_position: '주니어 개발자',
-      userId: 5555,
+      userId: 12,
       createdAt: '2020-11-12T05:52:59.000Z',
       updatedAt: '2020-11-12T05:52:59.000Z',
     },
@@ -403,7 +403,7 @@ let a = {
       descrition: '프로젝트 팀입니다.',
       team_region: '만나서합니다.',
       team_position: '주니어 개발자',
-      userId: 666,
+      userId: 13,
       createdAt: '2020-11-12T05:52:59.000Z',
       updatedAt: '2020-11-12T05:52:59.000Z',
     },
@@ -413,7 +413,7 @@ let a = {
       descrition: '흥신소 합니다..',
       team_region: '만나서합니다.',
       team_position: '주니어 개발자',
-      userId: 777,
+      userId: 14,
       createdAt: '2020-11-12T05:52:59.000Z',
       updatedAt: '2020-11-12T05:52:59.000Z',
     },
@@ -423,7 +423,7 @@ let a = {
       descrition: '첨이에요',
       team_region: '반갑습니다.',
       team_position: '주니어 개발자',
-      userId: 777,
+      userId: 15,
       createdAt: '2020-11-12T05:52:59.000Z',
       updatedAt: '2020-11-12T05:52:59.000Z',
     },
@@ -433,7 +433,7 @@ let a = {
       descrition: '첨이에요',
       team_region: '반갑습니다.',
       team_position: '주니어 개발자',
-      userId: 777,
+      userId: 16,
       createdAt: '2020-11-12T05:52:59.000Z',
       updatedAt: '2020-11-12T05:52:59.000Z',
     },
@@ -443,7 +443,7 @@ let a = {
       descrition: '첨이에요',
       team_region: '반갑습니다.',
       team_position: '주니어 개발자',
-      userId: 777,
+      userId: 17,
       createdAt: '2020-11-12T05:52:59.000Z',
       updatedAt: '2020-11-12T05:52:59.000Z',
     },
@@ -453,11 +453,11 @@ let a = {
       descrition: '첨이에요',
       team_region: '반갑습니다.',
       team_position: '주니어 개발자',
-      userId: 777,
+      userId: 18,
       createdAt: '2020-11-12T05:52:59.000Z',
       updatedAt: '2020-11-12T05:52:59.000Z',
     },
   ],
 };
 
-export default a;
+export default dummyData;

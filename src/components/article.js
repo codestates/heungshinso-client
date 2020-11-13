@@ -12,7 +12,7 @@ const Article = (props) => (
             MORE VIEW
           </button>
           <div className="title">{props.team.title}</div>
-          <div className="username">작성자: 추노</div>
+          <div className="username">작성자 {props.username}</div>
           <div className="description">{props.team.description}</div>
           <div className="position">{props.team.team_position}</div>
           <div className="region">{props.team.team_region}</div>

@@ -16,6 +16,7 @@ class ProfileChange extends Component {
     this.setState({ [key]: e.target.value });
   };
   handleUserValue = () => {
+    console.log(this.props);
     let body = {
       ...this.state,
     };
@@ -31,8 +32,8 @@ class ProfileChange extends Component {
       .then((res) => res.json())
       .then((body) => {
         this.setState({ errorMessage: '' });
-        this.props.ProfileChangeModalHandler();
         this.props.changeCurrentUserHandler(this.state);
+        this.props.profileChangeModalHandler();
       })
       .catch((err) => {
         this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });
@@ -47,7 +48,7 @@ class ProfileChange extends Component {
           <input
             type="text"
             value={this.state.username}
-            onChange={this.handleInputValue.bind(this)}
+            onChange={this.handleInputValue('username').bind(this)}
           ></input>
         </div>
         <div>
@@ -55,7 +56,7 @@ class ProfileChange extends Component {
           <input
             type="text"
             value={this.state.phone_number}
-            onChange={this.handleInputValue.bind(this)}
+            onChange={this.handleInputValue('phone_number').bind(this)}
           ></input>
         </div>
         <div>
@@ -63,7 +64,7 @@ class ProfileChange extends Component {
           <input
             type="text"
             value={this.state.birthday}
-            onChange={this.handleInputValue.bind(this)}
+            onChange={this.handleInputValue('birthday').bind(this)}
           ></input>
         </div>
         <div>
@@ -71,7 +72,7 @@ class ProfileChange extends Component {
           <input
             type="text"
             value={this.state.user_position}
-            onChange={this.handleInputValue.bind(this)}
+            onChange={this.handleInputValue('user_position').bind(this)}
           ></input>
         </div>
         <div>
@@ -79,7 +80,7 @@ class ProfileChange extends Component {
           <input
             type="text"
             value={this.state.user_region}
-            onChange={this.handleInputValue.bind(this)}
+            onChange={this.handleInputValue('user_region').bind(this)}
           ></input>
         </div>
         <div>
@@ -87,10 +88,10 @@ class ProfileChange extends Component {
           <input
             type="text"
             value={this.state.user_status}
-            onChange={this.handleInputValue.bind(this)}
+            onChange={this.handleInputValue('user_status').bind(this)}
           ></input>
         </div>
-        <div onClick={this.props.profileChangeModalHandler}>확인</div>
+        <div onClick={this.handleUserValue.bind(this)}>확인</div>
       </div>
     );
   }
