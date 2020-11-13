@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import dummy_data from '../../../dummy_data/dummy_data';
 
 class SignIn extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    const url = 'http://localhost:4000/user/signin';
+    const url = 'http://localhost:4000/users/signin';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -35,9 +36,9 @@ class SignIn extends Component {
     })
       .then((res) => res.json())
       .then((body) => {
-        this.props.signInAndOutHandler('aa');
-        this.props.signInModalHandler();
         this.setState({ errorMessage: '' });
+        this.props.signInModalHandler();
+        this.props.signInAndOutHandler(dummy_data.user[0]);
       })
       .catch((err) => {
         this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });

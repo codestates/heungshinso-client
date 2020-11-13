@@ -1,7 +1,7 @@
 .hidden-modal {
 }
 
-.show-modal {
+#show-modal {
   background-color: rgba(0, 0, 0, 0.466);
 }
 
@@ -10,4 +10,9 @@
   height: 500px;
   width: 500px;
   background-color: snow;
+}
+
+nav {
+  position: fixed;
+  background-color: rosybrown;
 }

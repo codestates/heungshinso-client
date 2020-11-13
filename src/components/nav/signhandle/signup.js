@@ -20,7 +20,7 @@ class SignUp extends Component {
     ) {
       return;
     }
-    const url = 'http://localhost:4000/user/signup';
+    const url = 'http://localhost:4000/users/signup';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -34,8 +34,8 @@ class SignUp extends Component {
     })
       .then((res) => res.json())
       .then((body) => {
-        this.props.signUpModalHandler();
         this.setState({ errorMessage: '' });
+        this.props.signUpModalHandler();
       })
       .catch((err) => {
         this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });

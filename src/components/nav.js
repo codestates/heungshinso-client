@@ -4,11 +4,8 @@ import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
 
 class Nav extends Component {
-  constructor(props) {
-    super(props);
-  }
   handleSignOut = () => {
-    const url = 'http://localhost:4000/user/signin';
+    const url = 'http://localhost:4000/users/signin';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
