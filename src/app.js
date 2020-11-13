@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { Component } from 'react';
 import dummyData from './dummy_data/dummy_data';
 import Nav from './components/nav';
-import Recruit from './components/recurit';
+import Recruit from './components/recruit';
 import Apply from './components/apply';
 import Main from './components/main';
 import CreateTeam from './components/create_team';
@@ -48,40 +48,28 @@ class App extends Component {
       },
     }));
   }
-  componentDidMount() {
-    const url = 'http://3.35.21.164:3000/';
-    fetch(url, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => {
-        console.log(res.body);
-        return res.json();
-      })
-      .then((body) => {
-        console.log(body);
-        this.setState({ user: body.user });
-        this.setState({ team: body.team });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  componentDidMount() {
-    window
-      .fetch('http://3.35.21.164:3000/')
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          users: res.user,
-          teams: res.team,
-        });
-      });
-  }
+  // componentDidMount() {
+  //   const url = 'http://3.35.21.164:3000/';
+  //   fetch(url, {
+  //     method: 'GET',
+  //     mode: 'cors',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //     .then((res) => {
+  //       console.log(res.body);
+  //       return res.json();
+  //     })
+  //     .then((body) => {
+  //       console.log(body);
+  //       this.setState({ user: body.user });
+  //       this.setState({ team: body.team });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 
   render() {
     return (
@@ -89,8 +77,8 @@ class App extends Component {
         <div
           id={
             !this.state.isOpenSignIn &&
-            !this.state.isOpenSignUp &&
-            !this.state.isOpenProfileChange
+              !this.state.isOpenSignUp &&
+              !this.state.isOpenProfileChange
               ? 'hidden-modal'
               : 'show-modal'
           }
@@ -112,8 +100,8 @@ class App extends Component {
               this.state.isOpenSignIn
                 ? this.signInModalHandler.bind(this)
                 : this.state.isOpenSignUp
-                ? this.signUpModalHandler.bind(this)
-                : () => {}
+                  ? this.signUpModalHandler.bind(this)
+                  : () => { }
             }
           >
             <Switch>
@@ -131,8 +119,8 @@ class App extends Component {
                 {this.state.currentUser.isLogin ? (
                   <CreateTeam teams={this.state.users} />
                 ) : (
-                  <Redirect to="/" />
-                )}
+                    <Redirect to="/" />
+                  )}
               </Route>
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
@@ -147,8 +135,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                  <Redirect to="/" />
-                )}
+                    <Redirect to="/" />
+                  )}
               </Route>
             </Switch>
           </div>

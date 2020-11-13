@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from '../components/article'
 
-class Recurite extends React.Component {
+class Recruit extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -22,7 +22,7 @@ class Recurite extends React.Component {
   render() {
     return (
       <>
-        <div className="recurite_container">
+        <div className="recruit_container">
           {/* filter_section */}
           <section className="filter_section">
             <div className="filter">
@@ -49,9 +49,9 @@ class Recurite extends React.Component {
             </div>
           </section>
 
-          {/* recurite_section */}
-          <section className="recurite__section">
-            <div className="recurite_articles">
+          {/* recruit_section */}
+          <section className="recruit__section">
+            <div className="recruit_articles">
               {this.props.teams.map(team => (
                 <Article key={team.id} team={team} modalOn={this.modalOn.bind(this)} />
               ))}
@@ -75,7 +75,6 @@ class Recurite extends React.Component {
       </>
     )
   }
-
 }
 
-export default Recurite
+export default Recruit

@@ -5,7 +5,7 @@ import '../styles/nav.css';
 
 class Nav extends Component {
   handleSignOut = () => {
-    const url = 'http://localhost:4000/users/signin';
+    const url = 'http://localhost:3000/users/signout';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -17,6 +17,7 @@ class Nav extends Component {
         throw err;
       });
   };
+
   render() {
     if (this.props.currentUser.isLogin) {
       return (
