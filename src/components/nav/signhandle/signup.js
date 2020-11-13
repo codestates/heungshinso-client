@@ -20,7 +20,7 @@ class SignUp extends Component {
     ) {
       return;
     }
-    const url = 'http://localhost:4000/users/signup';
+    const url = 'http://localhost:3000/users/signup';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -29,11 +29,11 @@ class SignUp extends Component {
       },
       body: JSON.stringify({
         email: this.state.email,
-        password: this.state.password,
-      }),
+        password: this.state.password
+      })
     })
-      .then((res) => res.json())
       .then((body) => {
+        console.log(body)
         this.setState({ errorMessage: '' });
         this.props.signUpModalHandler();
       })

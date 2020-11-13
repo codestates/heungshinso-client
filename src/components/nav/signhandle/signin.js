@@ -25,7 +25,7 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    const url = 'http://localhost:4000/users/signin';
+    const url = 'http://localhost:3000/users/signin';
     // this.props.signInModalHandler();
     // this.props.signInAndOutHandler(dummy_data.user[0]);
     fetch(url, {
@@ -40,8 +40,9 @@ class SignIn extends Component {
       .then((body) => {
         this.setState({ errorMessage: '' });
         console.log(body)
-        // this.props.signInModalHandler();
-        // this.props.signInAndOutHandler(dummy_data.user[0]);
+        // this.props.history.push("/")
+        this.props.signInModalHandler();
+        this.props.signInAndOutHandler(dummy_data.user[0]);
       })
       .catch((err) => {
         this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });

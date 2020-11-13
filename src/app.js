@@ -48,28 +48,28 @@ class App extends Component {
       },
     }));
   }
-  componentDidMount() {
-    const url = 'http://3.35.21.164:3000/';
-    fetch(url, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => {
-        console.log(res.body);
-        return res.json();
-      })
-      .then((body) => {
-        console.log(body);
-        this.setState({ user: body.user });
-        this.setState({ team: body.team });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+  // componentDidMount() {
+  //   const url = 'http://3.35.21.164:3000/';
+  //   fetch(url, {
+  //     method: 'GET',
+  //     mode: 'cors',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //     .then((res) => {
+  //       console.log(res.body);
+  //       return res.json();
+  //     })
+  //     .then((body) => {
+  //       console.log(body);
+  //       this.setState({ user: body.user });
+  //       this.setState({ team: body.team });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 
   render() {
     return (
