@@ -26,8 +26,8 @@ class SignIn extends Component {
       password: this.state.password,
     };
     const url = 'http://localhost:4000/users/signin';
-    this.props.signInModalHandler();
-    this.props.signInAndOutHandler(dummy_data.user[0]);
+    // this.props.signInModalHandler();
+    // this.props.signInAndOutHandler(dummy_data.user[0]);
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -39,8 +39,9 @@ class SignIn extends Component {
       .then((res) => res.json())
       .then((body) => {
         this.setState({ errorMessage: '' });
-        this.props.signInModalHandler();
-        this.props.signInAndOutHandler(dummy_data.user[0]);
+        console.log(body)
+        // this.props.signInModalHandler();
+        // this.props.signInAndOutHandler(dummy_data.user[0]);
       })
       .catch((err) => {
         this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });

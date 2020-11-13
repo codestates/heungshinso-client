@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { Component } from 'react';
 import dummyData from './dummy_data/dummy_data';
 import Nav from './components/nav';
-import Recruit from './components/recurit';
+import Recruit from './components/recruit';
 import Apply from './components/apply';
 import Main from './components/main';
 import CreateTeam from './components/create_team';
