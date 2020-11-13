@@ -70,6 +70,19 @@ class App extends Component {
         console.log(err);
       });
   }
+
+  componentDidMount() {
+    window
+      .fetch('http://3.35.21.164:3000/')
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          users: res.user,
+          teams: res.team,
+        });
+      });
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -107,7 +120,10 @@ class App extends Component {
               <Route exact path="/">
                 <Main data={this.state}></Main>
               </Route>
-              <Route path="/recruit" component={Recruit} />
+              <Route path="/recruit">
+                {' '}
+                <Recruit teams={this.state.teams} />
+              </Route>
               <Route path="/apply">
                 <Apply users={this.state.users} />
               </Route>
