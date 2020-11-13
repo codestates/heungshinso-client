@@ -71,26 +71,14 @@ class App extends Component {
       });
   }
 
-  componentDidMount() {
-    window
-      .fetch('http://3.35.21.164:3000/')
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          users: res.user,
-          teams: res.team,
-        });
-      });
-  }
-
   render() {
     return (
       <BrowserRouter>
         <div
           id={
             !this.state.isOpenSignIn &&
-            !this.state.isOpenSignUp &&
-            !this.state.isOpenProfileChange
+              !this.state.isOpenSignUp &&
+              !this.state.isOpenProfileChange
               ? 'hidden-modal'
               : 'show-modal'
           }
@@ -112,8 +100,8 @@ class App extends Component {
               this.state.isOpenSignIn
                 ? this.signInModalHandler.bind(this)
                 : this.state.isOpenSignUp
-                ? this.signUpModalHandler.bind(this)
-                : () => {}
+                  ? this.signUpModalHandler.bind(this)
+                  : () => { }
             }
           >
             <Switch>
@@ -131,8 +119,8 @@ class App extends Component {
                 {this.state.currentUser.isLogin ? (
                   <CreateTeam teams={this.state.users} />
                 ) : (
-                  <Redirect to="/" />
-                )}
+                    <Redirect to="/" />
+                  )}
               </Route>
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
@@ -147,8 +135,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                  <Redirect to="/" />
-                )}
+                    <Redirect to="/" />
+                  )}
               </Route>
             </Switch>
           </div>

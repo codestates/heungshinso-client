@@ -75,7 +75,6 @@ class Recurite extends React.Component {
       </>
     )
   }
-
 }
 
 export default Recurite

@@ -26,6 +26,8 @@ class SignIn extends Component {
       password: this.state.password,
     };
     const url = 'http://localhost:4000/users/signin';
+    this.props.signInModalHandler();
+    this.props.signInAndOutHandler(dummy_data.user[0]);
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -78,8 +80,8 @@ class SignIn extends Component {
             ) : this.state.password.length <= 8 ? (
               <div>비밀번호를 8자 이상 입력하세요</div>
             ) : (
-              <div>{this.state.errorMessage}</div>
-            )}
+                  <div>{this.state.errorMessage}</div>
+                )}
           </form>
           <div
             onClick={(event) => {

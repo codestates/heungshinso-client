@@ -34,11 +34,7 @@ class Main extends React.Component {
             <div className="recurite_title">팀원 모집</div>
             <div className="recurite_articles">
               {this.props.data.teams.slice(0, 6).map((team) => (
-                <Article
-                  key={team.id}
-                  team={team}
-                  modalOn={this.modalOn.bind(this)}
-                />
+                <Article key={team.id} team={team} modalOn={this.modalOn.bind(this)} />
               ))}
             </div>
           </section>
@@ -48,11 +44,7 @@ class Main extends React.Component {
             <div className="apply_title">사람 찾기</div>
             <div className="apply_articles">
               {this.props.data.users.slice(0, 3).map((user) => (
-                <Article
-                  key={user.id}
-                  user={user}
-                  modalOn={this.modalOn.bind(this)}
-                />
+                <Article key={user.id} user={user} modalOn={this.modalOn.bind(this)} />
               ))}
             </div>
           </section>
@@ -69,6 +61,17 @@ class Main extends React.Component {
         </div>
 
         {/* modal_section */}
+        {this.state.modal ? <>
+          <section className="modal_section">
+            <div className="modal_overlay" onClick={this.modalOff.bind(this)}></div>
+            <div className="modal_card">
+              <div className="username">{this.state.modalData.username}</div>
+              <div className="position">{this.state.modalData.user_position}</div>
+              <div className="region">{this.state.modalData.user_region}</div>
+              <div className="status">{this.state.modalData.user_status}</div>
+            </div>
+          </section>
+        </> : null}
       </>
     );
   }
