@@ -38,7 +38,12 @@ class App extends Component {
   componentDidMount() {
     window.fetch('http://3.35.21.164:3000/')
       .then(res => res.json())
-      .then(res => console.log(res))
+      .then(res => {
+        this.setState({
+          users: res.user,
+          teams: res.team
+        })
+      })
   }
 
   render() {
