@@ -29,7 +29,9 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    const url = 'http://localhost:4000/users/signin';
+    const url = 'http://localhost:3000/users/signin';
+    // this.props.signInModalHandler();
+    // this.props.signInAndOutHandler(dummy_data.user[0]);
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -41,6 +43,8 @@ class SignIn extends Component {
       .then((res) => res.json())
       .then((body) => {
         this.setState({ errorMessage: '' });
+        console.log(body);
+        // this.props.history.push("/")
         this.props.signInModalHandler();
         this.props.signInAndOutHandler(dummy_data.user[0]);
       })

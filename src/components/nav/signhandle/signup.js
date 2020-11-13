@@ -20,7 +20,7 @@ class SignUp extends Component {
     ) {
       return;
     }
-    const url = 'http://localhost:4000/users/signup';
+    const url = 'http://localhost:3000/users/signup';
     fetch(url, {
       method: 'POST',
       mode: 'cors',

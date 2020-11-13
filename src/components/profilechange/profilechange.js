@@ -20,7 +20,8 @@ class ProfileChange extends Component {
     let body = {
       ...this.state,
     };
-    const url = 'http://localhost:4000/profile';
+    console.log(body);
+    const url = 'http://localhost:3000/users/profile';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -91,7 +92,14 @@ class ProfileChange extends Component {
             onChange={this.handleInputValue('user_status').bind(this)}
           ></input>
         </div>
-        <div onClick={this.handleUserValue.bind(this)}>확인</div>
+        <div
+          onClick={() => {
+            this.props.profileChangeModalHandler();
+            this.handleUserValue();
+          }}
+        >
+          확인
+        </div>
       </div>
     );
   }
