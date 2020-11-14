@@ -18,7 +18,6 @@ class App extends Component {
       currentUser: { isLogin: false, userData: null },
       isOpenSignIn: false,
       isOpenSignUp: false,
-      isOpenProfileChange: false,
     };
   }
   signInModalHandler() {
@@ -27,11 +26,7 @@ class App extends Component {
   signUpModalHandler() {
     this.setState((prestate) => ({ isOpenSignUp: !prestate.isOpenSignUp }));
   }
-  profileChangeModalHandler() {
-    this.setState((prestate) => ({
-      isOpenProfileChange: !prestate.isOpenProfileChange,
-    }));
-  }
+
   signInAndOutHandler(userData) {
     this.setState((prestate) => ({
       currentUser: {
@@ -40,11 +35,12 @@ class App extends Component {
       },
     }));
   }
-  changeCurrentUserHandler(userData) {
+
+  changeCurrentUserHandler(TYPE, userData) {
     this.setState((prestate) => ({
       currentUser: {
-        isLogin: prestate.isLogin,
-        userData: { ...prestate.userData, ...userData },
+        isLogin: prestate.currentUser.isLogin,
+        userData: { ...prestate.currentUser.userData, ...userData },
       },
     }));
   }
@@ -67,39 +63,18 @@ class App extends Component {
       .catch((err) => {
         console.log(err);
       });
+    if (localStorage.getItem('currentUser')) {
+      let userdata = localStorage.getItem('currentUser');
+      this.signInAndOutHandler(JSON.parse(userdata));
+    }
   }
-  // componentDidUpdate() {
-  //   const query = window.location.search.substring(1);
-  //   const token = query.split('access_Token=')[1];
-  //   // GitHub API를 통해 사용자 정보를 받아올 수 있습니다
-  //   fetch('//api.github.com/user', {
-  //     headers: {
-  //       method: 'GET',
-  //       mode: 'cors',
-  //       // 이와 같이 Authorization 헤더에 `token ${token}`과 같이
-  //       // 인증 코드를 전송하는 형태를 가리켜 Bearer Token 인증이라고 합니다
-  //       Authorization: 'token ' + token,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       console.log(res);
-  //       // 이 응답에 대한 문서는 GitHub 공식 문서를 참조하세요
-  //       // https://developer.github.com/v3/users/#get-the-authenticated-user
-
-  //       document.body.innerText = `${res.name}님 환영합니다!`;
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
 
   render() {
     return (
       <BrowserRouter>
         <div
           id={
-            !this.state.isOpenSignIn &&
-            !this.state.isOpenSignUp &&
-            !this.state.isOpenProfileChange
+            !this.state.isOpenSignIn && !this.state.isOpenSignUp
               ? 'hidden-modal'
               : 'show-modal'
           }
@@ -131,7 +106,11 @@ class App extends Component {
               </Route>
               <Route path="/recruit">
                 {' '}
-                <Recruit users={this.state.users} teams={this.state.teams} />
+                <Recruit
+                  users={this.state.users}
+                  teams={this.state.teams}
+                  currentUserData={this.state.currentUser.userData}
+                />
               </Route>
               <Route path="/apply">
                 <Apply users={this.state.users} />
@@ -150,10 +129,6 @@ class App extends Component {
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
                   <Profile
-                    profileChangeModalHandler={this.profileChangeModalHandler.bind(
-                      this
-                    )}
-                    isOpenProfileChange={this.state.isOpenProfileChange}
                     changeCurrentUserHandler={this.changeCurrentUserHandler.bind(
                       this
                     )}

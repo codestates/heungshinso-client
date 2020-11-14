@@ -1,16 +1,19 @@
 import { Component } from 'react';
 import SignHandle from './nav/signhandle';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import '../styles/nav.css';
 
 class Nav extends Component {
   handleSignOut = () => {
-    const url = 'http://localhost:3000/users/signout';
+    const url = 'http://localhost:4000/users/signout';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
     })
       .then((res) => {
+        localStorage.removeItem('currentUser');
+        this.props.signInAndOutHandler();
+        this.props.history.push('/');
         return res;
       })
       .catch((err) => {
@@ -50,7 +53,6 @@ class Nav extends Component {
           <span
             onClick={() => {
               this.handleSignOut();
-              this.props.signInAndOutHandler(null);
             }}
           >
             로그아웃
@@ -103,4 +105,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

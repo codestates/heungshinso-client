@@ -1,14 +1,19 @@
 import { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class CreateTeam extends Component {
   constructor(props) {
     super(props);
     this.state = {
       errorMessage: '',
+      title: '',
+      description: '',
+      team_region: '',
+      team_position: '',
     };
   }
-  handleInputValue = (key) => (e) => {
-    this.setState({ [key]: e.target.value });
+  handleInputValue = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
   };
   handleTeamValue = () => {
     if (
@@ -34,6 +39,7 @@ class CreateTeam extends Component {
       description: this.state.description,
       team_position: this.state.team_position,
       team_region: this.state.team_region,
+      userId: this.props.currentUserData.id,
     };
     const url = 'http://localhost:4000/team/createteam';
     fetch(url, {
@@ -59,33 +65,37 @@ class CreateTeam extends Component {
         <div>
           제목{' '}
           <input
+            name="title"
             type="text"
             value={this.state.title}
-            onChange={this.handleInputValue('title').bind(this)}
+            onChange={this.handleInputValue}
           ></input>
         </div>
         <div>
           설명{' '}
           <input
+            name="description"
             type="text"
             value={this.state.description}
-            onChange={this.handleInputValue('description').bind(this)}
+            onChange={this.handleInputValue}
           ></input>
         </div>
         <div>
           장소{' '}
           <input
             type="text"
+            name="team_region"
             value={this.state.team_region}
-            onChange={this.handleInputValue('team_region').bind(this)}
+            onChange={this.handleInputValue}
           ></input>
         </div>
         <div>
           구인 직무{' '}
           <input
             type="text"
+            name="team_position"
             value={this.state.team_position}
-            onChange={this.handleInputValue('team_position').bind(this)}
+            onChange={this.handleInputValue}
           ></input>
         </div>
 
@@ -96,4 +106,4 @@ class CreateTeam extends Component {
   }
 }
 
-export default CreateTeam;
+export default withRouter(CreateTeam);

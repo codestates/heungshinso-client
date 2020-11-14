@@ -29,7 +29,7 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    const url = 'http://localhost:3000/users/signin';
+    const url = 'http://localhost:4000/users/signin';
     // this.props.signInModalHandler();
     // this.props.signInAndOutHandler(dummy_data.user[0]);
     fetch(url, {
@@ -43,16 +43,40 @@ class SignIn extends Component {
       .then((res) => res.json())
       .then((body) => {
         this.setState({ errorMessage: '' });
-        console.log(body);
-        // this.props.history.push("/")
+        let userData = dummy_data.user[0];
+        localStorage.setItem('currentUser', JSON.stringify(userData));
         this.props.signInModalHandler();
-        this.props.signInAndOutHandler(dummy_data.user[0]);
+        this.props.signInAndOutHandler(userData);
       })
       .catch((err) => {
         this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });
         throw err;
       });
   };
+  componentWillUnmount() {
+    const query = window.location.search.substring(1);
+
+    if (query.indexOf('access_Token') !== -1) {
+      console.log('workk');
+      const token = query.split('access_Token=')[1];
+      // GitHub API를 통해 사용자 정보를 받아올 수 있습니다
+      fetch('//api.github.com/user', {
+        headers: {
+          method: 'GET',
+          mode: 'cors',
+          // 이와 같이 Authorization 헤더에 `token ${token}`과 같이
+          // 인증 코드를 전송하는 형태를 가리켜 Bearer Token 인증이라고 합니다
+          Authorization: 'token ' + token,
+        },
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          this.props.signInAndOutHandler(dummy_data.user[0]);
+        })
+        .catch((err) => console.log(err));
+    }
+    console.log('not work');
+  }
 
   render() {
     return (

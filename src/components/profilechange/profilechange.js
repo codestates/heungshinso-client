@@ -16,12 +16,10 @@ class ProfileChange extends Component {
     this.setState({ [key]: e.target.value });
   };
   handleUserValue = () => {
-    console.log(this.props);
     let body = {
       ...this.state,
     };
-    console.log(body);
-    const url = 'http://localhost:3000/users/profile';
+    const url = 'http://localhost:4000/users/profile';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -30,14 +28,11 @@ class ProfileChange extends Component {
       },
       body: JSON.stringify(body),
     })
-      .then((res) => res.json())
       .then((body) => {
-        this.setState({ errorMessage: '' });
         this.props.changeCurrentUserHandler(this.state);
         this.props.profileChangeModalHandler();
       })
       .catch((err) => {
-        this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });
         throw err;
       });
   };
@@ -92,14 +87,7 @@ class ProfileChange extends Component {
             onChange={this.handleInputValue('user_status').bind(this)}
           ></input>
         </div>
-        <div
-          onClick={() => {
-            this.props.profileChangeModalHandler();
-            this.handleUserValue();
-          }}
-        >
-          확인
-        </div>
+        <div onClick={this.handleUserValue}>확인</div>
       </div>
     );
   }

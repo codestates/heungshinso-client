@@ -8,7 +8,7 @@ class SignHandle extends Component {
   }
   render() {
     return (
-      <>
+      <div>
         <span onClick={this.props.signInModalHandler}>로그인</span>;
         {this.props.isOpenSignIn ? (
           <SignIn
@@ -22,7 +22,7 @@ class SignHandle extends Component {
         ) : (
           <div></div>
         )}
-      </>
+      </div>
     );
   }
 }

@@ -5,6 +5,14 @@ import ProfileChange from './profilechange/profilechange';
 class Profile extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isOpenProfileChange: false,
+    };
+  }
+  profileChangeModalHandler() {
+    this.setState((prestate) => ({
+      isOpenProfileChange: !prestate.isOpenProfileChange,
+    }));
   }
   render() {
     return (
@@ -12,8 +20,8 @@ class Profile extends Component {
         <div
           id="profile"
           onClick={
-            this.props.isOpenProfileChange
-              ? this.props.profileChangeModalHandler
+            this.state.isOpenProfileChange
+              ? this.profileChangeModalHandler.bind(this)
               : () => {}
           }
         >
@@ -30,11 +38,15 @@ class Profile extends Component {
             <div>{this.props.currentUserData.user_status}</div>
           </div>
         </div>
-        <div onClick={this.props.profileChangeModalHandler}>프로필 변경</div>
-        {this.props.isOpenProfileChange ? (
+        <div onClick={this.profileChangeModalHandler.bind(this)}>
+          프로필 변경
+        </div>
+        {this.state.isOpenProfileChange ? (
           <ProfileChange
             changeCurrentUserHandler={this.props.changeCurrentUserHandler}
-            profileChangeModalHandler={this.props.profileChangeModalHandler}
+            profileChangeModalHandler={this.profileChangeModalHandler.bind(
+              this
+            )}
             currentUserData={this.props.currentUserData}
           />
         ) : (
