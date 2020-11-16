@@ -53,8 +53,8 @@ const Filter = (props) => (
 
       {/* { 필터 아이템이 몇 개 이상 되면 오버 레이아웃으로 이동 */}
       <span className={props.ft_items.length > 5 ? null : "ft_items"}>
-        {props.ft_items.map(item => (
-          <span className="item">{item}</span>
+        {props.ft_items.map((item, index) => (
+          <span key={index} className="item">{item}</span>
         ))}
       </span>
     </div>

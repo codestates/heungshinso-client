@@ -10,6 +10,7 @@ class Apply extends React.Component {
       modal: false,
       modalData: null,
       ft_items: [],
+      ft_items_id: 1,
       query: '',
       data: this.props.users
     }
@@ -25,6 +26,11 @@ class Apply extends React.Component {
   }
 
   changeQuery(e, item) {
+    this.setState({ ft_items: [...this.state.ft_items, e.target.textContent] })
+    // this.setState(state => ({
+    //   ft_items_id: state.ft_items_id + 1
+    // }))
+
     if (this.state.query === '') {
       if (item === 'resion') {
         this.setState(state => ({
@@ -61,10 +67,6 @@ class Apply extends React.Component {
     }
   }
 
-  filterItems(e) {
-    this.setState({ ft_items: [...this.state.ft_items, e.target.textContent] })
-  }
-
   componentDidUpdate() {
     const url = `http://localhost:3000/users/apply${this.state.query}`
     if (this.state.query !== '') {
@@ -85,14 +87,15 @@ class Apply extends React.Component {
   render() {
     return (
       <>
-        {console.log(this.state.query)}
+        {/* {console.log(this.state.ft_items)} */}
+        {/* {console.log(this.state.query)} */}
         {/* {console.log(this.props.users.filter(user => {
           return user.username === "duyjlepc"
         }))} */}
         <div className="apply_container">
           {/* filter_section */}
           < section className="filter_section">
-            <Filter changeQuery={this.changeQuery.bind(this)} filterItems={this.filterItems.bind(this)} ft_items={this.state.ft_items} />
+            <Filter changeQuery={this.changeQuery.bind(this)} ft_items={this.state.ft_items} />
           </section>
 
           {/* apply_section */}
