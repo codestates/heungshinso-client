@@ -9,7 +9,9 @@ class Apply extends React.Component {
     this.state = {
       modal: false,
       modalData: null,
-      ft_items: []
+      ft_items: [],
+      query: '',
+      data: this.props.users
     }
   }
 
@@ -22,26 +24,85 @@ class Apply extends React.Component {
     this.setState({ modal: false })
   }
 
+  changeQuery(e, item) {
+    if (this.state.query === '') {
+      if (item === 'resion') {
+        this.setState(state => ({
+          query: state.query + `?resion=${e.target.textContent}`
+        }))
+      }
+      else if (item === 'position') {
+        this.setState(state => ({
+          query: state.query + `?position=${e.target.textContent}`
+        }))
+
+      }
+      else if (item === 'state') {
+        this.setState(state => ({
+          query: state.query + `?state=${e.target.textContent}`
+        }))
+      }
+    }
+    else {
+      if (item === 'resion') {
+        this.setState(state => ({
+          query: state.query + `&resion=${e.target.textContent}`
+        }))
+      }
+      else if (item === 'position') {
+        this.setState(state => ({
+          query: state.query + `&position=${e.target.textContent}`
+        }))
+
+      }
+      else if (item === 'state') {
+        this.setState(state => ({
+          query: state.query + `&state=${e.target.textContent}`
+        }))
+      }
+    }
+  }
+
   filterItems(e) {
     this.setState({ ft_items: [...this.state.ft_items, e.target.textContent] })
   }
 
+  componentDidUpdate() {
+    const url = `http://localhost:3000/users/apply${this.state.query}`
+    if (this.state.query !== '') {
+      fetch(url, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .then(res => {
+          this.setState({ data: res })
+        })
+        .catch(err => console.log(err))
+    }
+  }
+
+
+
   render() {
     return (
       <>
-        {console.log(this.props.users.filter(user => {
+        {console.log(this.state.query)}
+        {/* {console.log(this.props.users.filter(user => {
           return user.username === "duyjlepc"
-        }))}
+        }))} */}
         <div className="apply_container">
           {/* filter_section */}
           < section className="filter_section">
-            <Filter filterItems={this.filterItems.bind(this)} ft_items={this.state.ft_items} />
+            <Filter changeQuery={this.changeQuery.bind(this)} filterItems={this.filterItems.bind(this)} ft_items={this.state.ft_items} />
           </section>
 
           {/* apply_section */}
           <section className="apply__section">
             <div className="apply_articles">
-              {this.props.users.map(user => (
+              {this.state.data.map(user => (
                 <Article key={user.id} user={user} modalOn={this.modalOn.bind(this)} />
               ))}
             </div>

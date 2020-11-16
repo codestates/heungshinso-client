@@ -6,7 +6,7 @@ const Filter = (props) => (
         지역
         <span className="ft_arrow_down_ic"></span>
         <div className="ft_resion">
-          <ul className="ft_ul" onClick={props.filterItems}>
+          <ul className="ft_ul" onClick={(e) => props.changeQuery(e, 'resion')}>
             <li>서울특별시</li>
             <li>부산광역시</li>
             <li>인천광역시</li>
@@ -31,7 +31,7 @@ const Filter = (props) => (
       <span className="ft_list">
         직무
         <span className="ft_arrow_down_ic"></span>
-        <ul className="ft_ul" onClick={props.filterItems}>
+        <ul className="ft_ul" onClick={(e) => props.changeQuery(e, 'position')}>
           <li>Planner</li>
           <li>Designer</li>
           <li>Developer</li>
@@ -42,7 +42,7 @@ const Filter = (props) => (
       <span className="ft_list">
         상태
         <span className="ft_arrow_down_ic"></span>
-        <ul className="ft_ul" onClick={props.filterItems}>
+        <ul className="ft_ul" onClick={(e) => props.changeQuery(e, 'state')}>
           <li>구직중</li>
           <li>구인중</li>
           <li>재직중</li>
