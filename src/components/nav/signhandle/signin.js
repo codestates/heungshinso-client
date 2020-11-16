@@ -69,6 +69,7 @@ class SignIn extends Component {
             </div>
           </center>
         ) : (
+
             <center id="email-login">
               <form
                 onSubmit={(e) => {
@@ -111,6 +112,8 @@ class SignIn extends Component {
             </div>
             </center>
           )}
+
+        
       </div>
     );
   }

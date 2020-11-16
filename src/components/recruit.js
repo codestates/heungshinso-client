@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Article from './article'
+
 
 class Recruit extends React.Component {
   constructor(props) {
