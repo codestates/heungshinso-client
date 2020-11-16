@@ -14,28 +14,10 @@ class App extends Component {
     super(props);
     this.state = {
       users: [
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
+        ...dummyData.user
       ],
       teams: [
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
+        ...dummyData.team
       ],
       currentUser: { isLogin: false, userData: null },
       isOpenSignIn: false,
@@ -195,8 +177,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                  <Redirect to="/" />
-                )}
+                    <Redirect to="/" />
+                  )}
               </Route>
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
@@ -207,8 +189,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                  <Redirect to="/" />
-                )}
+                    <Redirect to="/" />
+                  )}
               </Route>
             </Switch>
           </div>

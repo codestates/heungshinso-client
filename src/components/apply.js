@@ -99,9 +99,11 @@ class Apply extends React.Component {
           </section>
 
           {/* apply_section */}
+          {console.log(this.state.data)}
           <section className="apply__section">
             <div className="apply_articles">
               {this.state.data.map(user => (
+
                 <Article key={user.id} user={user} modalOn={this.modalOn.bind(this)} />
               ))}
             </div>
