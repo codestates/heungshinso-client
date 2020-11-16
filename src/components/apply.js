@@ -1,12 +1,15 @@
 import React from 'react';
 import Article from '../components/article'
+import Filter from '../components/filter'
+import '../styles/filter.css';
 
 class Apply extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       modal: false,
-      modalData: null
+      modalData: null,
+      ft_items: []
     }
   }
 
@@ -19,34 +22,20 @@ class Apply extends React.Component {
     this.setState({ modal: false })
   }
 
+  filterItems(e) {
+    this.setState({ ft_items: [...this.state.ft_items, e.target.textContent] })
+  }
+
   render() {
     return (
       <>
+        {console.log(this.props.users.filter(user => {
+          return user.username === "duyjlepc"
+        }))}
         <div className="apply_container">
           {/* filter_section */}
           < section className="filter_section">
-            <div className="filter">
-              <span className="ft_ic"></span>
-              <span className="ft_region">
-                지역
-            {/* <span className="ft_arrow_down_ic"></span> */}
-                {/* <ul>
-              </ul> */}
-              </span>
-              <span className="ft_position">직무</span>
-              <span className="ft_state">상태</span>
-              {/* { 필터 아이템이 몇 개 이상 되면 오버 레이아웃으로 이동 */}
-              <span className="ft_items">
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-              </span>
-              <span className="ft_items_over">
-
-              </span>
-            </div>
+            <Filter filterItems={this.filterItems.bind(this)} ft_items={this.state.ft_items} />
           </section>
 
           {/* apply_section */}

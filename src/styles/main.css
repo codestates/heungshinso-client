@@ -47,8 +47,8 @@
 }
 
 
-/* recurite_section */
-.recurite_section {
+/* recruite_section */
+.recruit_section {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -58,12 +58,12 @@
   margin: auto;
 }
 
-.recurite_title {
+.recruit_title {
   border: solid 3px yellowgreen;
   margin-top: 10px
 }
 
-.recurite_articles {
+.recruit_articles {
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
@@ -71,7 +71,7 @@
   border: solid 3px pink; 
 }
 
-.recurite_card {
+.recruit_card {
   width: 400px;
   height: 300px;
   border: solid 3px yellow;

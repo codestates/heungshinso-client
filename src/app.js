@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { Component } from 'react';
 import dummyData from './dummy_data/dummy_data';
 import Nav from './components/nav';
-import Recruit from './components/recurit';
+import Recruit from './components/recruit';
 import Apply from './components/apply';
 import Main from './components/main';
 import CreateTeam from './components/create_team';
@@ -58,11 +58,9 @@ class App extends Component {
       },
     })
       .then((res) => {
-        console.log(res.body);
         return res.json();
       })
       .then((body) => {
-        console.log(body);
         this.setState({ user: body.user });
         this.setState({ team: body.team });
       })
@@ -70,6 +68,29 @@ class App extends Component {
         console.log(err);
       });
   }
+  // componentDidUpdate() {
+  //   const query = window.location.search.substring(1);
+  //   const token = query.split('access_Token=')[1];
+  //   // GitHub API를 통해 사용자 정보를 받아올 수 있습니다
+  //   fetch('//api.github.com/user', {
+  //     headers: {
+  //       method: 'GET',
+  //       mode: 'cors',
+  //       // 이와 같이 Authorization 헤더에 `token ${token}`과 같이
+  //       // 인증 코드를 전송하는 형태를 가리켜 Bearer Token 인증이라고 합니다
+  //       Authorization: 'token ' + token,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       console.log(res);
+  //       // 이 응답에 대한 문서는 GitHub 공식 문서를 참조하세요
+  //       // https://developer.github.com/v3/users/#get-the-authenticated-user
+
+  //       document.body.innerText = `${res.name}님 환영합니다!`;
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
 
   render() {
     return (
@@ -77,8 +98,8 @@ class App extends Component {
         <div
           id={
             !this.state.isOpenSignIn &&
-              !this.state.isOpenSignUp &&
-              !this.state.isOpenProfileChange
+            !this.state.isOpenSignUp &&
+            !this.state.isOpenProfileChange
               ? 'hidden-modal'
               : 'show-modal'
           }
@@ -100,8 +121,8 @@ class App extends Component {
               this.state.isOpenSignIn
                 ? this.signInModalHandler.bind(this)
                 : this.state.isOpenSignUp
-                  ? this.signUpModalHandler.bind(this)
-                  : () => { }
+                ? this.signUpModalHandler.bind(this)
+                : () => {}
             }
           >
             <Switch>
@@ -110,17 +131,21 @@ class App extends Component {
               </Route>
               <Route path="/recruit">
                 {' '}
-                <Recruit teams={this.state.teams} />
+                <Recruit users={this.state.users} teams={this.state.teams} />
               </Route>
               <Route path="/apply">
                 <Apply users={this.state.users} />
               </Route>
               <Route path="/createTeam">
                 {this.state.currentUser.isLogin ? (
-                  <CreateTeam teams={this.state.users} />
+                  <CreateTeam
+                    users={this.state.teams}
+                    teams={this.state.users}
+                    currentUserData={this.state.currentUser.userData}
+                  />
                 ) : (
-                    <Redirect to="/" />
-                  )}
+                  <Redirect to="/" />
+                )}
               </Route>
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
@@ -135,8 +160,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                    <Redirect to="/" />
-                  )}
+                  <Redirect to="/" />
+                )}
               </Route>
             </Switch>
           </div>

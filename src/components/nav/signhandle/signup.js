@@ -20,7 +20,7 @@ class SignUp extends Component {
     ) {
       return;
     }
-    const url = 'http://localhost:4000/users/signup';
+    const url = 'http://localhost:3000/users/signup';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -32,8 +32,8 @@ class SignUp extends Component {
         password: this.state.password,
       }),
     })
-      .then((res) => res.json())
       .then((body) => {
+        console.log(body);
         this.setState({ errorMessage: '' });
         this.props.signUpModalHandler();
       })
@@ -75,8 +75,8 @@ class SignUp extends Component {
             ) : this.state.password.length <= 8 ? (
               <div>비밀번호를 8자 이상 입력하세요</div>
             ) : (
-                  <div>{this.state.errorMessage}</div>
-                )}
+              <div>{this.state.errorMessage}</div>
+            )}
           </form>
           <div></div>
         </center>

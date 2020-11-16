@@ -12,7 +12,7 @@ class Profile extends Component {
         <div
           id="profile"
           onClick={
-            this.props.profileChangeModalHandler
+            this.props.isOpenProfileChange
               ? this.props.profileChangeModalHandler
               : () => {}
           }
@@ -33,6 +33,7 @@ class Profile extends Component {
         <div onClick={this.props.profileChangeModalHandler}>프로필 변경</div>
         {this.props.isOpenProfileChange ? (
           <ProfileChange
+            changeCurrentUserHandler={this.props.changeCurrentUserHandler}
             profileChangeModalHandler={this.props.profileChangeModalHandler}
             currentUserData={this.props.currentUserData}
           />
