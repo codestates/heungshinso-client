@@ -1,0 +1,155 @@
+a {
+  display: inherit;
+  text-decoration: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.sign_in_and_out {
+  /* flex 적용 */
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: 1;
+
+  /* position 설정 (중앙정렬)  */
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: fixed;
+
+  /* 컨텐츠 크기 */
+  width: 500px;
+  height: 380px;
+
+  /* 컨텐츠 테두리 */
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px 3px rgba(65, 12, 12, 0.19),
+    0 6px 6px rgba(82, 19, 19, 0.23);
+  background-color: white;
+
+  /* 컨텐츠 내부 */
+  text-align: center;
+  background-color: rgb(253, 253, 253);
+}
+
+.signhandle_modal {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.signin_intro {
+  font-family: 'East Sea Dokdo';
+  font-size: 4.3rem;
+  color: rgba(105, 36, 36, 0.863);
+  flex-grow: 2;
+}
+
+.signin_intro_text {
+  position: relative;
+  left: 35px;
+  top: 10px;
+}
+
+.signin_login {
+  height: 70%;
+  flex-grow: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signin_login_title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: rgba(105, 36, 36, 0.918);
+}
+
+.signin_login_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin_login_content_a {
+  font-family: 'NanumGothic';
+  font-weight: 900;
+  display: relative;
+  height: 35px;
+  width: 200px;
+  align-items: inherit;
+  color: white;
+  border-radius: 3.5px;
+  font-size: 0.9rem;
+}
+
+.signin_login_content:nth-child(2) .signin_login_content_a {
+  background-color: rgba(105, 36, 36, 0.863);
+}
+.signin_login_content:nth-child(2) .signin_login_content_img {
+  width: 35px;
+}
+.signin_login_content:nth-child(3) .signin_login_content_a {
+  background-color: rgba(0, 0, 0, 0.801);
+}
+.signin_login_content:nth-child(4) .signin_login_content_a {
+  background-color: rgba(17, 199, 32, 0.829);
+}
+.signin_login_content:nth-child(5) .signin_login_content_a {
+  background-color: rgba(255, 231, 14, 0.685);
+  color: rgba(0, 0, 0, 0.616);
+}
+.signin_login_content_img {
+  height: 35px;
+  border-color: white;
+  border-right: 5px;
+  margin-right: 2px;
+  border-radius: 3px;
+}
+
+/* 이메일 로그인 part */
+.signin_email {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signin_email_item:nth-child(1) {
+  flex-grow: 1;
+  color: rgba(105, 36, 36, 0.747);
+  font-size: 1.1rem;
+}
+
+.signin_email_item:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-grow: 3;
+}
+.signin_email_input:nth-child(3) {
+  color: rgba(236, 0, 0, 0.767);
+}
+.signin_email_item:nth-child(3) {
+  flex-grow: 1;
+  color: rgb(156, 156, 156);
+  display: relative;
+  top: 5px;
+}

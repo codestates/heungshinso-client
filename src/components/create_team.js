@@ -41,7 +41,7 @@ class CreateTeam extends Component {
       team_region: this.state.team_region,
       userId: this.props.currentUserData.id,
     };
-    const url = 'http://localhost:4000/team/createteam';
+    const url = 'http://3.35.21.164:3000/team/createteam';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -52,6 +52,7 @@ class CreateTeam extends Component {
     })
       .then((res) => res.json())
       .then((body) => {
+        console.log(body);
         this.setState({ errorMessage: '' });
         this.props.history.push('/');
       })
@@ -61,7 +62,7 @@ class CreateTeam extends Component {
   };
   render() {
     return (
-      <div id="profile-change">
+      <div id="profile_change">
         <div>
           제목{' '}
           <input

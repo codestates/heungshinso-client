@@ -1,15 +1,22 @@
 import SignIn from './signhandle/signin';
 import SignUp from './signhandle/signup';
+import { Helmet } from 'react-helmet';
 import { Component } from 'react';
-
+import '../../styles/signin.css';
 class SignHandle extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <div>
-        <span onClick={this.props.signInModalHandler}>로그인</span>;
+      <span className="nav_page_item">
+        <Helmet>
+          <link
+            href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap"
+            rel="stylesheet"
+          ></link>
+        </Helmet>
+        <span onClick={this.props.signInModalHandler}>로그인</span>
         {this.props.isOpenSignIn ? (
           <SignIn
             signInModalHandler={this.props.signInModalHandler}
@@ -22,7 +29,7 @@ class SignHandle extends Component {
         ) : (
           <div></div>
         )}
-      </div>
+      </span>
     );
   }
 }

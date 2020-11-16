@@ -1,15 +1,50 @@
-#show-modal {
-  background-color: rgba(0, 0, 0, 0.466);
-}
-
-#sign-in {
-  align-content: center;
-  height: 500px;
-  width: 500px;
-  background-color: snow;
-}
-
 nav {
-  position: fixed;
-  background-color: rosybrown;
+  width: 100%;
+  height: 100%;
+}
+
+.nav_container {
+  width: 1500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'NanumGothic';
+  font-weight: 700;
+}
+
+.nav_main {
+  position: relative;
+  flex-grow: 8;
+  font-size: 3rem;
+  font-weight: normal;
+  font-family: 'East Sea Dokdo';
+}
+
+.nav_main_a {
+  width: 100%;
+  color: rgba(105, 36, 36, 0.822);
+  margin-right: 20px;
+  font-family: inherit;
+}
+
+.nav_page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav_page_item {
+  color: rgba(105, 36, 36, 0.884);
+  font-size: 0.9rem;
+}
+
+.nav_page_div {
+  color: rgba(105, 36, 36, 0.377);
+  font-size: 0.9rem;
+}
+
+.active {
+  text-decoration: none;
 }

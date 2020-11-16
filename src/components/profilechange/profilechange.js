@@ -16,10 +16,11 @@ class ProfileChange extends Component {
     this.setState({ [key]: e.target.value });
   };
   handleUserValue = () => {
+    console.log('a');
     let body = {
       ...this.state,
     };
-    const url = 'http://localhost:4000/users/profile';
+    const url = 'http://3.35.21.164:3000/users/profile';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -29,6 +30,7 @@ class ProfileChange extends Component {
       body: JSON.stringify(body),
     })
       .then((body) => {
+        console.log(body);
         this.props.changeCurrentUserHandler(this.state);
         this.props.profileChangeModalHandler();
       })
@@ -38,7 +40,7 @@ class ProfileChange extends Component {
   };
   render() {
     return (
-      <div id="profile-change">
+      <div id="profile_change">
         <div>
           닉네임{' '}
           <input

@@ -11,7 +11,8 @@
   width: 30%;
   height: 30%;
   border-radius: 8px;
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
   background-color: white;
   text-align: center;
 }
@@ -27,7 +28,6 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-
 /* intro_section */
 .intro_section {
   display: flex;
@@ -37,7 +37,7 @@
   height: 1000px;
 }
 
-.intro{
+.intro {
   display: flex;
   /* border: solid 1px white; */
   font-size: 150px;
@@ -45,7 +45,6 @@
   margin: 150px;
   padding-top: 130px;
 }
-
 
 /* recruite_section */
 .recruit_section {
@@ -60,7 +59,7 @@
 
 .recruit_title {
   border: solid 3px yellowgreen;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
 .recruit_articles {
@@ -68,7 +67,7 @@
   flex-flow: wrap;
   justify-content: space-around;
   align-items: center;
-  border: solid 3px pink; 
+  border: solid 3px pink;
 }
 
 .recruit_card {
@@ -85,17 +84,16 @@
   text-align: center;
   text-decoration: none;
   color: yellow;
-  background-color: pink; 
+  background-color: pink;
   border-radius: 8px;
   border: none;
   padding: 15px 32px;
 }
 
 .modal_bt:hover {
-  background-color: yellow; 
-  color: black
+  background-color: yellow;
+  color: black;
 }
-
 
 /* apply_section */
 .apply_section {
@@ -110,7 +108,7 @@
 
 .apply_title {
   border: solid 3px yellowgreen;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
 .apply_articles {
@@ -118,17 +116,16 @@
   flex-flow: wrap;
   justify-content: space-around;
   align-items: center;
-  border: solid 3px pink; 
+  border: solid 3px pink;
 }
 
-.apply_card{
+.apply_card {
   width: 400px;
   height: 300px;
   border: solid 3px yellow;
   margin: 10px 0px 10px 0px;
   text-align: center;
 }
-
 
 /* footer */
 .footer {
@@ -137,12 +134,12 @@
   justify-content: space-around;
 }
 
-.team{
-border: solid 3px papayawhip;
+.team {
+  border: solid 3px papayawhip;
 }
 
-.member{
-display: flex;
-justify-content: space-around;
-border: solid 1px palevioletred;
+.member {
+  display: flex;
+  justify-content: space-around;
+  border: solid 1px palevioletred;
 }

@@ -5,15 +5,15 @@ import '../styles/nav.css';
 
 class Nav extends Component {
   handleSignOut = () => {
-    const url = 'http://localhost:4000/users/signout';
+    this.props.signInAndOutHandler();
+    this.props.history.push('/');
+    localStorage.removeItem('currentUser');
+    const url = 'http://3.35.21.164:3000/users/signout';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
     })
       .then((res) => {
-        localStorage.removeItem('currentUser');
-        this.props.signInAndOutHandler();
-        this.props.history.push('/');
         return res;
       })
       .catch((err) => {
@@ -24,70 +24,89 @@ class Nav extends Component {
   render() {
     if (this.props.currentUser.isLogin) {
       return (
-        <nav>
-          <span>
-            <NavLink exact to="/" activeClassName="active">
-              main
+        <nav className="nav_container">
+          <div className="nav_main">
+            <NavLink exact to="/" className="nav_main_a">
+              흥신소
             </NavLink>
-          </span>
-          <span>
-            <NavLink to="/recruit" activeClassName="active">
+          </div>
+          <div className="nav_page">
+            <NavLink
+              to="/recruit"
+              activeClassName="active"
+              className="nav_page_item"
+            >
               모집
             </NavLink>
-          </span>
-          <span>
-            <NavLink to="/apply" activeClassName="active">
+
+            <NavLink
+              to="/apply"
+              activeClassName="active"
+              className="nav_page_item"
+            >
               찾기
             </NavLink>
-          </span>
-          <span>
-            <NavLink to="/createTeam" activeClassName="active">
+
+            <NavLink
+              to="/createTeam"
+              activeClassName="active"
+              className="nav_page_item"
+            >
               팀생성
             </NavLink>
-          </span>
-          <span>
-            <NavLink to="/profile" activeClassName="active">
+
+            <NavLink
+              className="nav_page_item"
+              to="/profile"
+              activeClassName="active"
+            >
               프로필
             </NavLink>
-          </span>
-          <span
-            onClick={() => {
-              this.handleSignOut();
-            }}
-          >
-            로그아웃
-          </span>
+            <div className="nav_page_div">ㅣ</div>
+            <span
+              className="nav_page_item"
+              onClick={() => {
+                this.handleSignOut();
+              }}
+            >
+              로그아웃
+            </span>
+          </div>
         </nav>
       );
     } else {
       return (
-        <nav>
-          <span>
-            <NavLink exact to="/" activeClassName="active">
-              main
+        <nav className="nav_container">
+          <div className="nav_main">
+            <NavLink exact to="/" className="nav_main_a">
+              흥신소
             </NavLink>
-          </span>
-          <span>
-            <NavLink to="/recruit" activeClassName="active">
+          </div>
+          <div className="nav_page">
+            <NavLink
+              to="/recruit"
+              activeClassName="active"
+              className="nav_page_item"
+            >
               모집
             </NavLink>
-          </span>
-          <span>
-            <NavLink to="/apply" activeClassName="active">
+
+            <NavLink
+              to="/apply"
+              activeClassName="active"
+              className="nav_page_item"
+            >
               찾기
             </NavLink>
-          </span>
-          <span>
-            <NavLink to="/createTeam" activeClassName="active">
-              팀생성
+
+            <NavLink
+              to="/createTeam"
+              activeClassName="active"
+              className="nav_page_item"
+            >
+              <div onClick={this.props.signInModalHandler}>팀생성</div>
             </NavLink>
-          </span>
-          <span>
-            <NavLink to="/profile" activeClassName="active">
-              프로필
-            </NavLink>
-          </span>
-          <span>
+            <div className="nav_page_div">ㅣ</div>
             <SignHandle
               signInModalHandler={this.props.signInModalHandler}
               isOpenSignIn={this.props.isOpenSignIn}
@@ -98,7 +117,7 @@ class Nav extends Component {
             >
               로그인
             </SignHandle>
-          </span>
+          </div>
         </nav>
       );
     }

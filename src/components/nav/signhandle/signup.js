@@ -20,7 +20,7 @@ class SignUp extends Component {
     ) {
       return;
     }
-    const url = 'http://localhost:3000/users/signup';
+    const url = 'http://3.35.21.164:3000/users/signup';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -33,20 +33,29 @@ class SignUp extends Component {
       }),
     })
       .then((body) => {
-        console.log(body);
-        this.setState({ errorMessage: '' });
-        this.props.signUpModalHandler();
+        if (body.status === 409) {
+          this.setState({ errorMessage: '이미 가입된 이메일입니다.' });
+        } else {
+          console.log(body);
+          this.setState({ errorMessage: '' });
+          // this.props.signUpModalHandler();
+        }
       })
       .catch((err) => {
+        console.log('err,', err);
         this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });
         throw err;
       });
   };
   render() {
     return (
-      <div id="sign-in">
-        <center>
-          이메일 회원가입
+      <div>
+        <div
+          className="signhandle_modal"
+          onClick={this.props.signUpModalHandler}
+        ></div>
+        <div className="sign_in_and_out">
+          회원가입
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -58,7 +67,6 @@ class SignUp extends Component {
                 placeholder="이메일 입력"
                 onChange={this.handleInputValue('email')}
               ></input>
-              <span onClick={this.props.signUpModalHandler}>X</span>
             </div>
             <div>
               <input
@@ -78,8 +86,7 @@ class SignUp extends Component {
               <div>{this.state.errorMessage}</div>
             )}
           </form>
-          <div></div>
-        </center>
+        </div>
       </div>
     );
   }
