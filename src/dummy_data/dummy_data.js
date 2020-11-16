@@ -274,7 +274,7 @@ let a = {
     {
       id: 10,
       username: 'John',
-      password: '123123',
+      password: '12',
       email: 'example@example.com',
       phone_number: '123123123',
       birthday: 123123,

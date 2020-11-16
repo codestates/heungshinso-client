@@ -1,5 +1,7 @@
 import React from 'react';
-import Article from '../components/article'
+
+import Article from './article'
+
 
 class Recruit extends React.Component {
   constructor(props) {
@@ -25,28 +27,7 @@ class Recruit extends React.Component {
         <div className="recruit_container">
           {/* filter_section */}
           <section className="filter_section">
-            <div className="filter">
-              <span className="ft_ic"></span>
-              <span className="ft_region">
-                지역
-              {/* <span className="ft_arrow_down_ic"></span>
-              <ul>
-              </ul> */}
-              </span>
-              <span className="ft_position">직무</span>
-              <span className="ft_state">상태</span>
-              {/* { 필터 아이템이 몇 개 이상 되면 오버 레이아웃으로 이동 */}
-              <span className="ft_items">
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-              </span>
-              <span className="ft_items_over">
 
-              </span>
-            </div>
           </section>
 
           {/* recruit_section */}
