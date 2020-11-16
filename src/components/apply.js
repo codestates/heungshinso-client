@@ -35,7 +35,6 @@ class Apply extends React.Component {
         this.setState(state => ({
           query: state.query + `?position=${e.target.textContent}`
         }))
-
       }
       else if (item === 'state') {
         this.setState(state => ({
@@ -53,7 +52,6 @@ class Apply extends React.Component {
         this.setState(state => ({
           query: state.query + `&position=${e.target.textContent}`
         }))
-
       }
       else if (item === 'state') {
         this.setState(state => ({
@@ -83,8 +81,6 @@ class Apply extends React.Component {
         .catch(err => console.log(err))
     }
   }
-
-
 
   render() {
     return (
