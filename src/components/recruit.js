@@ -1,5 +1,6 @@
 import React from 'react';
-import Article from '../components/article';
+
+import Article from './article';
 
 class Recruit extends React.Component {
   constructor(props) {
@@ -24,43 +25,7 @@ class Recruit extends React.Component {
       <>
         <div className="recruit_container">
           {/* filter_section */}
-          <section className="filter_section">
-            <div className="filter">
-              <span className="ft_ic"></span>
-              <span className="ft_region">
-                <label>지역</label>
-                <select>
-                  <option value="모두">모두</option>
-                  <option value="서울광역시">서울광역시</option>
-                  <option value="부산광역시">부산광역시</option>
-                  <option value="대구광역시">대구광역시</option>
-                  <option value="인천광역시">인천광역시</option>
-                  <option value="광주광역시">광주광역시</option>
-                  <option value="대전광역시">대전광역시</option>
-                  <option value="울산광역시">울산광역시</option>
-                </select>
-              </span>
-              <span className="ft_position">
-                <label>직무</label>
-                <select>
-                  <option value="모두">모두</option>
-                  <option value="개발자">개발자</option>
-                  <option value="기획자">기획자</option>
-                  <option value="디자이너">디자이너</option>
-                  <option value="기타">기타</option>
-                </select>
-              </span>
-              {/* { 필터 아이템이 몇 개 이상 되면 오버 레이아웃으로 이동 */}
-              <span className="ft_items">
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-              </span>
-              <span className="ft_items_over"></span>
-            </div>
-          </section>
+          <section className="filter_section"></section>
 
           {/* recruit_section */}
           <section className="recruit__section">

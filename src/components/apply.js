@@ -1,12 +1,18 @@
 import React from 'react';
 import Article from '../components/article'
+import Filter from '../components/filter'
+import '../styles/filter.css';
 
 class Apply extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       modal: false,
-      modalData: null
+      modalData: null,
+      ft_items: [],
+      ft_items_id: 1,
+      query: '',
+      data: this.props.users
     }
   }
 
@@ -19,40 +25,83 @@ class Apply extends React.Component {
     this.setState({ modal: false })
   }
 
+  changeQuery(e, item) {
+    this.setState({ ft_items: [...this.state.ft_items, e.target.textContent] })
+    // this.setState(state => ({
+    //   ft_items_id: state.ft_items_id + 1
+    // }))
+
+    if (this.state.query === '') {
+      if (item === 'resion') {
+        this.setState(state => ({
+          query: state.query + `?resion=${e.target.textContent}`
+        }))
+      }
+      else if (item === 'position') {
+        this.setState(state => ({
+          query: state.query + `?position=${e.target.textContent}`
+        }))
+      }
+      else if (item === 'state') {
+        this.setState(state => ({
+          query: state.query + `?state=${e.target.textContent}`
+        }))
+      }
+    }
+    else {
+      if (item === 'resion') {
+        this.setState(state => ({
+          query: state.query + `&resion=${e.target.textContent}`
+        }))
+      }
+      else if (item === 'position') {
+        this.setState(state => ({
+          query: state.query + `&position=${e.target.textContent}`
+        }))
+      }
+      else if (item === 'state') {
+        this.setState(state => ({
+          query: state.query + `&state=${e.target.textContent}`
+        }))
+      }
+    }
+  }
+
+  componentDidUpdate() {
+    const url = `http://localhost:3000/users/apply${this.state.query}`
+    if (this.state.query !== '') {
+      fetch(url, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .then(res => {
+          this.setState({ data: res })
+        })
+        .catch(err => console.log(err))
+    }
+  }
+
   render() {
     return (
       <>
+        {/* {console.log(this.state.ft_items)} */}
+        {/* {console.log(this.state.query)} */}
+        {/* {console.log(this.props.users.filter(user => {
+          return user.username === "duyjlepc"
+        }))} */}
         <div className="apply_container">
           {/* filter_section */}
           < section className="filter_section">
-            <div className="filter">
-              <span className="ft_ic"></span>
-              <span className="ft_region">
-                지역
-            {/* <span className="ft_arrow_down_ic"></span> */}
-                {/* <ul>
-              </ul> */}
-              </span>
-              <span className="ft_position">직무</span>
-              <span className="ft_state">상태</span>
-              {/* { 필터 아이템이 몇 개 이상 되면 오버 레이아웃으로 이동 */}
-              <span className="ft_items">
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-                <span className="item"></span>
-              </span>
-              <span className="ft_items_over">
-
-              </span>
-            </div>
+            <Filter changeQuery={this.changeQuery.bind(this)} ft_items={this.state.ft_items} />
           </section>
 
           {/* apply_section */}
           <section className="apply__section">
             <div className="apply_articles">
-              {this.props.users.map(user => (
+              {this.state.data.map(user => (
                 <Article key={user.id} user={user} modalOn={this.modalOn.bind(this)} />
               ))}
             </div>
