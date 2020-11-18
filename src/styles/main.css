@@ -52,7 +52,7 @@
   flex-flow: column;
   justify-content: center;
   background-color: oldlace;
-  width: 1300px;
+  /* width: 1300px; */
   padding-top: 15px;
   margin: auto;
 }
@@ -100,7 +100,7 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
-  background-color: whitesmoke;
+
   width: 1300px;
   padding-top: 15px;
   margin: auto;
@@ -125,21 +125,4 @@
   border: solid 3px yellow;
   margin: 10px 0px 10px 0px;
   text-align: center;
-}
-
-/* footer */
-.footer {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-}
-
-.team {
-  border: solid 3px papayawhip;
-}
-
-.member {
-  display: flex;
-  justify-content: space-around;
-  border: solid 1px palevioletred;
 }

@@ -5,7 +5,6 @@
   font-size: 12px;
 }
 
-
 .ft_ic {
   background-image: url('../images/filter_16px.png');
   background-repeat: no-repeat;
@@ -26,6 +25,7 @@
   margin-left: 5px;
 }
 
+
 .ft_check_ic {
   display: inline-block;
   background-image: url('../images/check1_16px.png');
@@ -35,9 +35,8 @@
   padding-left: 10px;
 }
 
-
 .ft_list {
-  z-index: 10;
+  z-index: 0;
   cursor: pointer;
   text-align: center;
   line-height: 55px;
@@ -52,7 +51,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  
+
   transform: scale(0);
   transition-duration: 0.1s;
   transform-origin: top left;
@@ -64,6 +63,7 @@
   border-right: 1px solid #EFEFEF;
   border-bottom: 1px solid #EFEFEF;
   text-align: left; 
+
 }
 .ft_list:hover .ft_ul {
   display: flex;
@@ -74,7 +74,6 @@
 .ft_ul li {
   padding-left: 15px;
 }
-
 
 .ft_items {
   display: flex;
@@ -90,7 +89,7 @@
   border: solid 1px #dddddd;
   border-radius: 8px;
   margin: 5px 0 0 7px;
-  padding: 2px 5px
+  padding: 2px 5px;
 }
 .ft_close {
   /* display: inline-block; */
@@ -109,6 +108,7 @@
   border: solid 1px pink;
   border-radius: 8px;
   margin: 5px 0 0 7px;
+
   padding: 2px 5px
 }
 
@@ -116,3 +116,4 @@
 .team_state_filter_close {
   display: none;
 }
+
