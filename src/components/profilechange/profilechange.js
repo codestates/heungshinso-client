@@ -16,11 +16,11 @@ class ProfileChange extends Component {
     this.setState({ [key]: e.target.value });
   };
   handleUserValue = () => {
-    console.log('a');
     let body = {
       ...this.state,
+      email: this.props.currentUserData.email,
     };
-    const url = 'http://3.35.21.164:3000/users/profile';
+    const url = 'https://1d2f4d43d53b.ngrok.io/users/profile';
     fetch(url, {
       method: 'POST',
       mode: 'cors',

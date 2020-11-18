@@ -16,43 +16,44 @@ class Profile extends Component {
   }
   render() {
     return (
-      <main>
-        <div
-          id="profile"
-          onClick={
-            this.state.isOpenProfileChange
-              ? this.profileChangeModalHandler.bind(this)
-              : () => {}
-          }
-        >
-          <div id="profile--img">
-            <img></img>
+      <div id="profile">
+        <main class="profile">
+          <div
+            onClick={
+              this.state.isOpenProfileChange
+                ? this.profileChangeModalHandler.bind(this)
+                : () => {}
+            }
+          >
+            <div id="profile--img">
+              <img></img>
+            </div>
+            <div id="profile-userdata">
+              <div>이름{this.props.currentUserData.username}</div>
+              <div>이메일{this.props.currentUserData.email}</div>
+              <div>전화번호{this.props.currentUserData.phone_number}</div>
+              <div>생일{this.props.currentUserData.birthday}</div>
+              <div>지역{this.props.currentUserData.user_region}</div>
+              <div>직무{this.props.currentUserData.user_position}</div>
+              <div>상태{this.props.currentUserData.user_status}</div>
+            </div>
           </div>
-          <div id="profile-userdata">
-            <div>{this.props.currentUserData.username}</div>
-            <div>{this.props.currentUserData.email}</div>
-            <div>{this.props.currentUserData.phone_number}</div>
-            <div>{this.props.currentUserData.birthday}</div>
-            <div>{this.props.currentUserData.user_region}</div>
-            <div>{this.props.currentUserData.user_position}</div>
-            <div>{this.props.currentUserData.user_status}</div>
+          <div onClick={this.profileChangeModalHandler.bind(this)}>
+            프로필 변경
           </div>
-        </div>
-        <div onClick={this.profileChangeModalHandler.bind(this)}>
-          프로필 변경
-        </div>
-        {this.state.isOpenProfileChange ? (
-          <ProfileChange
-            changeCurrentUserHandler={this.props.changeCurrentUserHandler}
-            profileChangeModalHandler={this.profileChangeModalHandler.bind(
-              this
-            )}
-            currentUserData={this.props.currentUserData}
-          />
-        ) : (
-          <div></div>
-        )}
-      </main>
+          {this.state.isOpenProfileChange ? (
+            <ProfileChange
+              changeCurrentUserHandler={this.props.changeCurrentUserHandler}
+              profileChangeModalHandler={this.profileChangeModalHandler.bind(
+                this
+              )}
+              currentUserData={this.props.currentUserData}
+            />
+          ) : (
+            <div></div>
+          )}
+        </main>
+      </div>
     );
   }
 }

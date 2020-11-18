@@ -1,7 +1,16 @@
-#profile_change {
+#profile {
+  display: flex;
+  justify-content: center;
+}
+
+.profile {
   align-content: center;
-  height: 500px;
-  width: 500px;
-  background-color: snow;
+  height: 1000px;
+  top: 40px;
+  width: 1000px;
+  border: 10px solid;
+  border-color: bisque;
+  background-color: rgb(255, 255, 255);
+  color: black;
   position: relative;
 }

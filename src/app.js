@@ -86,10 +86,23 @@ class App extends Component {
       })
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
-          this.signInAndOutHandler(dummyData.user[0]);
+          return res.json();
         })
-        .catch((err) => console.log(err));
+        .then((res) => {
+          console.log(res);
+          let body = {
+            id: res.id,
+            email: res.email,
+            gender: res.response.gender,
+            username: res.name,
+            phone_number: null,
+            birthday: null,
+            user_region: null,
+            user_position: null,
+            user_status: null,
+          };
+          this.signInAndOutHandler(body);
+        });
     }
     // // naver login
     if (window.location.href.indexOf("?naverlogin") !== -1) {
