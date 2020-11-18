@@ -65,8 +65,8 @@ class App extends Component {
       })
       .then((body) => {
         console.log(body);
-        this.setState({ users: body.user });
-        this.setState({ teams: body.team });
+        this.setState({ user: body.user });
+        this.setState({ team: body.team });
       })
       .catch((err) => {
         console.log(err);
@@ -197,8 +197,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                  <Redirect to="/" />
-                )}
+                    <Redirect to="/" />
+                  )}
               </Route>
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
@@ -209,8 +209,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                  <Redirect to="/" />
-                )}
+                    <Redirect to="/" />
+                  )}
               </Route>
             </Switch>
           </div>
