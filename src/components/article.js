@@ -34,7 +34,7 @@ const Article = (props) => (
                 <dt>status</dt><dd>: {props.user.user_status}</dd>
               </dl>
             </span>
-            <div className="apply_card_desc">description</div>
+            <div className="apply_card_desc">{props.user.description}</div>
           </div>
         </>
       )}
