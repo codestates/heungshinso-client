@@ -45,97 +45,56 @@
   background-color: rgba(0, 0, 0, 0.37);
 }
 
-/* 로그인 선택창 modal */
-.signin_login {
-  height: 70%;
+/* 로그인 창 */
+
+.signin {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.signin_container {
   flex-grow: 5;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.signin_container_item:nth-child(1) {
+  position: relative;
+  top: 30px;
+  align-items: center;
+  flex-grow: 2;
+}
+.signin_container_item:nth-child(2) {
+  flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
-.signin_login_title {
-  width: 100px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: rgba(105, 36, 36, 0.918);
-}
-
-.signin_login_content {
+.signin_social_login {
+  flex-grow: 1;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
 }
 
-.signin_login_content_a {
-  font-family: 'NanumGothic';
-  font-weight: 900;
-  position: relative;
-  height: 35px;
-  width: 250px;
-  align-items: inherit;
-  color: white;
-  border-radius: 3.5px;
-  font-size: 0.9rem;
+.signin_to_signup {
+  flex-grow: 1;
 }
 
-.signin_login_content:nth-child(2) .signin_login_content_a {
-  background-color: rgba(148, 35, 35, 0.863);
-}
-.signin_login_content:nth-child(2) .signin_login_content_img {
-  width: 35px;
-}
-.signin_login_content:nth-child(3) .signin_login_content_a {
-  background-color: rgb(0, 0, 0);
-}
-.signin_login_content:nth-child(4) .signin_login_content_a {
-  background-color: rgba(17, 199, 32, 0.897);
-}
-.signin_login_content:nth-child(5) .signin_login_content_a {
-  background-color: rgb(255, 231, 14);
-  color: rgba(0, 0, 0, 0.616);
-}
+/* 이메일 로그인 part */
+
+/* 소셜 로그인 */
+
 .signin_login_content_img {
   height: 35px;
   border-color: white;
   border-right: 5px;
   margin-right: 2px;
   border-radius: 8px;
-}
-
-/* 이메일 로그인 part */
-.signin_email {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.signin_email_item:nth-child(1) {
-  position: relative;
-  top: 35px;
-  flex-grow: 1;
-  color: rgba(105, 36, 36, 0.747);
-  font-size: 1.1rem;
-}
-
-.signin_email_item:nth-child(2) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  flex-grow: 3;
-}
-.signin_email_input:nth-child(3) {
-  color: rgba(236, 0, 0, 0.767);
-}
-.signin_email_item:nth-child(3) {
-  flex-grow: 1;
-  color: rgb(156, 156, 156);
-  display: relative;
-  top: 5px;
 }
