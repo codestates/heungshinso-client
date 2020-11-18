@@ -78,8 +78,7 @@
   align-items: center;
 }
 
-input[type='email'],
-input[type='text'] {
+input[type='email'] {
   position: relative;
   width: 200px;
   bottom: 5px;
@@ -95,8 +94,7 @@ input[type='text'] {
   transition: 0.15s;
 }
 input[type='email']:hover,
-input[type='email']:focus,
-input[type='text'] {
+input[type='email']:focus {
   position: relative;
   width: 200px;
   bottom: 5px;
@@ -145,7 +143,8 @@ input[type='password']:focus {
   transition: 0.3s;
 }
 
-button[type='submit'] {
+.signin_container_item button[type='submit'],
+.signup_container_form button[type='submit'] {
   all: unset;
   font-size: 0.85rem;
   background-color: rgba(59, 59, 59, 0.781);
@@ -157,7 +156,8 @@ button[type='submit'] {
   transition: 0.15s;
 }
 
-button[type='submit']:hover {
+.signin_container_item button[type='submit']:hover,
+.signup_container_form button[type='submit']:hover {
   all: unset;
   font-size: 0.85rem;
   background-color: rgba(0, 0, 0, 0.856);

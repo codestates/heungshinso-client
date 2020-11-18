@@ -49,6 +49,7 @@ class ProfileChange extends Component {
           <div>
             닉네임{' '}
             <input
+              className="profilechange_container_input"
               type="text"
               value={this.state.username}
               onChange={this.handleInputValue('username').bind(this)}
@@ -57,6 +58,7 @@ class ProfileChange extends Component {
           <div>
             전화번호{' '}
             <input
+              className="profilechange_container_input"
               type="text"
               value={this.state.phone_number}
               onChange={this.handleInputValue('phone_number').bind(this)}
@@ -65,6 +67,7 @@ class ProfileChange extends Component {
           <div>
             생년월일{' '}
             <input
+              className="profilechange_container_input"
               type="text"
               value={this.state.birthday}
               onChange={this.handleInputValue('birthday').bind(this)}
@@ -73,6 +76,7 @@ class ProfileChange extends Component {
           <div>
             직무{' '}
             <input
+              className="profilechange_container_input"
               type="text"
               value={this.state.user_position}
               onChange={this.handleInputValue('user_position').bind(this)}
@@ -81,6 +85,7 @@ class ProfileChange extends Component {
           <div>
             지역{' '}
             <input
+              className="profilechange_container_input"
               type="text"
               value={this.state.user_region}
               onChange={this.handleInputValue('user_region').bind(this)}
@@ -89,6 +94,7 @@ class ProfileChange extends Component {
           <div>
             상태{' '}
             <input
+              className="profilechange_container_input"
               type="text"
               value={this.state.user_status}
               onChange={this.handleInputValue('user_status').bind(this)}
