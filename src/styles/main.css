@@ -90,9 +90,11 @@
 .recruit_section {
   display: flex;
   flex-flow: column;
+
   color: white;
   border: solid 1px #333;
   width: 83.4vw;
+
 }
 .recruit_title {
   font-size: 1.3rem;
@@ -162,9 +164,11 @@
 .apply_section {
   display: flex;
   flex-flow: column;
+
   color: white;
   border: solid 1px #333;
   width: 83.4vw;
+
 }
 .apply_title {
   font-size: 1.3rem;
@@ -186,6 +190,7 @@
 .apply_card:hover {
   border: solid 0.1px #ffffff;
 }
+
 .apply_card_img {
   display: inline-block;
   background-image: url(/src/images/person.png);
@@ -234,3 +239,4 @@
   justify-content: space-around;
   border: solid 1px palevioletred;
 }
+

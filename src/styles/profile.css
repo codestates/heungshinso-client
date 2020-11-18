@@ -1,7 +1,78 @@
-#profile_change {
+@import '/src/styles/reset.css';
+
+/* #profile {
+  display: flex;
+  justify-content: center;
+} */
+
+.profile {
+  display: flex;
+  justify-content: center;
   align-content: center;
-  height: 500px;
-  width: 500px;
-  background-color: snow;
+  height: 100%;
+  top: 40px;
+  width: 100%;
+  /* border: 10px solid;
+  border-color: bisque; */
+  background-color: #484848;
+  color: black;
   position: relative;
+}
+.profile-info {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-username {
+  margin-top: 25%;
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 10rem;
+  letter-spacing: 4px;
+}
+
+.user-info-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-user {
+  margin-left: 27%;
+  /* border: 1px solid black; */
+  height: 100%;
+}
+.profile-img {
+  /* border: 1px solid black; */
+  margin-right: 50%;
+  border-radius: 50%;
+}
+
+.profile-email {
+  font-size: 25px;
+  font-weight: 550;
+  color: #ffffff;
+}
+
+.profile-emailset {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-emailicon {
+  font-size: 25px;
+  margin-right: 10%;
+  color: #ffffff;
+}
+
+.profile-userimg {
+  margin-right: 10%;
+  width: 30%;
+}
+.profile-change {
+  /* border: 1px solid black; */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
 }

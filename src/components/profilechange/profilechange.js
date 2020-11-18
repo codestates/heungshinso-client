@@ -18,24 +18,20 @@ class ProfileChange extends Component {
     this.setState({ [key]: e.target.value });
   };
   handleUserValue = () => {
-    console.log('a');
     let body = {
       ...this.state,
+      email: this.props.currentUserData.email,
     };
-    const url = 'http://localhost:3000/users/profile';
-    // fetch(url, {
-    //   method: 'POST',
-    //   // mode: 'cors',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(body),
-    // })
-    axios({
-      method: 'post',
-      url: 'http://localhost:3000/users/profile',
-      withCredentials: true,
-      data: body
+
+    const url = 'https://1d2f4d43d53b.ngrok.io/users/profile';
+    fetch(url, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+
     })
       .then((body) => {
         console.log(body);
