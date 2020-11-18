@@ -4,6 +4,7 @@ import githubImg from '../../../styles/contents/github.webp';
 import kakaoImg from '../../../styles/contents/kakaologin2.png';
 import naverImg from '../../../styles/contents/naverlogin.png';
 import emailImg from '../../../styles/contents/email.jpeg';
+import axios from "axios";
 
 class SignIn extends Component {
   constructor(props) {
@@ -33,25 +34,33 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    const url = 'http://3.35.21.164:3000/users/signin';
+    const url = 'http://localhost:3000/users/signin';
     // this.props.signInModalHandler();
     // this.props.signInAndOutHandler(dummy_data.user[0]);
-    fetch(url, {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
+    // fetch(url, {
+    //   method: 'POST',
+    //   mode: 'cors',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(body),
+    // })
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/users/signin',
+      withCredentials: true,
+      data: body,
+      headers: { 'Content-Type': 'application/json' }
     })
-      .then((res) => res.json())
       .then((body) => {
+        console.log(body)
         if (body.status === 500) {
           this.setState({
             errorMessage: '이메일 또는 비밀번호를 확인해주세요.',
           });
-        } else {
-          body.password = undefined;
+        }
+        else {
+          body.data.password = undefined;
           this.setState({ errorMessage: '' });
           let userData = body;
           localStorage.setItem('currentUser', JSON.stringify(userData));
@@ -59,6 +68,21 @@ class SignIn extends Component {
           this.props.signInAndOutHandler(userData);
         }
       })
+      // .then((body) => {
+      //   console.log(body)
+      //   if (body.status === 500) {
+      //     this.setState({
+      //       errorMessage: '이메일 또는 비밀번호를 확인해주세요.',
+      //     });
+      //   } else {
+      //     body.password = undefined;
+      //     this.setState({ errorMessage: '' });
+      //     let userData = body;
+      //     localStorage.setItem('currentUser', JSON.stringify(userData));
+      //     this.props.signInModalHandler();
+      //     this.props.signInAndOutHandler(userData);
+      //   }
+      // })
       .catch((err) => {
         console.log(err);
         this.setState({ errorMessage: '네트워크에 문제가 있습니다.' });
@@ -148,67 +172,67 @@ class SignIn extends Component {
             </span>
           </div>
         ) : (
-          <div>
-            <span
-              className="signhandle_modal"
-              onClick={this.props.signInModalHandler}
-            ></span>
-            <div className="sign_in_and_out">
-              <div className="signin_email">
-                <div className="signin_email_item">
-                  <div className="signin_email_item_content">이메일 로그인</div>
-                </div>
-                <form
-                  className="signin_email_item"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                  }}
-                >
-                  <input
-                    className="signin_email_input"
-                    type="email"
-                    placeholder="이메일"
-                    onChange={this.handleInputValue('email')}
-                  ></input>
-
-                  <input
-                    className="signin_email_input"
-                    type="password"
-                    placeholder="비밀번호 숫자, 문자 포함 8자리 이상"
-                    onChange={this.handleInputValue('password')}
-                  ></input>
-                  {!this.state.email.includes('@') ? (
-                    <div className="signin_email_input">
-                      이메일을 입력하세요
-                    </div>
-                  ) : this.state.password.length <= 8 ? (
-                    <div className="signin_email_input">
-                      비밀번호를 8자 이상 입력하세요
-                    </div>
-                  ) : (
-                    <div> {this.state.errorMessage}</div>
-                  )}
-                  <button
-                    className="signin_email_input"
-                    type="submit"
-                    onClick={this.handleSignIn}
+            <div>
+              <span
+                className="signhandle_modal"
+                onClick={this.props.signInModalHandler}
+              ></span>
+              <div className="sign_in_and_out">
+                <div className="signin_email">
+                  <div className="signin_email_item">
+                    <div className="signin_email_item_content">이메일 로그인</div>
+                  </div>
+                  <form
+                    className="signin_email_item"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                    }}
                   >
-                    로그인
+                    <input
+                      className="signin_email_input"
+                      type="email"
+                      placeholder="이메일"
+                      onChange={this.handleInputValue('email')}
+                    ></input>
+
+                    <input
+                      className="signin_email_input"
+                      type="password"
+                      placeholder="비밀번호 숫자, 문자 포함 8자리 이상"
+                      onChange={this.handleInputValue('password')}
+                    ></input>
+                    {!this.state.email.includes('@') ? (
+                      <div className="signin_email_input">
+                        이메일을 입력하세요
+                      </div>
+                    ) : this.state.password.length <= 8 ? (
+                      <div className="signin_email_input">
+                        비밀번호를 8자 이상 입력하세요
+                      </div>
+                    ) : (
+                          <div> {this.state.errorMessage}</div>
+                        )}
+                    <button
+                      className="signin_email_input"
+                      type="submit"
+                      onClick={this.handleSignIn}
+                    >
+                      로그인
                   </button>
-                </form>
-                <div
-                  className="signin_email_item"
-                  onClick={(event) => {
-                    this.props.signUpModalHandler();
-                    this.props.signInModalHandler();
-                  }}
-                >
-                  아이디가 없으신가요?
+                  </form>
+                  <div
+                    className="signin_email_item"
+                    onClick={(event) => {
+                      this.props.signUpModalHandler();
+                      this.props.signInModalHandler();
+                    }}
+                  >
+                    아이디가 없으신가요?
+                </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
     );
   }

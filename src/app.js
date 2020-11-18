@@ -53,7 +53,7 @@ class App extends Component {
       let userdata = localStorage.getItem('currentUser');
       this.signInAndOutHandler(JSON.parse(userdata));
     }
-    const url = 'http://3.35.21.164:3000/';
+    const url = 'http://localhost:3000/';
     fetch(url, {
       method: 'GET',
       mode: 'cors',
@@ -66,8 +66,8 @@ class App extends Component {
       })
       .then((body) => {
         console.log(body);
-        this.setState({ user: body.user });
-        this.setState({ team: body.team });
+        this.setState({ users: body.user });
+        this.setState({ teams: body.team });
       })
       .catch((err) => {
         console.log(err);
@@ -155,6 +155,7 @@ class App extends Component {
           </div>
 
           <div className="app_main">
+            {console.log(this.state)}
             <Switch>
               <Route exact path="/">
                 <Main data={this.state}></Main>

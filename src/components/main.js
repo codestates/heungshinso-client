@@ -32,42 +32,38 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <div className="main_container">
-          {/* intro_section */}
-          <section className="intro_section">
-            <div className="intro"></div>
-          </section>
+        {/* intro_section */}
+        <section className="intro_section">
+          <div className="intro"></div>
+        </section>
 
-          {/* recruit_section */}
-          <section className="recruit_section">
-            <div className="recruit_title">팀원 모집</div>
-            <div className="recruit_articles">
-              {this.props.data.teams.slice(0, 6).map((team) => (
-                <Article
-                  key={team.id}
-                  team={team}
-                  modalOn={this.recruitModalon.bind(this)}
-                />
-              ))}
-            </div>
-          </section>
+        {/* recruit_section */}
+        <section className="recruit_section">
+          <div className="recruit_title">모집</div>
+          <div className="recruit_articles">
+            {this.props.data.teams.map((team) => (
+              <Article
+                key={team.id}
+                team={team}
+                modalOn={this.recruitModalon.bind(this)}
+              />
+            ))}
+          </div>
+        </section>
 
-          {/* apply_section */}
-          <section className="apply_section">
-            <div className="apply_title">사람 찾기</div>
-            <div className="apply_articles">
-              {this.props.data.users.slice(0, 3).map((user) => (
-                <Article
-                  key={user.id}
-                  user={user}
-                  modalOn={this.applyModalon.bind(this)}
-                />
-              ))}
-            </div>
-          </section>
-
-          {/* footer */}
-        </div>
+        {/* apply_section */}
+        <section className="apply_section">
+          <div className="apply_title">찾기</div>
+          <div className="apply_articles">
+            {this.props.data.users.map((user) => (
+              <Article
+                key={user.id}
+                user={user}
+                modalOn={this.applyModalon.bind(this)}
+              />
+            ))}
+          </div>
+        </section>
 
         {/* modal_section */}
         {this.state.applyModal ? (

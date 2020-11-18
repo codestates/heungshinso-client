@@ -1,5 +1,6 @@
 body {
   font-family: 'NanumGothic';
+  background-color: #161616;
 }
 
 @font-face {
@@ -17,24 +18,19 @@ body {
 
 .app_container {
   display: flex;
-  align-content: center;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
 }
-
 .app_main {
-  position: relative;
-  width: 1500px;
-  background-color: rgb(255, 255, 255);
-  top: 60px;
+  background-color: #161616;
+  width: 83.4vw;
 }
-
 .app_navigation {
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
-  background-color: rgb(252, 246, 246);
+  background-color: #161616;
   border: 0.2px rgba(105, 36, 36, 0.39);
   width: 100%;
   height: 60px;

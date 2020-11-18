@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import '../../styles/profile.css';
+import axios from "axios";
+
 class ProfileChange extends Component {
   constructor(props) {
     super(props);
@@ -20,14 +22,20 @@ class ProfileChange extends Component {
     let body = {
       ...this.state,
     };
-    const url = 'http://3.35.21.164:3000/users/profile';
-    fetch(url, {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
+    const url = 'http://localhost:3000/users/profile';
+    // fetch(url, {
+    //   method: 'POST',
+    //   // mode: 'cors',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(body),
+    // })
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/users/profile',
+      withCredentials: true,
+      data: body
     })
       .then((body) => {
         console.log(body);

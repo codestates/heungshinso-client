@@ -16,7 +16,6 @@
   background-color: white;
   text-align: center;
 }
-
 .modal_overlay {
   position: fixed;
   z-index: 0;
@@ -25,59 +24,8 @@
   bottom: 0;
   right: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #161616;
 }
-
-/* intro_section */
-.intro_section {
-  display: flex;
-  justify-content: center;
-  background-image: url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-  background-size: 100%;
-  height: 1000px;
-}
-
-.intro {
-  display: flex;
-  /* border: solid 1px white; */
-  font-size: 150px;
-  color: yellow;
-  margin: 150px;
-  padding-top: 130px;
-}
-
-/* recruite_section */
-.recruit_section {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  background-color: oldlace;
-  width: 1300px;
-  padding-top: 15px;
-  margin: auto;
-}
-
-.recruit_title {
-  border: solid 3px yellowgreen;
-  margin-top: 10px;
-}
-
-.recruit_articles {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  align-items: center;
-  border: solid 3px pink;
-}
-
-.recruit_card {
-  width: 400px;
-  height: 300px;
-  border: solid 3px yellow;
-  margin: 10px 0px 10px 0px;
-  text-align: center;
-}
-
 .modal_bt {
   display: inline-block;
   font-size: 16px;
@@ -85,47 +33,146 @@
   text-decoration: none;
   color: yellow;
   background-color: pink;
-  border-radius: 8px;
   border: none;
   padding: 15px 32px;
 }
-
 .modal_bt:hover {
   background-color: yellow;
   color: black;
 }
 
+
+/* intro_section */
+.intro_section {
+}
+.intro {
+  /* border: solid 1px white; */
+  font-size: 150px;
+  color: yellow;
+  padding-top: 130px;
+  background-image: url(/src/images/team3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 94vh;
+}
+
+
+/* recruite_section */
+.recruit_section {
+  display: flex;
+  flex-flow: column;
+  color: white;
+  border: solid 1px #333;
+  width: 83.4vw;
+}
+.recruit_title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 25px 0 10px 10px;
+}
+.recruit_articles {
+  display: flex;
+  flex-flow: row wrap;
+}
+.recruit_card {
+  flex-basis: 300px;
+  background-color: #000;
+  height: 400px;
+  margin: 0 10px 20px 10px;
+}
+
+
+/* recruit_card */
+.recruit_card_img {
+  background-image: url(/src/images/data1.jpg);
+  width: 300px;
+  height: 225px;
+}
+.recruit_card_nav {
+  line-height: 1.4;
+}
+.recruit_card_title {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #333;
+}
+.recruit_card_title .title {
+  padding: 0.8em 10px;
+}
+.recruit_card_info {
+  margin: 0 10px;
+}
+.recruit_card_info dl {
+  font-size: 77%;
+  margin: 0;
+  padding: 0;
+}
+.recruit_card_info dt {
+  clear: left;
+  float: left;
+  color: #666;
+  width: 8em;
+}
+.recruit_card_info dd {
+  margin-left: 8em;
+}
+.recruit_card_info .date {
+  color: #aaa;
+}
+
+
 /* apply_section */
 .apply_section {
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  background-color: whitesmoke;
-  width: 1300px;
-  padding-top: 15px;
-  margin: auto;
+  color: white;
+  border: solid 1px #333;
+  width: 83.4vw;
 }
-
 .apply_title {
-  border: solid 3px yellowgreen;
-  margin-top: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 25px 0 10px 10px;
 }
-
 .apply_articles {
   display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  align-items: center;
-  border: solid 3px pink;
+  flex-flow: row wrap;
+}
+.apply_card {
+  flex-basis: 300px;
+  background-color: #000;
+  height: 250px;
+  margin: 0 10px 20px 10px;
+  line-height: 1.6;
 }
 
-.apply_card {
-  width: 400px;
-  height: 300px;
-  border: solid 3px yellow;
-  margin: 10px 0px 10px 0px;
-  text-align: center;
+.apply_card_img {
+  display: inline-block;
+  background-image: url(/src/images/person.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 35%;
+  margin: 30px 0 0 20px;
 }
+.apply_card_info {
+  display: inline-block;
+  padding: 0 0 0 15px;
+  margin: 0 0 0 15px;
+  /* border-left: solid 1px #333; */
+}
+.apply_card_info dt {
+  clear: left;
+  float: left;
+  color: #666;
+  width: 4em;
+}
+.apply_card_info dd {
+  margin-left: 4em;
+}
+.apply_card_desc {
+  border-top: solid 1px #333;
+}
+
 
 /* footer */
 .footer {
