@@ -1,9 +1,7 @@
 import { Component } from "react";
 import { FaBlog } from "react-icons/fa";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { AiOutlineFacebook } from "react-icons/ai";
 import { SiNetlify } from "react-icons/si";
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/footer.css";
 class Footer extends Component {
   render() {
@@ -11,8 +9,21 @@ class Footer extends Component {
       <div className="footer">
         <div className="inner-footer">
           <div className="footer-items">
+            <h1>흥신소</h1>
+            <div className="border"></div>
+            <h2>'사람' 찾아 드립니다.</h2>
+            <h3>
+              저희 흥신소는 개발자들이 혹은 스타트업이 함께 할 사람을 찾는
+              서비스입니다.
+            </h3>
+          </div>
+          <div className="footer-items">
             <h1>Roles</h1>
-            <p>임경섭,장수민,김면수,유병국</p>
+            <div className="border"></div>
+            <div className="roletag">Front-end</div>
+            <p>임경섭,장수민</p>
+            <div className="roletag">Back-end</div>
+            <p>김면수,유병국</p>
           </div>
           <div className="footer-items">
             <h2>Quick Links</h2>
