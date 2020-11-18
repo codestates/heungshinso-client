@@ -78,7 +78,8 @@
   align-items: center;
 }
 
-input[type='email'] {
+input[type='email'],
+input[type='text'] {
   position: relative;
   width: 200px;
   bottom: 5px;
@@ -94,7 +95,8 @@ input[type='email'] {
   transition: 0.15s;
 }
 input[type='email']:hover,
-input[type='email']:focus {
+input[type='email']:focus,
+input[type='text'] {
   position: relative;
   width: 200px;
   bottom: 5px;
