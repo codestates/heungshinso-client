@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import '../../styles/profile.css';
+import axios from "axios";
+
 class ProfileChange extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +22,7 @@ class ProfileChange extends Component {
       ...this.state,
       email: this.props.currentUserData.email,
     };
+
     const url = 'https://1d2f4d43d53b.ngrok.io/users/profile';
     fetch(url, {
       method: 'POST',
@@ -28,6 +31,7 @@ class ProfileChange extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
+
     })
       .then((body) => {
         console.log(body);

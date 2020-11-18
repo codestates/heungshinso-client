@@ -37,24 +37,24 @@ class Recruit extends React.Component {
       if (item === 'resion') {
         this.setState(state => ({
           query: state.query + `?resion=${e.target.textContent}`
-        }))
+        }), this.filterFetch)
       }
       else if (item === 'position') {
         this.setState(state => ({
           query: state.query + `?position=${e.target.textContent}`
-        }))
+        }), this.filterFetch)
       }
     }
     else {
       if (item === 'resion') {
         this.setState(state => ({
           query: state.query + `&resion=${e.target.textContent}`
-        }))
+        }), this.filterFetch)
       }
       else if (item === 'position') {
         this.setState(state => ({
           query: state.query + `&position=${e.target.textContent}`
-        }))
+        }), this.filterFetch)
       }
     }
   }
@@ -63,18 +63,18 @@ class Recruit extends React.Component {
     if (item === 'Planner' || item === 'Designer' || item === 'Developer' || item === 'ETC') {
       this.setState(state => ({
         query: state.query.replace(`position=${item}`, '')
-      }))
+      }), this.filterFetch)
       this.setState(state => ({
         ft_items: state.ft_items.filter(el => el !== item)
-      }))
+      }), this.filterFetch)
     }
     else {
       this.setState(state => ({
         query: state.query.replace(`resion=${item}`, '')
-      }))
+      }), this.filterFetch)
       this.setState(state => ({
         ft_items: state.ft_items.filter(el => el !== item)
-      }))
+      }), this.filterFetch)
     }
 
     if (this.state.ft_items.length === 1) {
@@ -82,22 +82,24 @@ class Recruit extends React.Component {
     }
   }
 
-  componentDidUpdate() {
-    let url = `http://localhost:3000/teams/apply${this.state.query}`
-
-    if (this.state.query !== '') {
-      fetch(url, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+  filterFetch() {
+    let url = `http://localhost:3000/teams/recruit${this.state.query}`
+    console.log(url)
+    fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'credentials': 'include'
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        this.setState({ data: res })
       })
-        .then(res => res.json())
-        .then(res => console.log(res))
-        .then(res => {
-          this.setState({ data: res })
-        })
-        .catch(err => console.log(err))
-    }
+      .catch(err => console.log(err))
+  }
+
+  componentDidUpdate() {
   }
 
   render() {

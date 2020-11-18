@@ -43,7 +43,11 @@ class CreateTeam extends Component {
       team_region: this.state.team_region,
       userId: this.props.currentUserData.id,
     };
+
+    const url = 'http://localhost:3000/team/createteam';
+
     const url = "http://localhost:3001/team/createteam";
+
     fetch(url, {
       method: "POST",
       mode: "cors",
