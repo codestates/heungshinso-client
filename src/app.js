@@ -13,30 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-        ...dummyData.user,
-      ],
-      teams: [
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-        ...dummyData.team,
-      ],
+      users: [...dummyData.user],
+      teams: [...dummyData.team],
       currentUser: { isLogin: false, userData: null },
       isOpenSignIn: false,
       isOpenSignUp: false,
@@ -72,45 +50,46 @@ class App extends Component {
       this.signInAndOutHandler(JSON.parse(userdata));
     }
     const url = 'http://3.35.21.164:3000/';
-    fetch(url, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((body) => {
-        console.log(body);
-        this.setState({ user: body.user });
-        this.setState({ team: body.team });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // fetch(url, {
+    //   method: 'GET',
+    //   mode: 'cors',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    // })
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((body) => {
+    //     console.log(body);
+    //     this.setState({ user: body.user });
+    //     this.setState({ team: body.team });
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
 
     // github login
-    const query = window.location.search.substring(1);
-    if (query.split('=')[0] === 'access_Token') {
-      const token = query.split('access_Token=')[1];
-      // GitHub API를 통해 사용자 정보를 받아올 수 있습니다
-      fetch('//api.github.com/user', {
-        headers: {
-          method: 'GET',
-          mode: 'cors',
-          // 이와 같이 Authorization 헤더에 `token ${token}`과 같이
-          // 인증 코드를 전송하는 형태를 가리켜 Bearer Token 인증이라고 합니다
-          Authorization: 'token ' + token,
-        },
-      })
-        .then((res) => res.json())
+    if (window.location.href.indexOf('?githublogin') !== -1) {
+      fetch('http://3.35.21.164:3000/users/githublogin')
+        .then((res) => {
+          return res.json();
+        })
         .then((res) => {
           console.log(res);
-          this.signInAndOutHandler(dummyData.user[0]);
-        })
-        .catch((err) => console.log(err));
+          let body = {
+            id: res.id,
+            email: res.email,
+            gender: res.response.gender,
+            username: res.name,
+            phone_number: null,
+            birthday: null,
+            user_region: null,
+            user_position: null,
+            user_status: null,
+          };
+          this.signInAndOutHandler(body);
+        });
     }
     // // naver login
     if (window.location.href.indexOf('?naverlogin') !== -1) {

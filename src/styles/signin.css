@@ -1,19 +1,13 @@
-a {
-  display: inherit;
-  text-decoration: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-}
-
+/* 로그인 모달 위치 */
 .sign_in_and_out {
   /* flex 적용 */
   display: flex;
   flex-direction: row;
-
+  position: relative;
   justify-content: space-around;
   align-items: center;
 
-  z-index: 1;
+  z-index: 30;
 
   /* position 설정 (중앙정렬)  */
   top: -20%;
@@ -31,13 +25,13 @@ a {
   border-radius: 3px;
   box-shadow: 3px 3px 3px 3px rgba(65, 12, 12, 0.19),
     0 6px 6px rgba(82, 19, 19, 0.23);
-  background-color: white;
 
   /* 컨텐츠 내부 */
   text-align: center;
-  background-color: rgb(253, 253, 253);
+  background-color: rgb(48, 47, 47);
 }
 
+/* 로그인 창 뒷배경 */
 .signhandle_modal {
   justify-content: center;
   align-items: center;
@@ -48,22 +42,10 @@ a {
   left: 0;
   right: 0;
 
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.37);
 }
 
-.signin_intro {
-  font-family: 'East Sea Dokdo';
-  font-size: 4.3rem;
-  color: rgba(105, 36, 36, 0.863);
-  flex-grow: 2;
-}
-
-.signin_intro_text {
-  position: relative;
-  left: 35px;
-  top: 10px;
-}
-
+/* 로그인 선택창 modal */
 .signin_login {
   height: 70%;
   flex-grow: 5;
@@ -74,6 +56,7 @@ a {
 }
 
 .signin_login_title {
+  width: 100px;
   font-weight: 700;
   font-size: 1.05rem;
   color: rgba(105, 36, 36, 0.918);
@@ -89,9 +72,9 @@ a {
 .signin_login_content_a {
   font-family: 'NanumGothic';
   font-weight: 900;
-  display: relative;
+  position: relative;
   height: 35px;
-  width: 200px;
+  width: 250px;
   align-items: inherit;
   color: white;
   border-radius: 3.5px;
@@ -99,19 +82,19 @@ a {
 }
 
 .signin_login_content:nth-child(2) .signin_login_content_a {
-  background-color: rgba(105, 36, 36, 0.863);
+  background-color: rgba(148, 35, 35, 0.863);
 }
 .signin_login_content:nth-child(2) .signin_login_content_img {
   width: 35px;
 }
 .signin_login_content:nth-child(3) .signin_login_content_a {
-  background-color: rgba(0, 0, 0, 0.801);
+  background-color: rgb(0, 0, 0);
 }
 .signin_login_content:nth-child(4) .signin_login_content_a {
-  background-color: rgba(17, 199, 32, 0.829);
+  background-color: rgba(17, 199, 32, 0.897);
 }
 .signin_login_content:nth-child(5) .signin_login_content_a {
-  background-color: rgba(255, 231, 14, 0.685);
+  background-color: rgb(255, 231, 14);
   color: rgba(0, 0, 0, 0.616);
 }
 .signin_login_content_img {
@@ -119,19 +102,22 @@ a {
   border-color: white;
   border-right: 5px;
   margin-right: 2px;
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 /* 이메일 로그인 part */
 .signin_email {
   width: 100%;
-  height: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .signin_email_item:nth-child(1) {
+  position: relative;
+  top: 35px;
   flex-grow: 1;
   color: rgba(105, 36, 36, 0.747);
   font-size: 1.1rem;
