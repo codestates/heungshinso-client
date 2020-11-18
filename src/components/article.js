@@ -5,7 +5,7 @@ const Article = (props) => (
     {props.team ? (
       <>
         <div className="recruit_card">
-          <div className="recruit_card_img" onClick={() => props.modalOn(props.team)}></div>
+          <div className="recruit_card_img"></div>
           <div className="recruit_card_nav">
             <div className="recruit_card_title">
               <div className="title">{props.team.title}</div>
@@ -16,7 +16,6 @@ const Article = (props) => (
                 <dt>position</dt><dd>: {props.team.team_position}</dd>
                 <dt>region</dt><dd>: {props.team.team_region}</dd>
                 <dt>date</dt><dd className="date">: 날짜</dd>
-                {/* <dt>description</dt><dd>{props.team.description}</dd> */}
               </dl>
             </div>
           </div>

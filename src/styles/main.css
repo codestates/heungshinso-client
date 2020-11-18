@@ -1,21 +1,4 @@
 /* modal_section */
-.modal_card {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 1;
-  top: 20%;
-  left: 35%;
-  width: 25%;
-  height: 60%;
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.19),
-    0 6px 6px rgba(0, 0, 0, 0.23);
-  background-color: black;
-  color: #ffffff;
-  text-align: center;
-}
 .modal_overlay {
   position: fixed;
   z-index: 0;
@@ -26,6 +9,64 @@
   width: 100%;
   background-color: #161616;
 }
+.modal_card {
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: space-around ; */
+  /* align-items: center; */
+  /* align-content: center; */
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 22%;
+  height: 530px;
+  box-shadow: 
+    10px 10px 10px 10px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: #000;
+  color: #ffffff;
+  /* text-align: center; */
+}
+.modal_card_img {
+  display: inline-block;
+  background-image: url(/src/images/person.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 25%;
+  margin: 30px 0 0 50px;
+}
+.modal_card_info {
+  line-height: 29px;
+  font-size: 90%;
+  width: 200px;
+  height: 30%;
+  padding: 10px 0 0 30px;
+}
+.modal_card_info dt {
+  clear: left;
+  float: left;
+  color: #666;
+  width: 4.3em;
+}
+.modal_card_info dd {
+  margin-left: 4.3em;
+}
+.modal_card_item {
+  width: 100%;
+  padding: 5px 10px 0 10px;
+  border-top: solid 1px #333;
+}
+.modal_card_item dt {
+  color: #666;
+  padding-bottom: 10px;
+}
+.modal_card_item dd {
+  font-size: 92%;
+}
+
 
 
 /* intro_section */
@@ -88,13 +129,14 @@
   border-bottom: 1px solid #333;
 }
 .recruit_card_title .title {
+  font-size: 94%;
   padding: 0.8em 10px;
 }
 .recruit_card_info {
   margin: 0 10px;
 }
 .recruit_card_info dl {
-  font-size: 77%;
+  font-size: 76%;
   margin: 0;
   padding: 0;
 }

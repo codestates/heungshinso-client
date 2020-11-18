@@ -12,7 +12,6 @@
   background-image: url('../images/filter_16px.png');
   background-repeat: no-repeat;
   background-position: center;
-
   color: #FFFFFF;
   cursor: inherit;
   width: 55px;
@@ -24,8 +23,9 @@
   background-image: url('../images/arrow_down_16px.png');
   background-repeat: no-repeat;
   background-position: center;
-  width: 8px;
-  height: 8px;
+  background-size: 100%;
+  width: 11px;
+  height: 11px;
   margin-left: 5px;
 }
 
@@ -48,7 +48,6 @@
   width: 110px;
   border-right: solid 1px #333;
   padding: 0 10px 0 0;
-  
 }
 .ft_resion {
   width: 330px;
@@ -88,7 +87,6 @@
   justify-content: center;
   align-content: center;
   padding-left: 15px;
-  
 }
 .item {
   line-height: 45px;
@@ -118,8 +116,6 @@
   margin: 5px 0 0 7px;
   padding: 2px 5px
 }
-
-
 .team_state_filter_close {
   display: none;
 }
