@@ -9,9 +9,12 @@ class Apply extends React.Component {
     this.state = {
       modal: false,
       modalData: null,
+
       ft_items: [],
       ft_items_id: 1,
+
       query: '',
+
       data: this.props.users
     }
   }
@@ -25,11 +28,11 @@ class Apply extends React.Component {
     this.setState({ modal: false })
   }
 
-  changeQuery(e, item) {
-    this.setState({ ft_items: [...this.state.ft_items, e.target.textContent] })
+  addQuery(e, item) {
     // this.setState(state => ({
     //   ft_items_id: state.ft_items_id + 1
     // }))
+    this.setState({ ft_items: [...this.state.ft_items, e.target.textContent] })
 
     if (this.state.query === '') {
       if (item === 'resion') {
@@ -67,8 +70,40 @@ class Apply extends React.Component {
     }
   }
 
+  replaceQuery(e, item) {
+    if (item === '구직중' || item === '구인중' || item === '재직중' || item === '이직희망' || item === '사이드잡희망') {
+      this.setState(state => ({
+        query: state.query.replace(`state=${item}`, '')
+      }))
+      this.setState(state => ({
+        ft_items: state.ft_items.filter(el => el !== item)
+      }))
+    }
+    else if (item === 'Planner' || item === 'Designer' || item === 'Developer' || item === 'ETC') {
+      this.setState(state => ({
+        query: state.query.replace(`position=${item}`, '')
+      }))
+      this.setState(state => ({
+        ft_items: state.ft_items.filter(el => el !== item)
+      }))
+    }
+    else {
+      this.setState(state => ({
+        query: state.query.replace(`resion=${item}`, '')
+      }))
+      this.setState(state => ({
+        ft_items: state.ft_items.filter(el => el !== item)
+      }))
+    }
+
+    if (this.state.ft_items.length === 1) {
+      this.setState({ query: '' })
+    }
+  }
+
   componentDidUpdate() {
-    const url = `http://localhost:3000/users/apply${this.state.query}`
+    let url = `http://localhost:3000/users/apply${this.state.query}`
+
     if (this.state.query !== '') {
       fetch(url, {
         headers: {
@@ -87,15 +122,13 @@ class Apply extends React.Component {
   render() {
     return (
       <>
-        {/* {console.log(this.state.ft_items)} */}
-        {/* {console.log(this.state.query)} */}
         {/* {console.log(this.props.users.filter(user => {
           return user.username === "duyjlepc"
         }))} */}
         <div className="apply_container">
           {/* filter_section */}
           < section className="filter_section">
-            <Filter changeQuery={this.changeQuery.bind(this)} ft_items={this.state.ft_items} />
+            <Filter addQuery={this.addQuery.bind(this)} replaceQuery={this.replaceQuery.bind(this)} ft_items={this.state.ft_items} />
           </section>
 
           {/* apply_section */}

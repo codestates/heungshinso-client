@@ -16,12 +16,23 @@
 }
 
 .ft_arrow_down_ic {
+  display: inline-block;
   background-image: url('../images/arrow_down_16px.png');
   background-repeat: no-repeat;
   background-position: center;
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
   margin-left: 5px;
+}
+
+
+.ft_check_ic {
+  display: inline-block;
+  background-image: url('../images/check1_16px.png');
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 10px;
 }
 
 .ft_list {
@@ -29,7 +40,7 @@
   cursor: pointer;
   text-align: center;
   line-height: 55px;
-  width: 80px;
+  width: 110px;
   border-right: solid 2px pink;
   padding: 0 10px 0 0;
 }
@@ -40,24 +51,27 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: none;
 
   transform: scale(0);
   transition-duration: 0.1s;
   transform-origin: top left;
   background-color: #ffffff;
   position: absolute;
-  z-index: 0;
-  width: 75px;
-  border-left: 1px solid #efefef;
-  border-right: 1px solid #efefef;
-  border-bottom: 1px solid #efefef;
-  text-align: left;
+  z-index: 10;
+  width: 105px;
+  border-left: 1px solid #EFEFEF;
+  border-right: 1px solid #EFEFEF;
+  border-bottom: 1px solid #EFEFEF;
+  text-align: left; 
+
 }
 .ft_list:hover .ft_ul {
   display: flex;
   flex-flow: row wrap;
   transform: scale(1);
+  padding-left: 15px;
+}
+.ft_ul li {
   padding-left: 15px;
 }
 
@@ -67,17 +81,26 @@
   justify-content: center;
   padding-left: 15px;
 }
-
 .item {
   line-height: 45px;
   font-size: 10px;
+  color: #707070;
   height: 40px;
-  border: solid 1px pink;
+  border: solid 1px #dddddd;
   border-radius: 8px;
   margin: 5px 0 0 7px;
   padding: 2px 5px;
 }
-
+.ft_close {
+  /* display: inline-block; */
+  cursor: pointer;
+  color: #707070;
+  background-image: url('../images/close_16px.png');
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 10px;
+}
 .ft_items_over {
   line-height: 45px;
   font-size: 10px;
@@ -85,5 +108,12 @@
   border: solid 1px pink;
   border-radius: 8px;
   margin: 5px 0 0 7px;
-  padding: 2px 5px;
+
+  padding: 2px 5px
 }
+
+
+.team_state_filter_close {
+  display: none;
+}
+
