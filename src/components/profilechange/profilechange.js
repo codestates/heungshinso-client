@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import '../../styles/profile.css';
+import '../../styles/profilechange.css';
 class ProfileChange extends Component {
   constructor(props) {
     super(props);
@@ -40,56 +40,62 @@ class ProfileChange extends Component {
   };
   render() {
     return (
-      <div id="profile_change">
-        <div>
-          닉네임{' '}
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.handleInputValue('username').bind(this)}
-          ></input>
+      <div>
+        <div
+          className="signhandle_modal"
+          onClick={this.props.profileChangeModalHandler}
+        ></div>
+        <div className="profilechange_container">
+          <div>
+            닉네임{' '}
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.handleInputValue('username').bind(this)}
+            ></input>
+          </div>
+          <div>
+            전화번호{' '}
+            <input
+              type="text"
+              value={this.state.phone_number}
+              onChange={this.handleInputValue('phone_number').bind(this)}
+            ></input>
+          </div>
+          <div>
+            생년월일{' '}
+            <input
+              type="text"
+              value={this.state.birthday}
+              onChange={this.handleInputValue('birthday').bind(this)}
+            ></input>
+          </div>
+          <div>
+            직무{' '}
+            <input
+              type="text"
+              value={this.state.user_position}
+              onChange={this.handleInputValue('user_position').bind(this)}
+            ></input>
+          </div>
+          <div>
+            지역{' '}
+            <input
+              type="text"
+              value={this.state.user_region}
+              onChange={this.handleInputValue('user_region').bind(this)}
+            ></input>
+          </div>
+          <div>
+            상태{' '}
+            <input
+              type="text"
+              value={this.state.user_status}
+              onChange={this.handleInputValue('user_status').bind(this)}
+            ></input>
+          </div>
+          <div onClick={this.handleUserValue}>확인</div>
         </div>
-        <div>
-          전화번호{' '}
-          <input
-            type="text"
-            value={this.state.phone_number}
-            onChange={this.handleInputValue('phone_number').bind(this)}
-          ></input>
-        </div>
-        <div>
-          생년월일{' '}
-          <input
-            type="text"
-            value={this.state.birthday}
-            onChange={this.handleInputValue('birthday').bind(this)}
-          ></input>
-        </div>
-        <div>
-          직무{' '}
-          <input
-            type="text"
-            value={this.state.user_position}
-            onChange={this.handleInputValue('user_position').bind(this)}
-          ></input>
-        </div>
-        <div>
-          지역{' '}
-          <input
-            type="text"
-            value={this.state.user_region}
-            onChange={this.handleInputValue('user_region').bind(this)}
-          ></input>
-        </div>
-        <div>
-          상태{' '}
-          <input
-            type="text"
-            value={this.state.user_status}
-            onChange={this.handleInputValue('user_status').bind(this)}
-          ></input>
-        </div>
-        <div onClick={this.handleUserValue}>확인</div>
       </div>
     );
   }

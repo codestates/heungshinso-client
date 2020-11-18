@@ -22,7 +22,7 @@ class SignIn extends Component {
     if (
       !this.state.email.includes('@') ||
       this.state.email.length <= 6 ||
-      this.state.password.length <= 8
+      this.state.password.length < 8
     ) {
       return;
     }
@@ -89,22 +89,23 @@ class SignIn extends Component {
                 <input
                   className="signin_container_item_input"
                   type="email"
-                  placeholder="이메일"
+                  placeholder="email"
                   onChange={this.handleInputValue('email')}
                 ></input>
 
                 <input
                   className="signin_container_item_input"
                   type="password"
-                  placeholder="비밀번호 숫자, 문자 포함 8자리 이상"
+                  placeholder="password"
                   onChange={this.handleInputValue('password')}
                 ></input>
+
                 {!this.state.email.includes('@') ? (
                   <div className="signin_container_item_error">
-                    이메일을 입력하세요
+                    이메일을 입력해 주세요
                   </div>
-                ) : this.state.password.length <= 8 ? (
-                  <div className="signin_container_item_input">
+                ) : this.state.password.length < 8 ? (
+                  <div className="signin_container_item_error">
                     비밀번호를 8자 이상 입력하세요
                   </div>
                 ) : (
@@ -122,7 +123,7 @@ class SignIn extends Component {
             <div className="signin_social_login">
               <span className="signin_login_content">
                 <a
-                  className="signin_login_content_a"
+                  className="signin_login_content_github"
                   href="https://github.com/login/oauth/authorize?client_id=67284f7fd9e4bc6602f7&redirect_uri=http://3.35.21.164:3000/users/signin/callback"
                 >
                   <img
@@ -152,7 +153,7 @@ class SignIn extends Component {
               </span>
               <span className="signin_login_content">
                 <a
-                  className="signin_login_content_a"
+                  className="signin_login_content_kakao"
                   href="http://3.35.21.164:3000/users/signin/kakaologin"
                 >
                   <img
@@ -162,15 +163,15 @@ class SignIn extends Component {
                 </a>
               </span>
             </div>
-            <div
+            <button
               className="signin_to_signup"
               onClick={(event) => {
                 this.props.signUpModalHandler();
                 this.props.signInModalHandler();
               }}
             >
-              이메일로 시작하기
-            </div>
+              이메일로 가입하기
+            </button>
           </div>
         </div>
       </div>

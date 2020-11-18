@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Main from './main';
 import ProfileChange from './profilechange/profilechange';
-
+import '../styles/profile.css';
 class Profile extends Component {
   constructor(props) {
     super(props);

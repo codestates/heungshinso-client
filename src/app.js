@@ -7,18 +7,15 @@ import Apply from './components/apply';
 import Main from './components/main';
 import CreateTeam from './components/create_team';
 import Profile from './components/profile';
+import Footer from './components/footer';
 import './styles/app.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [
-        ...dummyData.user
-      ],
-      teams: [
-        ...dummyData.team
-      ],
+      users: [...dummyData.user],
+      teams: [...dummyData.team],
 
       currentUser: { isLogin: false, userData: null },
       isOpenSignIn: false,
@@ -179,8 +176,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                    <Redirect to="/" />
-                  )}
+                  <Redirect to="/" />
+                )}
               </Route>
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
@@ -191,19 +188,12 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                    <Redirect to="/" />
-                  )}
+                  <Redirect to="/" />
+                )}
               </Route>
             </Switch>
           </div>
-          <footer className="footer">
-            <div className="team">
-              <span className="member">김면수</span>
-              <span className="member">유병국</span>
-              <span className="member">임경섭</span>
-              <span className="member">장수민</span>
-            </div>
-          </footer>
+          <Footer></Footer>
         </div>
       </BrowserRouter>
     );
