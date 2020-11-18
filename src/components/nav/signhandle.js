@@ -27,8 +27,8 @@ class SignHandle extends Component {
         ) : this.props.isOpenSignUp ? (
           <SignUp signUpModalHandler={this.props.signUpModalHandler} />
         ) : (
-          <div></div>
-        )}
+              <div></div>
+            )}
       </span>
     );
   }
