@@ -1,24 +1,21 @@
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { Component } from 'react';
-import dummyData from './dummy_data/dummy_data';
-import Nav from './components/nav';
-import Recruit from './components/recruit';
-import Apply from './components/apply';
-import Main from './components/main';
-import CreateTeam from './components/create_team';
-import Profile from './components/profile';
-import './styles/app.css';
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Component } from "react";
+import dummyData from "./dummy_data/dummy_data";
+import Nav from "./components/nav";
+import Recruit from "./components/recruit";
+import Apply from "./components/apply";
+import Main from "./components/main";
+import CreateTeam from "./components/create_team";
+import Profile from "./components/profile";
+import Footer from "./components/footer";
+import "./styles/app.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [
-        ...dummyData.user
-      ],
-      teams: [
-        ...dummyData.team
-      ],
+      users: [...dummyData.user],
+      teams: [...dummyData.team],
       currentUser: { isLogin: false, userData: null },
       isOpenSignIn: false,
       isOpenSignUp: false,
@@ -49,16 +46,16 @@ class App extends Component {
     }));
   }
   componentDidMount() {
-    if (localStorage.getItem('currentUser')) {
-      let userdata = localStorage.getItem('currentUser');
+    if (localStorage.getItem("currentUser")) {
+      let userdata = localStorage.getItem("currentUser");
       this.signInAndOutHandler(JSON.parse(userdata));
     }
-    const url = 'http://3.35.21.164:3000/';
+    const url = "http://3.35.21.164:3000/";
     fetch(url, {
-      method: 'GET',
-      mode: 'cors',
+      method: "GET",
+      mode: "cors",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then((res) => {
@@ -75,16 +72,16 @@ class App extends Component {
 
     // github login
     const query = window.location.search.substring(1);
-    if (query.split('=')[0] === 'access_Token') {
-      const token = query.split('access_Token=')[1];
+    if (query.split("=")[0] === "access_Token") {
+      const token = query.split("access_Token=")[1];
       // GitHub API를 통해 사용자 정보를 받아올 수 있습니다
-      fetch('//api.github.com/user', {
+      fetch("//api.github.com/user", {
         headers: {
-          method: 'GET',
-          mode: 'cors',
+          method: "GET",
+          mode: "cors",
           // 이와 같이 Authorization 헤더에 `token ${token}`과 같이
           // 인증 코드를 전송하는 형태를 가리켜 Bearer Token 인증이라고 합니다
-          Authorization: 'token ' + token,
+          Authorization: "token " + token,
         },
       })
         .then((res) => res.json())
@@ -95,8 +92,8 @@ class App extends Component {
         .catch((err) => console.log(err));
     }
     // // naver login
-    if (window.location.href.indexOf('?naverlogin') !== -1) {
-      fetch('http://3.35.21.164:3000/users/naverlogin')
+    if (window.location.href.indexOf("?naverlogin") !== -1) {
+      fetch("http://3.35.21.164:3000/users/naverlogin")
         .then((res) => {
           return res.json();
         })
@@ -117,8 +114,8 @@ class App extends Component {
     }
 
     // kakao login
-    if (window.location.href.indexOf('?kakaologin') !== -1) {
-      fetch('http://3.35.21.164:3000/users/kakaologin')
+    if (window.location.href.indexOf("?kakaologin") !== -1) {
+      fetch("http://3.35.21.164:3000/users/kakaologin")
         .then((res) => {
           return res.json();
         })
@@ -177,8 +174,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                    <Redirect to="/" />
-                  )}
+                  <Redirect to="/" />
+                )}
               </Route>
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
@@ -189,19 +186,12 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                    <Redirect to="/" />
-                  )}
+                  <Redirect to="/" />
+                )}
               </Route>
             </Switch>
           </div>
-          <footer className="footer">
-            <div className="team">
-              <span className="member">김면수</span>
-              <span className="member">유병국</span>
-              <span className="member">임경섭</span>
-              <span className="member">장수민</span>
-            </div>
-          </footer>
+          <Footer />
         </div>
       </BrowserRouter>
     );
