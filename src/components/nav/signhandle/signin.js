@@ -4,6 +4,7 @@ import githubImg from '../../../styles/contents/github.webp';
 import kakaoImg from '../../../styles/contents/kakaologin2.png';
 import naverImg from '../../../styles/contents/naverlogin.png';
 import emailImg from '../../../styles/contents/email.jpeg';
+import axios from 'axios';
 
 class SignIn extends Component {
   constructor(props) {
@@ -31,8 +32,6 @@ class SignIn extends Component {
       password: this.state.password,
     };
     const url = 'http://3.35.21.164:3000/users/signin';
-    // this.props.signInModalHandler();
-    // this.props.signInAndOutHandler(dummy_data.user[0]);
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -48,8 +47,8 @@ class SignIn extends Component {
             errorMessage: '이메일 또는 비밀번호를 확인해주세요.',
           });
         } else {
-          body.password = undefined;
           this.setState({ errorMessage: '' });
+          console.log(body);
           let userData = body;
           localStorage.setItem('currentUser', JSON.stringify(userData));
           this.props.signInModalHandler();

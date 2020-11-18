@@ -2,16 +2,23 @@ import { Component } from 'react';
 import SignHandle from './nav/signhandle';
 import { NavLink, withRouter } from 'react-router-dom';
 import '../styles/nav.css';
+import axios from "axios";
 
 class Nav extends Component {
   handleSignOut = () => {
     this.props.signInAndOutHandler();
     this.props.history.push('/');
     localStorage.removeItem('currentUser');
-    const url = 'http://3.35.21.164:3000/users/signout';
-    fetch(url, {
-      method: 'POST',
-      mode: 'cors',
+    const url = 'http://localhost:3000/users/signout';
+    // fetch(url, {
+    //   method: 'POST',
+    //   credentials: 'include',
+    //   mode: 'cors',
+    // })
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/users/signout',
+      withCredentials: true
     })
       .then((res) => {
         return res;

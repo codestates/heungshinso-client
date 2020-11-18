@@ -32,58 +32,70 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <div className="main_container">
-          {/* intro_section */}
-          <section className="intro_section">
-            <div className="intro"></div>
-          </section>
+        {/* intro_section */}
+        <section className="intro_section">
+          <div className="intro"></div>
+        </section>
 
-          {/* recruit_section */}
-          <section className="recruit_section">
-            <div className="recruit_title">팀원 모집</div>
-            <div className="recruit_articles">
-              {this.props.data.teams.slice(0, 6).map((team) => (
-                <Article
-                  key={team.id}
-                  team={team}
-                  modalOn={this.recruitModalon.bind(this)}
-                />
-              ))}
-            </div>
-          </section>
+        {/* recruit_section */}
+        <section className="recruit_section">
+          <div className="recruit_title">모집</div>
+          <div className="recruit_articles">
+            {this.props.data.teams.map((team) => (
+              <Article
+                key={team.id}
+                team={team}
+                modalOn={this.recruitModalon.bind(this)}
+              />
+            ))}
+          </div>
+        </section>
 
-          {/* apply_section */}
-          <section className="apply_section">
-            <div className="apply_title">사람 찾기</div>
-            <div className="apply_articles">
-              {this.props.data.users.slice(0, 3).map((user) => (
-                <Article
-                  key={user.id}
-                  user={user}
-                  modalOn={this.applyModalon.bind(this)}
-                />
-              ))}
-            </div>
-          </section>
-
-          {/* footer */}
-        </div>
+        {/* apply_section */}
+        <section className="apply_section">
+          <div className="apply_title">찾기</div>
+          <div className="apply_articles">
+            {this.props.data.users.map((user) => (
+              <Article
+                key={user.id}
+                user={user}
+                modalOn={this.applyModalon.bind(this)}
+              />
+            ))}
+          </div>
+        </section>
 
         {/* modal_section */}
         {this.state.applyModal ? (
           <>
             <section className="modal_section">
-              <div
-                className="modal_overlay"
-                onClick={this.modalOff.bind(this)}
-              ></div>
+              <div className="modal_overlay" onClick={this.modalOff.bind(this)}></div>
               <div className="modal_card">
-                <div className="username">{this.state.modalData.username}</div>
-                <div className="position">
-                  {this.state.modalData.user_position}
+                <span className="modal_card_img"></span >
+                <span className="modal_card_info">
+                  <dl>
+                    <dt>user</dt><dd>: {this.state.modalData.username}</dd>
+                    <dt>position</dt><dd>: {this.state.modalData.user_position}</dd>
+                    <dt>region</dt><dd>: {this.state.modalData.user_region}</dd>
+                    <dt>status</dt><dd>: {this.state.modalData.user_status}</dd>
+                  </dl>
+                </span>
+                <div className="modal_card_item">
+                  <dt>description</dt>
+                  <dd>{this.state.modalData.description}</dd>
                 </div>
-                <div className="region">{this.state.modalData.user_region}</div>
-                <div className="status">{this.state.modalData.user_status}</div>
+                <div className="modal_card_item">
+                  <dt>carrer</dt>
+                  <dd>{this.state.modalData.career}</dd>
+                </div>
+                <div className="modal_card_item">
+                  <dt>prize</dt>
+                  <dd>{this.state.modalData.prize}</dd>
+                </div>
+                <div className="modal_card_item">
+                  <dt>portfolio</dt>
+                  <dd>{this.state.modalData.portfolio}</dd>
+                </div>
               </div>
             </section>
           </>
