@@ -109,7 +109,7 @@ class Recruit extends React.Component {
   }
 
   filterFetch() {
-    let url = `http://localhost:3000/teams/recruit${this.state.query}`;
+    let url = `http://3.35.21.164:3000/teams/recruit${this.state.query}`;
     console.log(url);
     fetch(url, {
       headers: {

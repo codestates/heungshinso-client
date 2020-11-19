@@ -167,6 +167,7 @@ input[type='password']:focus {
   border-radius: 100px;
   transition: 0.3s;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(2, 0, 0, 0.23);
+  cursor: pointer;
 }
 
 .signin_container_item_error {

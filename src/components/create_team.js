@@ -17,7 +17,6 @@ class CreateTeam extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   handleTeamValue = () => {
-
     let body = {
       title: this.state.title,
       description: this.state.description,
@@ -26,7 +25,7 @@ class CreateTeam extends Component {
       userId: this.props.currentUserData.id,
     };
 
-    const url = 'http://localhost:3000/team/createteam';
+    const url = 'http://3.35.21.164:3000/team/createteam';
 
     fetch(url, {
       method: 'POST',
@@ -52,10 +51,9 @@ class CreateTeam extends Component {
         <div id="contents_section">
           <div id="title">함께할 팀원을 구하십니까?</div>
           <div id="setting_contents">
-
             <div className="content_div">
-              <span className="st_name">프로젝트 한줄 설명{": "}</span>
-v
+              <span className="st_name">프로젝트 한줄 설명{': '}</span>
+
               <span className="st_team_name">
                 <input
                   className="input_title"
@@ -69,7 +67,7 @@ v
             </div>
 
             <div className="content_div">
-              <span className="st_name">설명{": "}</span>
+              <span className="st_name">설명{': '}</span>
 
               <textarea
                 className="input_des"
@@ -83,7 +81,7 @@ v
             </div>
 
             <div className="content_div">
-              <span className="st_name">활동 위치{": "}</span>
+              <span className="st_name">활동 위치{': '}</span>
 
               <select
                 className="select_box"
@@ -113,7 +111,7 @@ v
             </div>
 
             <div className="content_div">
-              <span className="st_name">구인 직무{": "}</span>
+              <span className="st_name">구인 직무{': '}</span>
 
               <select
                 className="select_box"

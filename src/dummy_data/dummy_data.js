@@ -16,6 +16,8 @@ const dummyData = {
       career:
         '2001.01.21~2011.11.12 넷마블 개발부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       portfolio: 'www.portfolio1.com',
+      url:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr1NPd5YNYCH5AyDhNCJMqIFLOM8FZ_frPdg&usqp=CAU',
     },
     {
       id: 2,
@@ -31,6 +33,8 @@ const dummyData = {
       portfolio: 'www.portfolio2.com',
       career: '2011.01.21~2011.11.12 삼성 기획부 ,2012.1.28~2018.2.20 프리랜서',
       prize: '2011년 11월 21일 정주영창업경진대회 주관 행사',
+      url:
+        'https://brandyourself.com/blog/wp-content/uploads/linkedin-profile-picture-too-close.png',
     },
     {
       id: 3,
@@ -47,6 +51,8 @@ const dummyData = {
       career:
         '2008.01.21~2011.11.12 현대 개발부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 k스타트업 주관 대회',
+      url:
+        'https://cdn1.vectorstock.com/i/1000x1000/51/05/male-profile-avatar-with-brown-hair-vector-12055105.jpg',
     },
     {
       id: 4,
@@ -64,6 +70,8 @@ const dummyData = {
       career:
         '2004.01.21~2011.11.12 lg 사업부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 뉴스 빅데이터 해커톤 수상',
+      url:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQqg-SOspgefn5JxSHHBpKLs1zpMlsjEzNIA&usqp=CAU',
     },
     {
       id: 5,
@@ -81,6 +89,8 @@ const dummyData = {
       career:
         '2002.01.21~2011.11.12 스타트업 개발부 ,2012.1.28~2018.2.20 프리랜서',
       prize: '2011년 11월 21일 빅데이터 관련 대회 수상',
+      url:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQqg-SOspgefn5JxSHHBpKLs1zpMlsjEzNIA&usqp=CAU',
     },
     {
       id: 6,
@@ -98,6 +108,8 @@ const dummyData = {
       career:
         '2006.01.21~2011.11.12 넷마블 영업부 ,2012.1.28~2018.2.20 넷마블 기획팀',
       prize: '2011년 11월 21일 VR 관련 대회 수상',
+      url:
+        'https://lh3.googleusercontent.com/proxy/voPkfESOLHoiQm2rIItv9aNGlytcb7mqmG8KrhDCdsY6U_K_tGOTjJFOLQGR1avVY6BXFg30ZF5OUSVXJWaU6gBEcSljXVorMYLnAr_bpto8TBBJnCIo1F7og4mY6HKtOPmeA6OMLetVEYQJC5XvTtgbZjUUZSRJSaNGf8imXZDpoPhy9dSb3l3LqwY9PZc4qkszFQm01ZYiS0uVGSOvNB51s_GsUTsnUjq1cylMrTZ9Bq0',
     },
     {
       id: 7,
@@ -115,6 +127,8 @@ const dummyData = {
       career:
         '2009.01.21~2011.11.12 넷마블 개발부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 은행 주관 핀테크 대회 수상',
+      url:
+        'https://lh3.googleusercontent.com/proxy/zcxCUxXq4PNivbeTzLaASPtWWXGzPtkhpTIH2HRYgROWozJ4UUhnOirHU8RJ3HQcwXrf5dKTt1LK_58NARzQYQ4c8Y-V0LRdCj1Pe6CPFS2YzbrWmNUo86JZzjNdU9YqkGL5',
     },
     {
       id: 8,
@@ -132,6 +146,8 @@ const dummyData = {
       career:
         '2013.01.21~2017.11.12 스타트업 개발부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 외국계 주관 대회',
+      url:
+        'https://i.pinimg.com/originals/61/01/37/610137d11c814c791c54dc54401105e0.png',
     },
     {
       id: 9,
@@ -149,6 +165,8 @@ const dummyData = {
       career:
         '2015.01.21~2017.11.12 넷마블 개발부서 ,2012.1.28~2018.2.20 프리랜서',
       prize: '2011년 11월 21일 AI IOT 헤커톤 수상',
+      url:
+        'https://w7.pngwing.com/pngs/171/699/png-transparent-yellow-cartoon-character-in-yellow-bunny-costume-illustration-kakaotalk-kakao-friends-emoticon-emoji-text-smiley-sticker-thumbnail.png',
     },
     {
       id: 10,
@@ -166,6 +184,8 @@ const dummyData = {
       career:
         '2011.01.21~2012.11.12 넷마블 개발부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 중소기업 벤처부 주관 경진대회',
+      url:
+        'https://w7.pngwing.com/pngs/158/79/png-transparent-brown-cartoon-bear-character-illustration-kakaotalk-kakao-friends-sticker-viber-save-your-moon-s-face-smiley-online-chat-snout-thumbnail.png',
     },
     {
       id: 11,
@@ -182,6 +202,8 @@ const dummyData = {
       career:
         '2011.01.21~2014.11.12 스타트업 개발부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 k스타트업 주관 대회',
+      url:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKsvuDX9SSJEr31oMITcFl5zhiENlVNYOeag&usqp=CAU',
     },
     {
       id: 12,
@@ -199,6 +221,8 @@ const dummyData = {
       career:
         '2001.01.21~2011.11.12 넷마블 디자인부서 ,2012.1.28~2018.2.20 프리랜서',
       prize: '2011년 11월 21일 뉴스 빅데이터 해커톤 수상',
+      url:
+        'https://lh3.googleusercontent.com/proxy/yq_zZIEmIVt22EWOwvUDUMHjP-yGI1f2rzhJchoutNW6oVyHCRoXHUBmCQSEl3xRzkgHT2qbpTJAzzHeFOPQqbDxBaZWfUEa3MSCIOq04hdWfW107yw',
     },
     {
       id: 13,
@@ -215,6 +239,7 @@ const dummyData = {
       career:
         '2001.01.21~2011.11.12 게임회사 개발부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 빅데이터 관련 대회 수상',
+      url: 'https://biketago.com/img/kakao/p_05.jpg',
     },
     {
       id: 14,
@@ -232,6 +257,7 @@ const dummyData = {
       career:
         '2001.01.21~2011.11.12 넷마블 디자인 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 VR 관련 대회 수상',
+      url: 'https://biketago.com/img/kakao/cat_06.jpg',
     },
     {
       id: 15,
@@ -248,6 +274,8 @@ const dummyData = {
       career:
         '2001.01.21~2011.11.12 웹디자인회사 개발부 ,2012.1.28~2018.2.20 프리랜서',
       prize: '2011년 11월 21일 은행 주관 핀테크 대회 수상',
+      url:
+        'https://file3.instiz.net/data/file3/2018/02/28/e/5/9/e590973221992fb11bd8617d72e3cbc4.jpg',
     },
     {
       id: 16,
@@ -264,6 +292,8 @@ const dummyData = {
       career:
         '2001.01.21~2011.11.12 넷마블 기획 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 외국계 주관 대회',
+      url:
+        'https://i.pinimg.com/originals/0c/6c/ec/0c6cecde6ca258ed70acc74ba57c1111.gif',
     },
     {
       id: 17,
@@ -281,6 +311,8 @@ const dummyData = {
       career:
         '2001.01.21~2011.11.12 넷마블 개발부 ,2012.1.28~2018.2.20 스타트업 기획팀',
       prize: '2011년 11월 21일 AI IOT 헤커톤 수상',
+      url:
+        'https://item.kakaocdn.net/do/48dcfce971ba7d1cb927c1da339e5da1f43ad912ad8dd55b04db6a64cddaf76d',
     },
   ],
   team: [
@@ -304,6 +336,8 @@ const dummyData = {
       team_region: '부산광역시',
       team_position: 'Developer',
       userId: 7,
+      image:
+        'https://cdn.lynda.com/course/506926/506926-637286199177092773-16x9.jpg',
     },
     {
       id: 3,
@@ -314,6 +348,8 @@ const dummyData = {
       team_region: '대전광역시',
       team_position: 'Developer',
       userId: 3,
+      image:
+        'http://bm.straightline.jp/upload/large/large_9728ebf8cf89d23671479575e7053cc4.jpg?13:33:36',
     },
     {
       id: 4,
@@ -324,6 +360,8 @@ const dummyData = {
       team_region: '광주광역시',
       team_position: 'Designer',
       userId: 8,
+      image:
+        'http://bm.straightline.jp/upload/large/large_f25c962fe9d0f039f1b65121e1299d80.jpg?11:39:31',
     },
     {
       id: 5,
@@ -334,6 +372,8 @@ const dummyData = {
       team_region: '인천광역시',
       team_position: 'Planner',
       userId: 1,
+      image:
+        'http://bm.straightline.jp/upload/large/large_bc6ed7088febe8e126b5a7056f945f4e.jpg?13:43:04',
     },
     {
       id: 6,
@@ -344,6 +384,8 @@ const dummyData = {
       team_region: '인천광역시',
       team_position: 'ETC',
       userId: 6,
+      image:
+        'http://bm.straightline.jp/upload/large/large_bc6ed7088febe8e126b5a7056f945f4e.jpg?13:43:04',
     },
     {
       id: 7,
@@ -354,6 +396,8 @@ const dummyData = {
       team_region: '부산광역시',
       team_position: 'Developer',
       userId: 4,
+      image:
+        'http://bm.straightline.jp/upload/large/large_98280a94fcb74820cfce4a094ad1104e.jpg',
     },
     {
       id: 8,
@@ -364,6 +408,8 @@ const dummyData = {
       team_region: '부산광역시',
       team_position: '개발자',
       userId: 7,
+      image:
+        'http://bm.straightline.jp/upload/large/large_08a0e81573705670ddd81e631a971844.jpg?13:38:53',
     },
     {
       id: 9,
@@ -374,6 +420,8 @@ const dummyData = {
       team_region: '대전광역시',
       team_position: 'Desinger',
       userId: 3,
+      image:
+        'http://bm.straightline.jp/upload/large/large_53d51f461e23612bedb9b0d4ab77e11b.jpg?13:41:38',
     },
     {
       id: 10,
@@ -384,6 +432,8 @@ const dummyData = {
       team_region: '광주광역시',
       team_position: 'Desinger',
       userId: 8,
+      image:
+        'http://bm.straightline.jp/upload/large/large_e031bf088f216062b5c30ab9a7dc1dcf.jpg?13:37:37',
     },
     {
       id: 11,
@@ -394,6 +444,8 @@ const dummyData = {
       team_region: '인천광역시',
       team_position: 'Developer',
       userId: 1,
+      image:
+        'http://bm.straightline.jp/upload/large/large_9fe29994ae5c5353cfc01c6dac1cb48e.jpg?13:28:54',
     },
     {
       id: 12,
@@ -404,6 +456,8 @@ const dummyData = {
       team_region: '인천광역시',
       team_position: 'Developer',
       userId: 6,
+      image:
+        'http://bm.straightline.jp/upload/large/large_af79e6ef850a86d61847acfb33ede069.jpg?13:27:08',
     },
     {
       id: 13,
@@ -414,6 +468,8 @@ const dummyData = {
       team_region: '서울특별시',
       team_position: 'Developer',
       userId: 4,
+      image:
+        'http://bm.straightline.jp/upload/large/large_1ded918db50bd64e0e6cf2f092e2ff4d.jpg?13:27:41',
     },
     {
       id: 14,
@@ -424,6 +480,8 @@ const dummyData = {
       team_region: '부산광역시',
       team_position: 'Developer',
       userId: 7,
+      image:
+        'http://bm.straightline.jp/upload/large/large_8712e760b4dc37bcffc12166bf999bc5.jpg?13:25:15',
     },
     {
       id: 15,
@@ -434,6 +492,8 @@ const dummyData = {
       team_region: '대전광역시',
       team_position: 'Developer',
       userId: 3,
+      image:
+        'http://bm.straightline.jp/upload/large/large_315c65600a566aba4803252742247dd6.jpg?13:27:15',
     },
     {
       id: 16,
@@ -444,6 +504,8 @@ const dummyData = {
       team_region: '광주광역시',
       team_position: 'Planner',
       userId: 8,
+      image:
+        'http://bm.straightline.jp/upload/large/large_4c0bde286ba09376443977d71c654f7f.jpg?12:52:41',
     },
     {
       id: 17,
@@ -454,6 +516,8 @@ const dummyData = {
       team_region: '인천광역시',
       team_position: 'Developer',
       userId: 1,
+      image:
+        'http://bm.straightline.jp/upload/large/large_b58444c64d9d3a222649c7917017c0c8.jpg?',
     },
     {
       id: 18,
@@ -464,6 +528,7 @@ const dummyData = {
       team_region: '인천광역시',
       team_position: 'Desinger',
       userId: 6,
+      image: '',
     },
   ],
 };

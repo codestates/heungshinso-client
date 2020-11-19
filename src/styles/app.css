@@ -1,21 +1,17 @@
 body {
-
   font-family: 'NanumGothic';
   background-color: #161616;
-
-
-
 }
 
 @font-face {
-  font-family: "East Sea Dokdo";
-  src: url("../styles/contents/EastSeaDokdo-Regular.ttf") format("truetype");
+  font-family: 'East Sea Dokdo';
+  src: url('../styles/contents/EastSeaDokdo-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
-  font-family: "NanumGothic";
-  src: url("../styles/contents/NanumGothic-Regular.ttf") format("truetype");
+  font-family: 'NanumGothic';
+  src: url('../styles/contents/NanumGothic-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
@@ -34,6 +30,8 @@ a {
 }
 .app_main {
   background-color: #161616;
+  position: relative;
+  left: 3%;
   width: 83.4vw;
 }
 

@@ -1,16 +1,16 @@
-import { Component } from "react";
-import { FaBlog } from "react-icons/fa";
-import { SiNetlify } from "react-icons/si";
-import { NavLink } from "react-router-dom";
-import "../styles/footer.css";
-import logo from "../images/흥신소로고.png";
+import { Component } from 'react';
+import { FaBlog } from 'react-icons/fa';
+import { SiNetlify } from 'react-icons/si';
+import { NavLink } from 'react-router-dom';
+import '../styles/footer.css';
+import logoo from '../images/흥신소로고.png';
 class Footer extends Component {
   render() {
     return (
       <div className="footer">
         <div className="inner-footer">
           <div className="footer-items">
-            <img src={logo} />
+            <img src={logoo} />
             <div className="border"></div>
             <h3>'사람' 찾아 드립니다.</h3>
             <h3>

@@ -1,24 +1,21 @@
-
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { Component } from "react";
-import dummyData from "./dummy_data/dummy_data";
-import Nav from "./components/nav";
-import Recruit from "./components/recruit";
-import Apply from "./components/apply";
-import Main from "./components/main";
-import CreateTeam from "./components/create_team";
-import Profile from "./components/profile";
-import Footer from "./components/footer";
-import "./styles/app.css";
-
-
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Component } from 'react';
+import dummyData from './dummy_data/dummy_data';
+import Nav from './components/nav';
+import Recruit from './components/recruit';
+import Apply from './components/apply';
+import Main from './components/main';
+import CreateTeam from './components/create_team';
+import Profile from './components/profile';
+import Footer from './components/footer';
+import './styles/app.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [...dummyData.user],
-      teams: [...dummyData.team],
+      users: [],
+      teams: [],
 
       currentUser: { isLogin: false, userData: null },
       isOpenSignIn: false,
@@ -50,11 +47,10 @@ class App extends Component {
     }));
   }
   componentDidMount() {
-    if (localStorage.getItem("currentUser")) {
-      let userdata = localStorage.getItem("currentUser");
+    if (localStorage.getItem('currentUser')) {
+      let userdata = localStorage.getItem('currentUser');
       this.signInAndOutHandler(JSON.parse(userdata));
     }
-
 
     const url = 'http://3.35.21.164:3000/';
 
@@ -69,11 +65,9 @@ class App extends Component {
         return res.json();
       })
       .then((body) => {
-        console.log(body);
-
-        this.setState({ user: body.user });
-        this.setState({ team: body.team });
-
+        body = dummyData; // 더미데이터
+        this.setState({ users: body.user });
+        this.setState({ teams: body.team });
       })
       .catch((err) => {
         console.log(err);
@@ -81,7 +75,7 @@ class App extends Component {
 
     // github login
     if (window.location.href.indexOf('?githublogin') !== -1) {
-      fetch('http://localhost:3000/users/githublogin')
+      fetch('http://3.35.21.164:3000/users/githublogin')
         .then((res) => {
           return res.json();
         })
@@ -103,8 +97,8 @@ class App extends Component {
     }
     // // naver login
 
-    if (window.location.href.indexOf("?naverlogin") !== -1) {
-      fetch("http://3.35.21.164:3000/users/naverlogin")
+    if (window.location.href.indexOf('?naverlogin') !== -1) {
+      fetch('http://3.35.21.164:3000/users/naverlogin')
         .then((res) => {
           return res.json();
         })
@@ -126,8 +120,8 @@ class App extends Component {
 
     // kakao login
 
-    if (window.location.href.indexOf("?kakaologin") !== -1) {
-      fetch("http://3.35.21.164:3000/users/kakaologin")
+    if (window.location.href.indexOf('?kakaologin') !== -1) {
+      fetch('http://3.35.21.164:3000/users/kakaologin')
         .then((res) => {
           return res.json();
         })
@@ -164,7 +158,6 @@ class App extends Component {
           </div>
 
           <div className="app_main">
-            {console.log(this.state)}
             <Switch>
               <Route exact path="/">
                 <Main data={this.state}></Main>
@@ -187,8 +180,8 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                    <Redirect to="/" />
-                  )}
+                  <Redirect to="/" />
+                )}
               </Route>
               <Route path="/profile">
                 {this.state.currentUser.isLogin ? (
@@ -199,16 +192,12 @@ class App extends Component {
                     currentUserData={this.state.currentUser.userData}
                   />
                 ) : (
-                    <Redirect to="/" />
-                  )}
+                  <Redirect to="/" />
+                )}
               </Route>
             </Switch>
             <Footer></Footer>
           </div>
-
-          <Footer />
-
-
         </div>
       </BrowserRouter>
     );

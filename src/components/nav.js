@@ -10,7 +10,7 @@ class Nav extends Component {
     this.props.signInAndOutHandler();
     this.props.history.push('/');
     localStorage.removeItem('currentUser');
-    const url = 'http://localhost:3000/users/signout';
+    const url = 'http://3.35.21.164:3000/users/signout';
     // fetch(url, {
     //   method: 'POST',
     //   credentials: 'include',

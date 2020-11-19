@@ -1,5 +1,6 @@
 .footer {
-  position: sticky;
+  position: relative;
+  left: 40px;
   width: 100%;
   background: #171717;
   display: block;
