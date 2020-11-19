@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Component } from "react";
 import dummyData from "./dummy_data/dummy_data";
@@ -10,12 +11,15 @@ import Profile from "./components/profile";
 import Footer from "./components/footer";
 import "./styles/app.css";
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       users: [...dummyData.user],
       teams: [...dummyData.team],
+
       currentUser: { isLogin: false, userData: null },
       isOpenSignIn: false,
       isOpenSignUp: false,
@@ -50,12 +54,14 @@ class App extends Component {
       let userdata = localStorage.getItem("currentUser");
       this.signInAndOutHandler(JSON.parse(userdata));
     }
-    const url = "http://3.35.21.164:3000/";
+
+
+    const url = 'http://3.35.21.164:3000/';
     fetch(url, {
-      method: "GET",
-      mode: "cors",
+      method: 'GET',
+      mode: 'cors',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     })
       .then((res) => {
@@ -63,8 +69,10 @@ class App extends Component {
       })
       .then((body) => {
         console.log(body);
+
         this.setState({ user: body.user });
         this.setState({ team: body.team });
+
       })
       .catch((err) => {
         console.log(err);
@@ -165,6 +173,7 @@ class App extends Component {
           </div>
 
           <div className="app_main">
+            {console.log(this.state)}
             <Switch>
               <Route exact path="/">
                 <Main data={this.state}></Main>
@@ -205,6 +214,7 @@ class App extends Component {
             </Switch>
           </div>
           <Footer />
+
         </div>
       </BrowserRouter>
     );

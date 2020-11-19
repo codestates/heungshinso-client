@@ -1,16 +1,16 @@
-import { Component } from "react";
-import { withRouter } from "react-router-dom";
-import "../styles/createteam.css";
+import { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import '../styles/createteam.css';
 
 class CreateTeam extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      errorMessage: "",
-      title: "",
-      description: "",
-      team_region: "",
-      team_position: "",
+      errorMessage: '',
+      title: '',
+      description: '',
+      team_region: '',
+      team_position: '',
     };
   }
   handleInputValue = (e) => {
@@ -23,7 +23,7 @@ class CreateTeam extends Component {
       !this.state.team_region ||
       !this.state.team_position
     ) {
-      this.setState({ errorMessage: "모든 항목을 입력해주세요." });
+      this.setState({ errorMessage: '모든 항목을 입력해주세요.' });
       return;
     }
 
@@ -31,7 +31,7 @@ class CreateTeam extends Component {
     let users = this.props.users;
     let currentUser = this.props.currentUserData;
     if (teams.filter((team) => team.userId === currentUser.id).length !== 0) {
-      this.setState({ errorMessage: "이미 생성한 팀이 있습니다." });
+      this.setState({ errorMessage: '이미 생성한 팀이 있습니다.' });
       return;
     }
 
@@ -42,20 +42,22 @@ class CreateTeam extends Component {
       team_region: this.state.team_region,
       userId: this.props.currentUserData.id,
     };
-    const url = "http://localhost:3001/team/createteam";
+
+    const url = 'http://3.35.21.164:3000/team/createteam';
+
     fetch(url, {
-      method: "POST",
-      mode: "cors",
+      method: 'POST',
+      mode: 'cors',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
     })
       .then((res) => res.json())
       .then((body) => {
         console.log(body);
-        this.setState({ errorMessage: "" });
-        this.props.history.push("/");
+        this.setState({ errorMessage: '' });
+        this.props.history.push('/');
       })
       .catch((err) => {
         throw err;
@@ -67,8 +69,10 @@ class CreateTeam extends Component {
         <div id="contents_section">
           <div id="title">함께할 팀원을 구하십니까?</div>
           <div id="setting_contents">
+
             <div className="content_div">
               <span className="st_name">프로젝트 한줄 설명{": "}</span>
+v
               <span className="st_team_name">
                 <input
                   className="input_title"
@@ -80,8 +84,10 @@ class CreateTeam extends Component {
                 ></input>
               </span>
             </div>
+
             <div className="content_div">
               <span className="st_name">설명{": "}</span>
+
               <textarea
                 className="input_des"
                 name="description"
@@ -92,8 +98,10 @@ class CreateTeam extends Component {
                 onChange={this.handleInputValue}
               ></textarea>
             </div>
+
             <div className="content_div">
               <span className="st_name">활동 위치{": "}</span>
+
               <select
                 className="select_box"
                 type="text"
@@ -120,8 +128,10 @@ class CreateTeam extends Component {
                 <option value="제주시">제주시</option>
               </select>
             </div>
+
             <div className="content_div">
               <span className="st_name">구인 직무{": "}</span>
+
               <select
                 className="select_box"
                 type="text"

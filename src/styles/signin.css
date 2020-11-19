@@ -6,7 +6,7 @@
   position: relative;
   justify-content: space-around;
   align-items: center;
-
+  transition: 1s;
   z-index: 30;
 
   /* position 설정 (중앙정렬)  */
@@ -18,17 +18,17 @@
   position: fixed;
 
   /* 컨텐츠 크기 */
-  width: 500px;
-  height: 380px;
+  width: 450px;
+  height: 400px;
 
   /* 컨텐츠 테두리 */
-  border-radius: 3px;
+  border-radius: 10px;
   box-shadow: 3px 3px 3px 3px rgba(65, 12, 12, 0.19),
     0 6px 6px rgba(82, 19, 19, 0.23);
 
   /* 컨텐츠 내부 */
   text-align: center;
-  background-color: rgb(48, 47, 47);
+  background-color: rgb(255, 255, 255);
 }
 
 /* 로그인 창 뒷배경 */
@@ -41,101 +41,243 @@
   bottom: 0;
   left: 0;
   right: 0;
-
   background-color: rgba(0, 0, 0, 0.37);
 }
 
-/* 로그인 선택창 modal */
-.signin_login {
-  height: 70%;
-  flex-grow: 5;
+/* 로그인 창 */
+
+.signin {
+  width: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+/* 이메일 로그인 */
+.signin_container {
+  flex-grow: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.signin_container_item:nth-child(1) {
+  position: relative;
+  top: 30px;
+  align-items: center;
+  flex-grow: 2;
+  font-size: 1.1rem;
+  color: rgba(46, 45, 45, 0.836);
+}
+.signin_container_item:nth-child(2) {
+  flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
-.signin_login_title {
-  width: 100px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: rgba(105, 36, 36, 0.918);
+input[type='email'] {
+  position: relative;
+  width: 200px;
+  bottom: 5px;
+  height: auto; /* 높이 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  padding: 0.5em 0.5em; /* 여백 설정 */
+  border-width: 0px 0px;
+  border-bottom: 1px;
+  border-color: rgba(0, 0, 0, 0.247);
+  background-color: inherit;
+  border-style: solid;
+  color: rgba(0, 0, 0, 0.863);
+  transition: 0.15s;
+}
+input[type='email']:hover,
+input[type='email']:focus {
+  position: relative;
+  width: 200px;
+  bottom: 5px;
+  height: auto; /* 높이 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  padding: 0.5em 0.5em; /* 여백 설정 */
+  border-width: 0px 0px;
+  outline: none;
+  border-bottom: 1px;
+  border-color: rgb(0, 0, 0);
+  background-color: inherit;
+  border-style: solid;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
 }
 
-.signin_login_content {
+input[type='password'] {
+  position: relative;
+  width: 200px;
+  bottom: 8px;
+  height: auto; /* 높이 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  padding: 0.5em 0.5em; /* 여백 설정 */
+  border-width: 0px 0px;
+  border-bottom: 1px;
+  color: rgba(0, 0, 0, 0.87);
+  border-color: rgba(0, 0, 0, 0.226);
+  background-color: inherit;
+  border-style: solid;
+  transition: 0.15s;
+}
+
+input[type='password']:hover,
+input[type='password']:focus {
+  position: relative;
+  bottom: 8px;
+  height: auto; /* 높이 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  padding: 0.5em 0.5em; /* 여백 설정 */
+  border-width: 0px 0px;
+  border-bottom: 1px;
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.986);
+  background-color: inherit;
+  border-style: solid;
+  transition: 0.3s;
+}
+
+.signin_container_item button[type='submit'],
+.signup_container_form button[type='submit'] {
+  all: unset;
+  font-size: 0.85rem;
+  background-color: rgba(59, 59, 59, 0.781);
+  background-size: 30px;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 100px;
+  transition: 0.15s;
+}
+
+.signin_container_item button[type='submit']:hover,
+.signup_container_form button[type='submit']:hover {
+  all: unset;
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.856);
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 100px;
+  transition: 0.3s;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(2, 0, 0, 0.23);
+}
+
+.signin_container_item_error {
+  color: rgba(255, 44, 44, 0.562);
+}
+
+/* 소셜 로그인 */
+.signin_social_login {
+  position: relative;
+  top: 5px;
+  flex-grow: 1;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
 }
 
-.signin_login_content_a {
-  font-family: 'NanumGothic';
-  font-weight: 900;
+.signin_login_content_github {
   position: relative;
-  height: 35px;
-  width: 250px;
-  align-items: inherit;
-  color: white;
-  border-radius: 3.5px;
-  font-size: 0.9rem;
+  left: 70px;
 }
 
-.signin_login_content:nth-child(2) .signin_login_content_a {
-  background-color: rgba(148, 35, 35, 0.863);
+.signin_login_content_kakao {
+  position: relative;
+  right: 70px;
 }
-.signin_login_content:nth-child(2) .signin_login_content_img {
-  width: 35px;
-}
-.signin_login_content:nth-child(3) .signin_login_content_a {
-  background-color: rgb(0, 0, 0);
-}
-.signin_login_content:nth-child(4) .signin_login_content_a {
-  background-color: rgba(17, 199, 32, 0.897);
-}
-.signin_login_content:nth-child(5) .signin_login_content_a {
-  background-color: rgb(255, 231, 14);
-  color: rgba(0, 0, 0, 0.616);
-}
+
 .signin_login_content_img {
   height: 35px;
   border-color: white;
   border-right: 5px;
   margin-right: 2px;
-  border-radius: 8px;
+  border-radius: 9px;
+  transition: 0.5s;
+}
+.signin_login_content_img:hover {
+  height: 35px;
+  border-color: white;
+  border-right: 5px;
+  margin-right: 2px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+.signin_to_signup {
+  all: unset;
+  position: relative;
+
+  font-size: 0.85rem;
+  flex-grow: 1;
+  color: rgb(88, 87, 87);
+  transition: 0.1s;
+}
+.signin_to_signup:hover {
+  all: unset;
+  position: relative;
+
+  font-size: 0.85rem;
+  flex-grow: 1;
+  color: rgba(0, 0, 0, 0.904);
+  transition: 0.3s;
 }
 
-/* 이메일 로그인 part */
-.signin_email {
+/* 가입 창 */
+.signup_container {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.signin_email_item:nth-child(1) {
-  position: relative;
-  top: 35px;
-  flex-grow: 1;
-  color: rgba(105, 36, 36, 0.747);
-  font-size: 1.1rem;
-}
-
-.signin_email_item:nth-child(2) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+.signup_container_form {
   flex-grow: 3;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-.signin_email_input:nth-child(3) {
-  color: rgba(236, 0, 0, 0.767);
+.signup_container_form_title {
+  position: relative;
+  top: 70px;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.705);
 }
-.signin_email_item:nth-child(3) {
-  flex-grow: 1;
-  color: rgb(156, 156, 156);
-  display: relative;
-  top: 5px;
+.signup_container_form_email {
+  position: relative;
+  top: 60px;
+}
+.signup_container_form_password {
+  position: relative;
+  top: 30px;
+}
+.signup_container_form_error {
+  color: rgba(255, 44, 44, 0.562);
+  position: relative;
+  top: 15px;
+}
+.signup_container_form_button {
+  position: absolute;
+  bottom: 80px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(2, 0, 0, 0.23);
+}
+
+@media screen and (max-width: 600px) {
+  .sign_in_and_out {
+    width: 400px;
+    height: 400px;
+    transition: 1s;
+  }
+  .signin_login_content_github {
+    left: 60px;
+  }
+  .signin_login_content_kakao {
+    right: 60px;
+  }
 }

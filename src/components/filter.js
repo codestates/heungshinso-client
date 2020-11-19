@@ -8,7 +8,8 @@ class Filter extends React.Component {
     }
   }
 
-  filterOn() {
+  filterOn(e) {
+    this.setState({ [e.target.name]: e.target.value });
     this.setState({ filter_check: !this.state.filter_check })
   }
 
@@ -45,7 +46,6 @@ class Filter extends React.Component {
               </ul>
             </div>
           </span>
-          {console.log(this.props)}
           <span className="ft_list">
             직무
             <span className="ft_arrow_down_ic"></span>
@@ -53,7 +53,7 @@ class Filter extends React.Component {
               <li className={this.state.filter_check ? "ft_check_ic" : null} onClick={this.filterOn.bind(this)}>Planner</li>
               <li className={this.state.filter_check ? "ft_check_ic" : null} onClick={this.filterOn.bind(this)}>Designer</li>
               <li className={this.state.filter_check ? "ft_check_ic" : null} onClick={this.filterOn.bind(this)}>Developer</li>
-              <li className={this.state.filter_check ? "ft_check_ic" : null} onClick={this.filterOn.bind(this)}>ETC</li>
+              <li className={this.state.filter_check ? "ft_check_ic" : null} onClick={(e) => this.filterOn.bind(this)}>ETC</li>
             </ul>
           </span>
 
@@ -86,3 +86,6 @@ class Filter extends React.Component {
 }
 
 export default Filter
+
+
+

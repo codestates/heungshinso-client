@@ -38,34 +38,34 @@ class Apply extends React.Component {
       if (item === 'resion') {
         this.setState(state => ({
           query: state.query + `?resion=${e.target.textContent}`
-        }))
+        }), this.filterFetch)
       }
       else if (item === 'position') {
         this.setState(state => ({
           query: state.query + `?position=${e.target.textContent}`
-        }))
+        }), this.filterFetch)
       }
       else if (item === 'state') {
         this.setState(state => ({
-          query: state.query + `?state=${e.target.textContent}`
-        }))
+          query: state.query + `?user_status=${e.target.textContent}`
+        }), this.filterFetch)
       }
     }
     else {
       if (item === 'resion') {
         this.setState(state => ({
           query: state.query + `&resion=${e.target.textContent}`
-        }))
+        }), this.filterFetch)
       }
       else if (item === 'position') {
         this.setState(state => ({
           query: state.query + `&position=${e.target.textContent}`
-        }))
+        }), this.filterFetch)
       }
       else if (item === 'state') {
         this.setState(state => ({
-          query: state.query + `&state=${e.target.textContent}`
-        }))
+          query: state.query + `&user_status=${e.target.textContent}`
+        }), this.filterFetch)
       }
     }
   }
@@ -74,26 +74,26 @@ class Apply extends React.Component {
     if (item === '구직중' || item === '구인중' || item === '재직중' || item === '이직희망' || item === '사이드잡희망') {
       this.setState(state => ({
         query: state.query.replace(`state=${item}`, '')
-      }))
+      }), this.filterFetch)
       this.setState(state => ({
         ft_items: state.ft_items.filter(el => el !== item)
-      }))
+      }), this.filterFetch)
     }
     else if (item === 'Planner' || item === 'Designer' || item === 'Developer' || item === 'ETC') {
       this.setState(state => ({
         query: state.query.replace(`position=${item}`, '')
-      }))
+      }), this.filterFetch)
       this.setState(state => ({
         ft_items: state.ft_items.filter(el => el !== item)
-      }))
+      }), this.filterFetch)
     }
     else {
       this.setState(state => ({
         query: state.query.replace(`resion=${item}`, '')
-      }))
+      }), this.filterFetch)
       this.setState(state => ({
         ft_items: state.ft_items.filter(el => el !== item)
-      }))
+      }), this.filterFetch)
     }
 
     if (this.state.ft_items.length === 1) {
@@ -101,22 +101,24 @@ class Apply extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  filterFetch() {
     let url = `http://localhost:3000/users/apply${this.state.query}`
-
-    if (this.state.query !== '') {
-      fetch(url, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+    console.log(url)
+    fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'credentials': 'include'
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        this.setState({ data: res })
       })
-        .then(res => res.json())
-        .then(res => console.log(res))
-        .then(res => {
-          this.setState({ data: res })
-        })
-        .catch(err => console.log(err))
-    }
+      .catch(err => console.log(err))
+  }
+
+  componentDidUpdate() {
   }
 
   render() {
@@ -125,6 +127,7 @@ class Apply extends React.Component {
         {/* {console.log(this.props.users.filter(user => {
           return user.username === "duyjlepc"
         }))} */}
+        {/* {console.log(this.state.data)} */}
         <div className="apply_container">
           {/* filter_section */}
           < section className="filter_section">
@@ -141,15 +144,36 @@ class Apply extends React.Component {
           </section>
         </div>
 
-        {/* modal_section */}
+        {/* modal_section */} {console.log(this.state.modalData)}
         {this.state.modal ? <>
           <section className="modal_section">
             <div className="modal_overlay" onClick={this.modalOff.bind(this)}></div>
             <div className="modal_card">
-              <div className="username">{this.state.modalData.username}</div>
-              <div className="position">{this.state.modalData.user_position}</div>
-              <div className="region">{this.state.modalData.user_region}</div>
-              <div className="status">{this.state.modalData.user_status}</div>
+              <span className="modal_card_img"></span >
+              <span className="modal_card_info">
+                <dl>
+                  <dt>user</dt><dd>: {this.state.modalData.username}</dd>
+                  <dt>position</dt><dd>: {this.state.modalData.user_position}</dd>
+                  <dt>region</dt><dd>: {this.state.modalData.user_region}</dd>
+                  <dt>status</dt><dd>: {this.state.modalData.user_status}</dd>
+                </dl>
+              </span>
+              <div className="modal_card_item">
+                <dt>description</dt>
+                <dd>{this.state.modalData.description}</dd>
+              </div>
+              <div className="modal_card_item">
+                <dt>carrer</dt>
+                <dd>{this.state.modalData.career}</dd>
+              </div>
+              <div className="modal_card_item">
+                <dt>prize</dt>
+                <dd>{this.state.modalData.prize}</dd>
+              </div>
+              <div className="modal_card_item">
+                <dt>portfolio</dt>
+                <dd>{this.state.modalData.portfolio}</dd>
+              </div>
             </div>
           </section>
         </> : null}

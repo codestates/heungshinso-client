@@ -1,27 +1,30 @@
 .filter {
   display: flex;
   flex-flow: row;
-  border: solid 2px pink;
-  font-size: 12px;
+  background-color: #000;
+  color: #FFFFFF;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
 .ft_ic {
   background-image: url('../images/filter_16px.png');
   background-repeat: no-repeat;
   background-position: center;
+  color: #FFFFFF;
   cursor: inherit;
   width: 55px;
   height: 55px;
-  border-right: solid 2px pink;
+  border-right: solid 1px #333;
 }
-
 .ft_arrow_down_ic {
   display: inline-block;
   background-image: url('../images/arrow_down_16px.png');
   background-repeat: no-repeat;
   background-position: center;
-  width: 8px;
-  height: 8px;
+  background-size: 100%;
+  width: 11px;
+  height: 11px;
   margin-left: 5px;
 }
 
@@ -40,8 +43,9 @@
   cursor: pointer;
   text-align: center;
   line-height: 55px;
+  font-weight: 600;
   width: 110px;
-  border-right: solid 2px pink;
+  border-right: solid 1px #333;
   padding: 0 10px 0 0;
 }
 .ft_resion {
@@ -68,6 +72,7 @@
 .ft_list:hover .ft_ul {
   display: flex;
   flex-flow: row wrap;
+  background-color: #000;
   transform: scale(1);
   padding-left: 15px;
 }
@@ -79,40 +84,40 @@
   display: flex;
   flex-flow: row;
   justify-content: center;
+  align-content: center;
   padding-left: 15px;
 }
 .item {
   line-height: 45px;
   font-size: 10px;
-  color: #707070;
+  color: #ffffff;
   height: 40px;
   border: solid 1px #dddddd;
-  border-radius: 8px;
-  margin: 5px 0 0 7px;
-  padding: 2px 5px;
+
+  border-radius: 4px;
+  margin: 4px 0 0 7px;
+  padding: 1px 9px
+
 }
 .ft_close {
-  /* display: inline-block; */
   cursor: pointer;
-  color: #707070;
   background-image: url('../images/close_16px.png');
-  background-size: 10px;
+  background-size: 8px;
   background-repeat: no-repeat;
   background-position: center left;
   padding-left: 10px;
+  margin-left: 5px;
 }
 .ft_items_over {
   line-height: 45px;
   font-size: 10px;
   height: 40px;
-  border: solid 1px pink;
+  border: solid 1px #333;
   border-radius: 8px;
   margin: 5px 0 0 7px;
 
   padding: 2px 5px
 }
-
-
 .team_state_filter_close {
   display: none;
 }
