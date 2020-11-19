@@ -14,7 +14,7 @@ class Recruit extends React.Component {
 
       query: '',
 
-      data: this.props.teams.slice(0, 6),
+      data: this.props.teams,
       dataCount: 6,
     };
   }

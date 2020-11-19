@@ -129,8 +129,6 @@
 .recruit_card_title {
   margin-bottom: 1em;
   border-bottom: 1px solid #333;
-}
-.recruit_card_title .title {
   font-size: 94%;
   padding: 0.8em 10px;
 }
@@ -221,22 +219,3 @@
   padding: 5px 10px 0 10px;
   border-top: solid 1px #333;
 }
-
-
-/* footer */
-.footer {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-}
-
-.team {
-  border: solid 3px papayawhip;
-}
-
-.member {
-  display: flex;
-  justify-content: space-around;
-  border: solid 1px palevioletred;
-}
-

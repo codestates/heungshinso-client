@@ -1,10 +1,8 @@
 import { Component } from 'react';
-import dummy_data from '../../../dummy_data/dummy_data';
 import githubImg from '../../../styles/contents/github.webp';
 import kakaoImg from '../../../styles/contents/kakaologin2.png';
 import naverImg from '../../../styles/contents/naverlogin.png';
 import emailImg from '../../../styles/contents/email.jpeg';
-import axios from 'axios';
 
 class SignIn extends Component {
   constructor(props) {
@@ -31,7 +29,7 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    const url = 'http://3.35.21.164:3000/users/signin';
+    const url = 'http://localhost:3000/users/signin';
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -64,7 +62,7 @@ class SignIn extends Component {
 
   render() {
     const redirectURI = encodeURI(
-      'http://3.35.21.164:3000/users/signin/naverlogin/callback'
+      'http://localhost:3000/users/signin/naverlogin/callback'
     );
     const client_id = '228zVx2bad5gY6VoK5Gg';
     const state = '12345';
@@ -108,8 +106,8 @@ class SignIn extends Component {
                     비밀번호를 8자 이상 입력하세요
                   </div>
                 ) : (
-                  <div> {this.state.errorMessage}</div>
-                )}
+                      <div> {this.state.errorMessage}</div>
+                    )}
                 <button
                   className="signin_container_item_input"
                   type="submit"
@@ -123,7 +121,7 @@ class SignIn extends Component {
               <span className="signin_login_content">
                 <a
                   className="signin_login_content_github"
-                  href="https://github.com/login/oauth/authorize?client_id=67284f7fd9e4bc6602f7&redirect_uri=http://3.35.21.164:3000/users/signin/callback"
+                  href="https://github.com/login/oauth/authorize?client_id=67284f7fd9e4bc6602f7&redirect_uri=http://localhost:3000/users/signin/callback"
                 >
                   <img
                     className="signin_login_content_img"
@@ -153,7 +151,7 @@ class SignIn extends Component {
               <span className="signin_login_content">
                 <a
                   className="signin_login_content_kakao"
-                  href="http://3.35.21.164:3000/users/signin/kakaologin"
+                  href="http://localhost:3000/users/signin/kakaologin"
                 >
                   <img
                     className="signin_login_content_img"

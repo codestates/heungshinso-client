@@ -26,9 +26,7 @@ nav {
 
 .nav_main_a {
   width: 100%;
-
-  color: #ffffff;
-
+  color: #000;
   margin-right: 20px;
   font-family: inherit;
 }

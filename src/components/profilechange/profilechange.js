@@ -97,6 +97,7 @@ class ProfileChange extends Component {
     }
   };
   handleUserValue = () => {
+    console.log(1)
     let body = {
       username: this.state.username,
       phone_number: this.state.phone_number,

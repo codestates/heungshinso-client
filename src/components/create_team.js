@@ -17,23 +17,6 @@ class CreateTeam extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   handleTeamValue = () => {
-    if (
-      !this.state.title ||
-      !this.state.description ||
-      !this.state.team_region ||
-      !this.state.team_position
-    ) {
-      this.setState({ errorMessage: '모든 항목을 입력해주세요.' });
-      return;
-    }
-
-    let teams = this.props.teams;
-    let users = this.props.users;
-    let currentUser = this.props.currentUserData;
-    if (teams.filter((team) => team.userId === currentUser.id).length !== 0) {
-      this.setState({ errorMessage: '이미 생성한 팀이 있습니다.' });
-      return;
-    }
 
     let body = {
       title: this.state.title,
@@ -43,7 +26,7 @@ class CreateTeam extends Component {
       userId: this.props.currentUserData.id,
     };
 
-    const url = 'http://3.35.21.164:3000/team/createteam';
+    const url = 'http://localhost:3000/team/createteam';
 
     fetch(url, {
       method: 'POST',

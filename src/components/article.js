@@ -8,7 +8,7 @@ const Article = (props) => (
           <div className="recruit_card_img"></div>
           <div className="recruit_card_nav">
             <div className="recruit_card_title">
-              <div className="title">{props.team.title}</div>
+              <div>{props.team.title}</div>
             </div>
             <div className="recruit_card_info">
               <dl>
