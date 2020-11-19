@@ -129,8 +129,6 @@
 .recruit_card_title {
   margin-bottom: 1em;
   border-bottom: 1px solid #333;
-}
-.recruit_card_title .title {
   font-size: 94%;
   padding: 0.8em 10px;
 }

@@ -50,7 +50,7 @@ class Footer extends Component {
             <h2>Constact Us</h2>
             <div className="border"></div>
             <ul>
-              <a>
+              <a href="#!">
                 <li>임경섭</li>
                 <div className="social-media">
                   <a href="https://velog.io/@ranisol">
@@ -60,7 +60,7 @@ class Footer extends Component {
                   </a>
                 </div>
               </a>
-              <a>
+              <a href="#!">
                 <li>장수민</li>
                 <div className="social-media">
                   <a href="https://smss.netlify.app/">
@@ -70,7 +70,7 @@ class Footer extends Component {
                   </a>
                 </div>
               </a>
-              <a>
+              <a href="#!">
                 <li>김면수</li>
                 <div className="social-media">
                   <a href="https://velog.io/@conape">
@@ -80,7 +80,7 @@ class Footer extends Component {
                   </a>
                 </div>
               </a>
-              <a>
+              <a href="#!">
                 <li>유병국</li>
                 <div className="social-media">
                   <a href="https://velog.io/@godkor200">

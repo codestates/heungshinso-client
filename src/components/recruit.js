@@ -126,7 +126,7 @@ class Recruit extends React.Component {
           <section className="modal_section">
             <div className="modal_overlay" onClick={this.modalOff.bind(this)}></div>
             <div className="modal_card">
-              <div className="title">{this.state.modalData.title}</div>
+              <div className="modal_card_title">{this.state.modalData.title}</div>
               <div className="username">작성자: 추노</div>
               <div className="description">{this.state.modalData.description}</div>
               <div className="position">{this.state.modalData.team_position}</div>

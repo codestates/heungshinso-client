@@ -21,7 +21,7 @@ class ProfileChange extends Component {
       email: this.props.currentUserData.email,
     };
 
-    const url = 'http://3.35.21.164:3000/users/profile';
+    const url = 'http://localhost:3000/users/profile';
     fetch(url, {
       method: 'POST',
       mode: 'cors',

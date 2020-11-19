@@ -52,7 +52,7 @@ class App extends Component {
       this.signInAndOutHandler(JSON.parse(userdata));
     }
 
-    const url = 'http://3.35.21.164:3000/';
+    const url = 'http://localhost:3000/';
     fetch(url, {
       method: 'GET',
       mode: 'cors',
@@ -93,7 +93,7 @@ class App extends Component {
 
     // github login
     if (window.location.href.indexOf('?githublogin') !== -1) {
-      fetch('http://3.35.21.164:3000/users/githublogin')
+      fetch('http://localhost:3000/users/githublogin')
         .then((res) => {
           return res.json();
         })
@@ -115,7 +115,7 @@ class App extends Component {
     }
     // // naver login
     if (window.location.href.indexOf('?naverlogin') !== -1) {
-      fetch('http://3.35.21.164:3000/users/naverlogin')
+      fetch('http://localhost:3000/users/naverlogin')
         .then((res) => {
           return res.json();
         })
@@ -137,7 +137,7 @@ class App extends Component {
 
     // kakao login
     if (window.location.href.indexOf('?kakaologin') !== -1) {
-      fetch('http://3.35.21.164:3000/users/kakaologin')
+      fetch('http://localhost:3000/users/kakaologin')
         .then((res) => {
           return res.json();
         })

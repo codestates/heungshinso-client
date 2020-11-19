@@ -108,7 +108,7 @@ class Main extends React.Component {
                 onClick={this.modalOff.bind(this)}
               ></div>
               <div className="modal_card">
-                <div className="title">{this.state.modalData.title}</div>
+                <div className="modal_card_title">{this.state.modalData.title}</div>
                 <div className="username">작성자: 추노</div>
                 <div className="description">
                   {this.state.modalData.description}
