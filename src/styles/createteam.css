@@ -1,0 +1,193 @@
+#createteam_wapper {
+  min-height: 100%;
+  text-align: center;
+  background-color: #171717;
+  display: flex;
+  padding-top: 145px;
+}
+#contents_section {
+  line-height: 4vw;
+  display: flex;
+  text-align: left;
+  margin: auto auto;
+  width: 800px;
+  min-height: 300px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+#setting_contents {
+  padding: 0px 0px 0px;
+  margin: 20px 35px;
+}
+.setting_title {
+  position: relative;
+}
+.content_div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.st_name {
+  width: 100px;
+  line-height: 38px;
+  font-size: 14px;
+  vertical-align: top;
+}
+.st_team_name {
+  width: 100%;
+}
+
+.input_title {
+  background-color: #ffffff;
+  height: 38px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0px 10px;
+  font-size: 14px;
+  color: #3c3c3c;
+  vertical-align: middle;
+  width: 100%;
+}
+.input_des {
+  background-color: #ffffff;
+  height: 138px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 0px 10px;
+  font-size: 14px;
+  color: #3c3c3c;
+  vertical-align: middle;
+  width: 100%;
+  white-space: pre;
+  resize: none;
+  border-radius: 10px;
+}
+.select_box {
+  background-color: #ffffff;
+  height: 38px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 0px 10px;
+  font-size: 14px;
+  color: #3c3c3c;
+  vertical-align: middle;
+  width: 40%;
+}
+#title {
+  font-size: 14px;
+  color: #3c3c3c;
+  font-weight: 700;
+  padding: 18px 30px 13px;
+  border-bottom: 1px solid #3c3c3c;
+}
+textarea {
+  width: 500px;
+  height: 100px;
+  resize: none;
+  border-radius: 10px;
+}
+#btn {
+  border-radius: 10px;
+  background-color: #565656;
+  position: relative;
+  bottom: 20px;
+  height: 15px;
+  width: 90px;
+  padding: 10px 10px;
+  margin: 10px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#btn span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  bottom: 32px;
+  font-size: 0.8rem;
+}
+#btn span::after {
+  content: ':arrow_forward:';
+  color: white;
+  position: absolute;
+  top: 0px;
+  right: -22px;
+  opacity: 0;
+  font-size: 10px;
+  transition: 0.5s;
+}
+#btn:hover span {
+  padding-right: 30px;
+}
+#btn:hover span::after {
+  opacity: 0;
+  right: 0px;
+}
+.input_error_message {
+  display: block;
+  line-height: 35px;
+  font-size: 14px;
+  color: #f1453d;
+}
+
+/* 
+#title {
+  font-size: 14px;
+  color: #3c3c3c;
+  font-weight: 700;
+  padding: 18px 30px 13px;
+  border-bottom: 1px solid #3c3c3c;
+}
+#btn {
+  border-radius: 10px;
+  background-color: #171717;
+  height: 15px;
+  width: 90px;
+  padding: 8px 8px;
+  margin: 10px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#btn span {
+  position: relative;
+  bottom: 5px;
+  transition: 0.5s;
+}
+#btn span::after {
+  content: '▶';
+  color: white;
+  position: absolute;
+  top: 0px;
+  right: -22px;
+  opacity: 0;
+  font-size: 10px;
+  transition: 0.5s;
+}
+#btn:hover span {
+  padding-right: 30px;
+}
+#btn:hover span::after {
+  opacity: 0;
+  right: 0px;
+}
+.input_error_message {
+  display: block;
+  line-height: 35px;
+  font-size: 14px;
+  color: #f1453d;
+} */

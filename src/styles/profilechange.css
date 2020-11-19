@@ -1,0 +1,208 @@
+/* 로그인 창 뒷배경 */
+.signhandle_modal {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00000088;
+}
+
+.profilechange_container {
+  /* flex 적용 */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: 30;
+
+  /* position 설정 (중앙정렬)  */
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: fixed;
+
+  /* 컨텐츠 크기 */
+  width: 650px;
+  height: 700px;
+
+  /* 컨텐츠 테두리 */
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(65, 12, 12, 0.19),
+    0 6px 6px rgba(82, 19, 19, 0.23);
+
+  /* 컨텐츠 내부 */
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.profilechange_container_input {
+  position: relative;
+
+  bottom: 5px;
+  height: auto; /* 높이 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  padding: 0.5em 0.5em; /* 여백 설정 */
+  border-width: 0px 0px;
+  outline: none;
+  border-bottom: 1px;
+  border-color: rgba(0, 0, 0, 0.219);
+  background-color: inherit;
+  border-style: solid;
+  color: rgba(0, 0, 0, 0.699);
+  transition: 0.3s;
+}
+.profilechange_container_input:hover,
+.profilechange_container_input:focus {
+  position: relative;
+
+  bottom: 5px;
+  height: auto; /* 높이 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  padding: 0.5em 0.5em; /* 여백 설정 */
+  border-width: 0px 0px;
+  outline: none;
+  border-bottom: 1px;
+  border-color: rgb(0, 0, 0);
+  background-color: inherit;
+  border-style: solid;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+.profilechange_container button {
+  all: unset;
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.658);
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  color: white;
+}
+.profilechange_container button:hover {
+  all: unset;
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.938);
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  color: white;
+  cursor: pointer;
+}
+
+.profilechange_container_item {
+  width: 85%;
+}
+.profilechange_container_item:nth-child(1) {
+  position: relative;
+  top: 5px;
+}
+
+.profilechange_container_item:nth-child(3) {
+  position: relative;
+  bottom: 10px;
+}
+.profilechange_container_item:nth-child(4) {
+  position: relative;
+  bottom: 20px;
+}
+.profilechange_container_item:nth-child(5) {
+  position: relative;
+  bottom: 30px;
+}
+.profilechange_container_item:nth-child(6) {
+  position: relative;
+  bottom: 40px;
+}
+.profilechange_container_item:nth-child(7) {
+  position: relative;
+  bottom: 50px;
+}
+.profilechange_container_item:nth-child(8) {
+  position: relative;
+  bottom: 50px;
+}
+.profilechange_container_item:nth-child(8) button {
+  all: unset;
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.726);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 10px;
+  transition: 0.3s;
+  color: white;
+}
+.profilechange_container_item:nth-child(8) button:hover {
+  all: unset;
+  font-size: 0.85rem;
+  background-color: black;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 10px;
+  transition: 0.3s;
+  color: white;
+  cursor: pointer;
+}
+
+.profilechange_container_item span {
+  position: relative;
+  right: 10px;
+  font-size: 1rem;
+  color: rgb(58, 57, 57);
+}
+
+.profilechange_container_item button {
+  all: unset;
+  font-size: 0.85rem;
+  background-color: rgba(80, 80, 80, 0.555);
+  padding: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 10px;
+  transition: 0.3s;
+  color: white;
+}
+.profilechange_container_item button:hover {
+  all: unset;
+  font-size: 0.85rem;
+  background-color: rgba(80, 80, 80, 0.555);
+  padding: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 10px;
+  transition: 0.3s;
+  color: white;
+  cursor: pointer;
+}
+
+.profilechange_container_item:nth-child(1) img {
+  position: relative;
+  left: 25%;
+  width: 30%;
+  height: 90%;
+}
