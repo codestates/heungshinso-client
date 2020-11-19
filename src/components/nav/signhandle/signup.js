@@ -38,7 +38,7 @@ class SignUp extends Component {
         } else {
           console.log(body);
           this.setState({ errorMessage: '' });
-          // this.props.signUpModalHandler();
+          this.props.signUpModalHandler();
         }
       })
       .catch((err) => {

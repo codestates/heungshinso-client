@@ -54,12 +54,15 @@ class Profile extends Component {
               ></img>
             </div>
           </div>
-          <div
-            className="profile-change"
-            onClick={this.profileChangeModalHandler.bind(this)}
-          >
-            프로필 변경
+          <div className="profile-change">
+            <button
+              className="profile-change-button"
+              onClick={this.profileChangeModalHandler.bind(this)}
+            >
+              프로필 변경
+            </button>
           </div>
+
           {this.state.isOpenProfileChange ? (
             <ProfileChange
               changeCurrentUserHandler={this.props.changeCurrentUserHandler}
