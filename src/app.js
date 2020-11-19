@@ -72,25 +72,6 @@ class App extends Component {
         console.log(err);
       });
 
-    // fetch(url, {
-    //   method: 'GET',
-    //   mode: 'cors',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // })
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((body) => {
-    //     console.log(body);
-    //     this.setState({ user: body.user });
-    //     this.setState({ team: body.team });
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
     // github login
     if (window.location.href.indexOf('?githublogin') !== -1) {
       fetch('http://3.35.21.164:3000/users/githublogin')
