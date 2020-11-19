@@ -1,0 +1,68 @@
+body {
+  font-family: 'NanumGothic';
+  background-color: #161616;
+}
+
+@font-face {
+  font-family: 'East Sea Dokdo';
+  src: url('../styles/contents/EastSeaDokdo-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('../styles/contents/NanumGothic-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+a {
+  display: inherit;
+  text-decoration: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.app_container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.app_main {
+  background-color: #161616;
+  position: relative;
+  left: 3%;
+  width: 83.4vw;
+}
+
+.app_navigation {
+  flex-grow: 1;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  background-color: #161616;
+
+  border: 0.2px rgba(105, 36, 36, 0.39);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer */
+.footer {
+  flex-grow: 1;
+}
+
+.team {
+  border: solid 3px papayawhip;
+}
+
+.member {
+  display: flex;
+  justify-content: space-around;
+  border: solid 1px palevioletred;
+}

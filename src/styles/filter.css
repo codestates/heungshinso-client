@@ -1,0 +1,124 @@
+.filter {
+  display: flex;
+  flex-flow: row;
+  background-color: #000;
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.ft_ic {
+  background-image: url('../images/filter_16px.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #FFFFFF;
+  cursor: inherit;
+  width: 55px;
+  height: 55px;
+  border-right: solid 1px #333;
+}
+.ft_arrow_down_ic {
+  display: inline-block;
+  background-image: url('../images/arrow_down_16px.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 11px;
+  height: 11px;
+  margin-left: 5px;
+}
+
+
+.ft_check_ic {
+  display: inline-block;
+  background-image: url('../images/check1_16px.png');
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 10px;
+}
+
+.ft_list {
+  z-index: 0;
+  cursor: pointer;
+  text-align: center;
+  line-height: 55px;
+  font-weight: 600;
+  width: 110px;
+  border-right: solid 1px #333;
+  padding: 0 10px 0 0;
+}
+.ft_resion {
+  width: 330px;
+}
+.ft_ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  transform: scale(0);
+  transition-duration: 0.1s;
+  transform-origin: top left;
+  background-color: #ffffff;
+  position: absolute;
+  z-index: 10;
+  width: 105px;
+  border-left: 1px solid #EFEFEF;
+  border-right: 1px solid #EFEFEF;
+  border-bottom: 1px solid #EFEFEF;
+  text-align: left; 
+
+}
+.ft_list:hover .ft_ul {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #000;
+  transform: scale(1);
+  padding-left: 15px;
+}
+.ft_ul li {
+  padding-left: 15px;
+}
+
+.ft_items {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  padding-left: 15px;
+}
+.item {
+  line-height: 45px;
+  font-size: 10px;
+  color: #ffffff;
+  height: 40px;
+  border: solid 1px #dddddd;
+
+  border-radius: 4px;
+  margin: 4px 0 0 7px;
+  padding: 1px 9px
+
+}
+.ft_close {
+  cursor: pointer;
+  background-image: url('../images/close_16px.png');
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 10px;
+  margin-left: 5px;
+}
+.ft_items_over {
+  line-height: 45px;
+  font-size: 10px;
+  height: 40px;
+  border: solid 1px #333;
+  border-radius: 8px;
+  margin: 5px 0 0 7px;
+
+  padding: 2px 5px
+}
+.team_state_filter_close {
+  display: none;
+}
+

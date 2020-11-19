@@ -1,0 +1,117 @@
+/* @import '/src/styles/reset.css'; */
+
+/* #profile {
+  display: flex;
+  justify-content: center;
+} */
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 600px;
+  top: 40px;
+  width: 100%;
+  /* border: 10px solid;
+  border-color: bisque; */
+  background-color: #171717;
+  color: black;
+  position: relative;
+}
+.profile-info {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-username {
+  margin-top: 20%;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 10rem;
+  letter-spacing: 4px;
+  margin-top: 3rem;
+}
+
+.user-info-view {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 28px;
+
+  background-color: rgb(102, 102, 102);
+}
+
+.profile-user {
+  margin-left: 27%;
+  /* border: 1px solid black; */
+  height: 100%;
+}
+.profile-img {
+  /* border: 1px solid black; */
+  margin-right: 50%;
+  border-radius: 50%;
+  height: 25%;
+}
+
+.profile-email {
+  font-size: 1rem;
+  font-weight: 550;
+  color: #ffffff;
+}
+
+.profile-emailset {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-emailicon {
+  font-size: 1rem;
+  margin-right: 10%;
+  color: #ffffff;
+}
+
+.profile-userimg {
+  margin-bottom: 1rem;
+  margin-right: 9rem;
+  width: 30%;
+}
+.profile-userimg img {
+  width: 27%;
+}
+.profile-change {
+  /* border: 1px solid black; */
+  color: #ffffff;
+  position: relative;
+  padding-top: 1.4%;
+  left: 26%;
+}
+
+.profile-change-button {
+  all: unset;
+  font-size: 1rem;
+  background-color: rgba(126, 126, 126, 0.699);
+  text-shadow: black;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 100px;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.884);
+}
+
+.profile-change-button:hover {
+  all: unset;
+  font-size: 1rem;
+  background-color: rgba(204, 204, 204, 0.911);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 100px;
+  transition: 0.3s;
+  color: #0c0c0cd8;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(2, 0, 0, 0.23);
+  cursor: pointer;
+}
