@@ -12,7 +12,6 @@ class CreateTeam extends Component {
       team_region: '',
       team_position: '',
     };
-    console.log(this.state);
   }
   handleInputValue = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -70,11 +69,13 @@ class CreateTeam extends Component {
         <div id="contents_section">
           <div id="title">함께할 팀원을 구하십니까?</div>
           <div id="setting_contents">
-            <div>
-              <span className="st_name">프로젝트 한줄 설명{': '}</span>
+
+            <div className="content_div">
+              <span className="st_name">프로젝트 한줄 설명{": "}</span>
+v
               <span className="st_team_name">
                 <input
-                  className="input_box"
+                  className="input_title"
                   name="title"
                   type="text"
                   placeholder="ex) 스타트업 소비자 관리 플랫폼"
@@ -83,20 +84,26 @@ class CreateTeam extends Component {
                 ></input>
               </span>
             </div>
-            <div>
-              <span className="st_name">설명{': '}</span>
+
+            <div className="content_div">
+              <span className="st_name">설명{": "}</span>
+
               <textarea
-                className="input_box"
+                className="input_des"
                 name="description"
                 type="text"
+                placeholder="ex) 소비자 관리 프론트엔드 개발자 구합니다. 
+                vue.js ,react 를 잘 다루는 사람이였으면 좋겠습니다."
                 value={this.state.description}
                 onChange={this.handleInputValue}
               ></textarea>
             </div>
-            <div>
-              <span className="st_name">활동 위치{': '}</span>
+
+            <div className="content_div">
+              <span className="st_name">활동 위치{": "}</span>
+
               <select
-                className="input_box"
+                className="select_box"
                 type="text"
                 name="team_region"
                 value={this.state.team_region}
@@ -121,10 +128,12 @@ class CreateTeam extends Component {
                 <option value="제주시">제주시</option>
               </select>
             </div>
-            <div>
-              <span className="st_name">구인 직무{': '}</span>
+
+            <div className="content_div">
+              <span className="st_name">구인 직무{": "}</span>
+
               <select
-                className="input_box"
+                className="select_box"
                 type="text"
                 name="team_position"
                 value={this.state.team_position}
@@ -137,9 +146,9 @@ class CreateTeam extends Component {
               </select>
             </div>
             <div className="input_error_message">{this.state.errorMessage}</div>
-            <div id="btn" onClick={this.handleTeamValue.bind(this)}>
-              <span>팀 만들기</span>
-            </div>
+          </div>
+          <div id="btn" onClick={this.handleTeamValue.bind(this)}>
+            <span>팀 만들기</span>
           </div>
         </div>
       </div>
