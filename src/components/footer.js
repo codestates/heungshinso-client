@@ -3,15 +3,16 @@ import { FaBlog } from "react-icons/fa";
 import { SiNetlify } from "react-icons/si";
 import { NavLink } from "react-router-dom";
 import "../styles/footer.css";
+import logo from "../images/흥신소로고.png";
 class Footer extends Component {
   render() {
     return (
       <div className="footer">
         <div className="inner-footer">
           <div className="footer-items">
-            <h1>흥신소</h1>
+            <img src={logo} />
             <div className="border"></div>
-            <h2>'사람' 찾아 드립니다.</h2>
+            <h3>'사람' 찾아 드립니다.</h3>
             <h3>
               저희 흥신소는 개발자들이 혹은 스타트업이 함께 할 사람을 찾는
               서비스입니다.

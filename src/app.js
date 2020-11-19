@@ -1,14 +1,17 @@
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { Component } from 'react';
-import dummyData from './dummy_data/dummy_data';
-import Nav from './components/nav';
-import Recruit from './components/recruit';
-import Apply from './components/apply';
-import Main from './components/main';
-import CreateTeam from './components/create_team';
-import Profile from './components/profile';
-import Footer from './components/footer';
-import './styles/app.css';
+
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Component } from "react";
+import dummyData from "./dummy_data/dummy_data";
+import Nav from "./components/nav";
+import Recruit from "./components/recruit";
+import Apply from "./components/apply";
+import Main from "./components/main";
+import CreateTeam from "./components/create_team";
+import Profile from "./components/profile";
+import Footer from "./components/footer";
+import "./styles/app.css";
+
+
 
 class App extends Component {
   constructor(props) {
@@ -47,12 +50,14 @@ class App extends Component {
     }));
   }
   componentDidMount() {
-    if (localStorage.getItem('currentUser')) {
-      let userdata = localStorage.getItem('currentUser');
+    if (localStorage.getItem("currentUser")) {
+      let userdata = localStorage.getItem("currentUser");
       this.signInAndOutHandler(JSON.parse(userdata));
     }
 
-    const url = 'http://localhost:3000/';
+
+    const url = 'http://3.35.21.164:3000/';
+
     fetch(url, {
       method: 'GET',
       mode: 'cors',
@@ -65,8 +70,10 @@ class App extends Component {
       })
       .then((body) => {
         console.log(body);
+
         this.setState({ user: body.user });
         this.setState({ team: body.team });
+
       })
       .catch((err) => {
         console.log(err);
@@ -95,8 +102,9 @@ class App extends Component {
         });
     }
     // // naver login
-    if (window.location.href.indexOf('?naverlogin') !== -1) {
-      fetch('http://localhost:3000/users/naverlogin')
+
+    if (window.location.href.indexOf("?naverlogin") !== -1) {
+      fetch("http://3.35.21.164:3000/users/naverlogin")
         .then((res) => {
           return res.json();
         })
@@ -117,8 +125,9 @@ class App extends Component {
     }
 
     // kakao login
-    if (window.location.href.indexOf('?kakaologin') !== -1) {
-      fetch('http://localhost:3000/users/kakaologin')
+
+    if (window.location.href.indexOf("?kakaologin") !== -1) {
+      fetch("http://3.35.21.164:3000/users/kakaologin")
         .then((res) => {
           return res.json();
         })
@@ -196,6 +205,9 @@ class App extends Component {
             </Switch>
             <Footer></Footer>
           </div>
+
+          <Footer />
+
 
         </div>
       </BrowserRouter>

@@ -39,6 +39,9 @@ h3 {
   font-weight: lighter;
   text-transform: uppercase;
 }
+img {
+  height: 40px;
+}
 .roletag {
   margin: 10px 0;
   color: gray;
@@ -72,7 +75,7 @@ h3 {
   transition: 0.3s;
 }
 a li:hover {
-  color: #000;
+  color: gray;
 }
 .footer-items ul li {
   margin: 10px 0;
