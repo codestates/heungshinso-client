@@ -14,8 +14,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
-      teams: [],
+      users: [...dummyData.user],
+      teams: [...dummyData.team],
 
       currentUser: { isLogin: false, userData: null },
       isOpenSignIn: false,
@@ -46,10 +46,17 @@ class App extends Component {
       },
     }));
   }
+  handleChangeTeam(newteam) {
+    this.setState((pres) => {
+      newteam.id = pres.teams.length + 1;
+      console.log(pres.teams);
+      pres.teams.unshift(newteam);
+      return { teams: pres.teams };
+    });
+  }
   componentDidMount() {
     if (localStorage.getItem('currentUser')) {
       let userdata = localStorage.getItem('currentUser');
-      this.signInAndOutHandler(JSON.parse(userdata));
     }
 
     const url = 'http://3.35.21.164:3000/';
@@ -65,7 +72,7 @@ class App extends Component {
         return res.json();
       })
       .then((body) => {
-        body = dummyData; // 더미데이터
+        console.log(body);
         this.setState({ users: body.user });
         this.setState({ teams: body.team });
       })
@@ -83,8 +90,7 @@ class App extends Component {
           console.log(res);
           let body = {
             id: res.id,
-            email: res.email,
-            gender: res.response.gender,
+            email: res.login,
             username: res.name,
             phone_number: null,
             birthday: null,
@@ -103,11 +109,11 @@ class App extends Component {
           return res.json();
         })
         .then((res) => {
+          console.log(res);
           let body = {
             id: res.response.id,
             email: res.response.email,
-            gender: res.response.gender,
-            username: res.response.profile.nickname,
+            username: res.response.nickname,
             phone_number: null,
             birthday: null,
             user_region: null,
@@ -126,17 +132,18 @@ class App extends Component {
           return res.json();
         })
         .then((res) => {
+          console.log(res);
           let body = {
             id: res.id,
-            email: res.response.email,
-            gender: res.response.gender,
-            username: res.response.profile.nickname,
+            email: res.kakao_account.email,
+            username: res.kakao_account.profile.nickname,
             phone_number: null,
             birthday: null,
             user_region: null,
             user_position: null,
             user_status: null,
           };
+
           this.signInAndOutHandler(body);
         });
     }
@@ -178,6 +185,7 @@ class App extends Component {
                     users={this.state.teams}
                     teams={this.state.users}
                     currentUserData={this.state.currentUser.userData}
+                    handleChangeTeam={this.handleChangeTeam.bind(this)}
                   />
                 ) : (
                   <Redirect to="/" />

@@ -55,6 +55,8 @@ nav {
 }
 
 .nav_logo {
-  width: 60px;
-  height: 60px;
+  position: relative;
+  top: 10px;
+  width: 90px;
+  height: 40px;
 }

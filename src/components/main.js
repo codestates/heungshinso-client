@@ -69,15 +69,25 @@ class Main extends React.Component {
         {this.state.applyModal ? (
           <>
             <section className="modal_section">
-              <div className="modal_overlay" onClick={this.modalOff.bind(this)}></div>
+              <div
+                className="modal_overlay"
+                onClick={this.modalOff.bind(this)}
+              ></div>
               <div className="modal_card">
-                <span className="modal_card_img"></span >
+                <img
+                  src={this.state.modalData.url}
+                  className="modal_card_img"
+                ></img>
                 <span className="modal_card_info">
                   <dl>
-                    <dt>user</dt><dd>: {this.state.modalData.username}</dd>
-                    <dt>position</dt><dd>: {this.state.modalData.user_position}</dd>
-                    <dt>region</dt><dd>: {this.state.modalData.user_region}</dd>
-                    <dt>status</dt><dd>: {this.state.modalData.user_status}</dd>
+                    <dt>user</dt>
+                    <dd>: {this.state.modalData.username}</dd>
+                    <dt>position</dt>
+                    <dd>: {this.state.modalData.user_position}</dd>
+                    <dt>region</dt>
+                    <dd>: {this.state.modalData.user_region}</dd>
+                    <dt>status</dt>
+                    <dd>: {this.state.modalData.user_status}</dd>
                   </dl>
                 </span>
                 <div className="modal_card_item">
@@ -108,7 +118,9 @@ class Main extends React.Component {
                 onClick={this.modalOff.bind(this)}
               ></div>
               <div className="modal_card">
-                <div className="modal_card_title">{this.state.modalData.title}</div>
+                <div className="modal_card_title">
+                  {this.state.modalData.title}
+                </div>
                 <div className="username">작성자: 추노</div>
                 <div className="description">
                   {this.state.modalData.description}
