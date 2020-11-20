@@ -26,7 +26,7 @@ class CreateTeam extends Component {
     };
 
     const url = 'http://3.35.21.164:3000/team/createteam';
-
+    this.props.handleChangeTeam(body);
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -38,6 +38,7 @@ class CreateTeam extends Component {
       .then((res) => res.json())
       .then((body) => {
         console.log(body);
+
         this.setState({ errorMessage: '' });
         this.props.history.push('/');
       })

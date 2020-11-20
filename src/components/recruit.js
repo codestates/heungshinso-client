@@ -125,31 +125,6 @@ class Recruit extends React.Component {
       .catch((err) => console.log(err));
   }
 
-  componentDidMount() {
-    window.onscroll = function (ev) {
-      if (ev === null) {
-        return null;
-      }
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        if (this.props) {
-          if (this.props.teams.length >= this.state.dataCount) {
-            console.log('deleted');
-            this.setState(
-              (pres) => {
-                return { dataCount: pres.dataCount };
-              },
-              () => {
-                this.setState({
-                  data: this.props.teams.slice(0, this.state.dataCount),
-                });
-              }
-            );
-          }
-        }
-      }
-    };
-  }
-
   render() {
     return (
       <>

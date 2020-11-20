@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# INDEX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About Project and Team
 
-## Available Scripts
+## Requirement
 
-In the project directory, you can run:
+## FlowChart
 
-### `npm start`
+## Portfolio Page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# About Project and Team
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 팀명
 
-### `npm test`
+Chunos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 프로젝트명 및 로고
 
-### `npm run build`
+Heungshinso
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="387" alt="흥신소로고" src="https://user-images.githubusercontent.com/63483439/99771380-665fdf00-2b4c-11eb-84b6-7079bae0e92e.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### About
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+프로젝트를 함께 시작할 동료를 구하고 있다면, <br/>
+또는 참여할 프로젝트를 찾고 있다면, <br/>
+흥신소는 좋은 시작입니다.
 
-### `npm run eject`
+## 팀원
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 김면수
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Back-end
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 유병국
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Back-end
 
-## Learn More
+### 임경섭
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Front-end
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 장수민
 
-### Code Splitting
+Front-end
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Team role
 
-### Analyzing the Bundle Size
+### 변수명 규칙
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+camelCase
 
-### Making a Progressive Web App
+### Issue 작성
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+버그 발생 등
 
-### Advanced Configuration
+### 버전
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm version: 6.14.8 <br/>
+node version: 14.15.0
 
-### Deployment
+## 사용 스택
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![스크린샷, 2020-11-20 16-25-53](https://user-images.githubusercontent.com/63483439/99771824-1a616a00-2b4d-11eb-97b8-702fdc555149.png)
 
-### `npm run build` fails to minify
+# Requirement
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Bare minimum requirements
+
+- 로그인 기능(회원가입 ,로그인, 로그아웃)
+- 유저 정보 관리(회원가입, 회원탈퇴, 비밀번호 변경)
+- 찾기, 모집 페이지
+  - 필터링 기능 (지역, 직무, 경력, 상태)
+  - 스크롤 내림에 따라 새로운 view 렌더링
+- 새로운 팀 만들기 기능
+- 유저 프로필 변경 기능
+- 팀 지원, 팀 초대에 따른 메세지
+
+## Advanced
+
+- 추가 유저 정보 관리 (회원탈퇴, 비밀번호 변경)
+- 반응형 웹디자인
+- 스크롤시 애니메이션 효과 (메인바 따라 내려오는 효과 등)
+- 통합 검색 기능
+
+# FlowChart
+
+![img](https://user-images.githubusercontent.com/63483439/98665339-e3da6100-238e-11eb-91e9-4d706b85a667.jpg))
+
+# Portfolio page
+
+https://d2z76t8ifhgwqt.cloudfront.net/

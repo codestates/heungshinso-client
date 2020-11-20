@@ -11,7 +11,7 @@
   background-image: url('../images/filter_16px.png');
   background-repeat: no-repeat;
   background-position: center;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: inherit;
   width: 55px;
   height: 55px;
@@ -27,7 +27,6 @@
   height: 11px;
   margin-left: 5px;
 }
-
 
 .ft_check_ic {
   display: inline-block;
@@ -63,11 +62,10 @@
   position: absolute;
   z-index: 10;
   width: 105px;
-  border-left: 1px solid #EFEFEF;
-  border-right: 1px solid #EFEFEF;
-  border-bottom: 1px solid #EFEFEF;
-  text-align: left; 
-
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  text-align: left;
 }
 .ft_list:hover .ft_ul {
   display: flex;
@@ -96,8 +94,7 @@
 
   border-radius: 4px;
   margin: 4px 0 0 7px;
-  padding: 1px 9px
-
+  padding: 1px 9px;
 }
 .ft_close {
   cursor: pointer;
@@ -116,9 +113,8 @@
   border-radius: 8px;
   margin: 5px 0 0 7px;
 
-  padding: 2px 5px
+  padding: 2px 5px;
 }
 .team_state_filter_close {
   display: none;
 }
-

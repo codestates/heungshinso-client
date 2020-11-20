@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import SignHandle from './nav/signhandle';
 import { NavLink, withRouter } from 'react-router-dom';
-import logo from '../images/흥신소로고초안1.png';
+import logo from '../images/흥신소로고.png';
 import '../styles/nav.css';
 import axios from 'axios';
 
@@ -87,7 +87,7 @@ class Nav extends Component {
         <nav className="nav_container">
           <div className="nav_main">
             <NavLink exact to="/" className="nav_main_a">
-              흥신소
+              <img className="nav_logo" src={logo}></img>
             </NavLink>
           </div>
           <div className="nav_page">

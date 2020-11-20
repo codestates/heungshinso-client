@@ -5,7 +5,7 @@ const Article = (props) => (
     {props.team ? (
       <>
         <div className="recruit_card">
-          <img src={props.team.image} className="recruit_card_img"></img>
+          <img src={props.team.img} className="recruit_card_img"></img>
           <div className="recruit_card_nav">
             <div className="recruit_card_title">
               <div>{props.team.title}</div>
