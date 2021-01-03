@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from './article';
 import Filter from '../components/filter';
-
+import { serverAddress } from '../app';
 class Recruit extends React.Component {
   constructor(props) {
     super(props);
@@ -109,7 +109,7 @@ class Recruit extends React.Component {
   }
 
   filterFetch() {
-    let url = `http://3.35.21.164:3000/teams/recruit${this.state.query}`;
+    let url = `${serverAddress}/teams/recruit${this.state.query}`;
     console.log(url);
     fetch(url, {
       headers: {

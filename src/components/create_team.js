@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../styles/createteam.css';
-
+import { serverAddress } from '../app';
 class CreateTeam extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +25,7 @@ class CreateTeam extends Component {
       userId: this.props.currentUserData.id,
     };
 
-    const url = 'http://3.35.21.164:3000/team/createteam';
+    const url = `${serverAddress}/team/createteam`;
     this.props.handleChangeTeam(body);
     fetch(url, {
       method: 'POST',

@@ -4,13 +4,13 @@ import { NavLink, withRouter } from 'react-router-dom';
 import logo from '../images/흥신소로고.png';
 import '../styles/nav.css';
 import axios from 'axios';
-
+import { serverAddress } from '../app';
 class Nav extends Component {
   handleSignOut = () => {
     this.props.signInAndOutHandler();
     this.props.history.push('/');
     localStorage.removeItem('currentUser');
-    const url = 'http://3.35.21.164:3000/users/signout';
+    const url = `${serverAddress}/users/signout`;
     // fetch(url, {
     //   method: 'POST',
     //   credentials: 'include',
@@ -18,7 +18,7 @@ class Nav extends Component {
     // })
     axios({
       method: 'post',
-      url: 'http://3.35.21.164:3000/users/signout',
+      url: `${serverAddress}/users/signout`,
       withCredentials: true,
     })
       .then((res) => {

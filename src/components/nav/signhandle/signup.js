@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import { serverAddress } from '../../../app';
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ class SignUp extends Component {
     ) {
       return;
     }
-    const url = 'http://3.35.21.164:3000/users/signup';
+    const url = `${serverAddress}/users/signup`;
     fetch(url, {
       method: 'POST',
       mode: 'cors',

@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { FaChessBishop } from 'react-icons/fa';
 import '../../styles/profilechange.css';
+import { serverAddress } from '../../app';
 class ProfileChange extends Component {
   constructor(props) {
     super(props);
@@ -97,7 +98,7 @@ class ProfileChange extends Component {
     }
   };
   handleUserValue = () => {
-    console.log(1)
+    console.log(1);
     let body = {
       username: this.state.username,
       phone_number: this.state.phone_number,
@@ -108,7 +109,7 @@ class ProfileChange extends Component {
       email: this.props.currentUserData.email,
     };
 
-    const url = 'http://3.35.21.164:3000/users/profile';
+    const url = `${serverAddress}/users/profile`;
     fetch(url, {
       method: 'POST',
       mode: 'cors',

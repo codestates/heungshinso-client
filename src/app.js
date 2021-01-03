@@ -10,6 +10,8 @@ import Profile from './components/profile';
 import Footer from './components/footer';
 import './styles/app.css';
 
+export const serverAddress = 'http://3.35.21.164:3000';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -59,7 +61,7 @@ class App extends Component {
       let userdata = localStorage.getItem('currentUser');
     }
 
-    const url = 'http://3.35.21.164:3000/';
+    const url = serverAddress;
 
     fetch(url, {
       method: 'GET',
@@ -82,7 +84,7 @@ class App extends Component {
 
     // github login
     if (window.location.href.indexOf('?githublogin') !== -1) {
-      fetch('http://3.35.21.164:3000/users/githublogin')
+      fetch(`${serverAddress}/users/githublogin`)
         .then((res) => {
           return res.json();
         })
@@ -104,7 +106,7 @@ class App extends Component {
     // // naver login
 
     if (window.location.href.indexOf('?naverlogin') !== -1) {
-      fetch('http://3.35.21.164:3000/users/naverlogin')
+      fetch(`${serverAddress}/users/naverlogin`)
         .then((res) => {
           return res.json();
         })
@@ -127,7 +129,7 @@ class App extends Component {
     // kakao login
 
     if (window.location.href.indexOf('?kakaologin') !== -1) {
-      fetch('http://3.35.21.164:3000/users/kakaologin')
+      fetch(`${serverAddress}/users/kakaologin`)
         .then((res) => {
           return res.json();
         })
